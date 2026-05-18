@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weiterleitung…</title>
-  <meta http-equiv="refresh" content="0; url=./cheikh-kai-kontrollierbare-ki-systeme-scroll-page.html" />
+  <meta name="description" content="Cheikh Kai — Kontrollierbare KI-Systeme." />
+  <title>Cheikh Kai — Kontrollierbare KI-Systeme</title>
   <script>
     (() => {
-      const target = "cheikh-kai-kontrollierbare-ki-systeme-scroll-page.html";
-      const { search, hash } = window.location;
-      window.location.replace(`./${target}${search}${hash}`);
+      try {
+        const saved = localStorage.getItem("ck-theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+      } catch (_) {}
     })();
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/site.css" />
 </head>
 <body>
-  <p>Weiterleitung…</p>
+  <div data-app-root></div>
+  <script type="module" src="./assets/js/app.js"></script>
 </body>
 </html>

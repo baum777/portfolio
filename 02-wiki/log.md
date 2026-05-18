@@ -9,3 +9,7 @@
 ## [2026-05-18] fix | Root-404 auf Vercel durch index-Entry behoben (Redirect auf kanonische HTML-Seite) [[index]] [[cheikh-kai-kontrollierbare-ki-systeme-scroll-page]]
 
 ## [2026-05-18] update | Section-1-Scroll auf dynamischen Sticky-Pin mit präziser Horizontal-Progression umgestellt [[cheikh-kai-kontrollierbare-ki-systeme-scroll-page]]
+
+## [2026-05-18] fix | Desktop-Sticky in Section 1 durch Wechsel von overflow-x hidden auf clip repariert [[cheikh-kai-kontrollierbare-ki-systeme-scroll-page]]
+
+## [2026-05-18] update | Single-File in datengetriebene Struktur migriert (index + assets css/js/data) [[index]] [[cheikh-kai-kontrollierbare-ki-systeme-scroll-page]]
