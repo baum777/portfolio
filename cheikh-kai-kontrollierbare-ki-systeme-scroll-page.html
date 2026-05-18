@@ -46,6 +46,7 @@
       --page-progress: 0;
       --smooth-y: 0;
       --process-progress: 0;
+      --process-scroll-span: 400svh;
       --panel-shift: 0;
 
       color-scheme: dark;
@@ -711,7 +712,7 @@
 
     .process-scroll {
       position: relative;
-      height: 560svh;
+      height: calc(100svh + var(--process-scroll-span));
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       background:
@@ -2175,6 +2176,7 @@
       let currentX = 0;
       let targetX = 0;
       let processProgress = 0;
+      let processScrollSpan = 0;
 
       function updateTargets() {
         const scrollY = window.scrollY;
@@ -2185,17 +2187,34 @@
         if (processSection && processTrack && window.innerWidth > 680) {
           const rect = processSection.getBoundingClientRect();
           const sectionTop = scrollY + rect.top;
-          const distance = processSection.offsetHeight - window.innerHeight;
-          processProgress = distance > 0 ? clamp((scrollY - sectionTop) / distance, 0, 1) : 0;
+          const viewportWidth = window.innerWidth;
+          const viewportHeight = window.innerHeight;
+          const horizontalDistance = Math.max(0, processTrack.scrollWidth - viewportWidth);
 
-          const maxX = Math.max(0, processTrack.scrollWidth - window.innerWidth + Math.min(window.innerWidth * 0.06, 72));
-          targetX = -processProgress * maxX;
+          processScrollSpan = Math.max(horizontalDistance, viewportHeight * 4);
+          root.style.setProperty("--process-scroll-span", `${processScrollSpan}px`);
+
+          processProgress = processScrollSpan > 0
+            ? clamp((scrollY - sectionTop) / processScrollSpan, 0, 1)
+            : 0;
+
+          targetX = -processProgress * horizontalDistance;
         } else {
           processProgress = 0;
+          processScrollSpan = 0;
           targetX = 0;
+          root.style.setProperty("--process-scroll-span", "0px");
+
+          if (processTrack) {
+            processTrack.style.transform = "translate3d(0, 0, 0)";
+          }
         }
 
         root.style.setProperty("--process-progress", processProgress.toFixed(4));
+
+        if (reducedMotion && processTrack && window.innerWidth > 680) {
+          processTrack.style.transform = `translate3d(${targetX}px, 0, 0)`;
+        }
       }
 
       function animate() {
