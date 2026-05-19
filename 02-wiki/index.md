@@ -5,4 +5,8 @@
 [[cheikh-kai-kontrollierbare-ki-systeme-scroll-page]] | Kanonische statische Scroll-Landingpage mit justierter Section-1-Horizontalführung für vollständig lesbare Prozesskarten | #landingpage #html #css #javascript #scroll | 2026-05-18
 [[cheikh-kai-scroll-page-handoff]] | Handoff mit Umsetzung, Scroll-Konzept und Hinweisen | #handoff #documentation | 2026-05-18
 [[02-wiki/log]] | Append-only Arbeitslog | #log #governance | 2026-05-18
-[[index]] | Root-Entry mit Weiterleitung auf die kanonische Scroll-Seite | #entrypoint #vercel | 2026-05-18
+[[index]] | Historischer Root-Redirect (durch Next.js-App-Routing ersetzt) | #legacy #entrypoint | 2026-05-18
+[[app/page]] | Dynamische Startseite im Next.js App Router, datengetrieben aus JSON und Projekt-Metadaten | #nextjs #routing #homepage | 2026-05-19
+[[app/projekte/[slug]/page]] | Statisch generierte Projekt-Detailseiten aus Markdown mit dynamischer Slug-Route | #nextjs #ssg #projects | 2026-05-19
+[[content/site.de]] | Zentraler deutscher Content-Satz für Navigation, Hero, Process, Principles, Capabilities und Kontakt | #content #json #de | 2026-05-19
+[[content/projects]] | Projektquellen als Markdown mit Frontmatter (slug, facts, tags, order) | #content #markdown #projects | 2026-05-19

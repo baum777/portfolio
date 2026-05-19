@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Cheikh Kai — Kontrollierbare KI-Systeme",
+    "description": "Cheikh Kai — Kontrollierbare KI-Systeme. Persönliche Landingpage für AI Governance, Automatisierung, Systemdenken und kontrollierbare KI-Prozesse.",
+    "brand": "CK — Cheikh Kai / Systems",
+    "footerClaim": "Signals → Patterns → Structure → Control → Execution"
+  },
+  "nav": [
+    { "href": "#denken", "label": "Denken" },
+    { "href": "#arbeiten", "label": "Arbeiten" },
+    { "href": "#projekte", "label": "Projekte" },
+    { "href": "#kontakt", "label": "Kontakt" }
+  ],
+  "hero": {
+    "kicker": "AI Governance · Automation · Systems Thinking",
+    "titlePrefix": "Komplexe Zusammenhänge in",
+    "titleHighlight": "kontrollierbare",
+    "titleSuffix": "KI-Systeme.",
+    "subline": "Ich verbinde operative Erfahrung, Systemdenken und KI-Automatisierung, um Workflows zu entwickeln, die nachvollziehbar, prüfbar und verantwortbar bleiben.",
+    "ctas": [
+      { "href": "#denken", "label": "Arbeitsweise →", "variant": "primary" },
+      { "href": "#projekte", "label": "Projekte", "variant": "secondary" },
+      { "href": "#kontakt", "label": "Kontakt", "variant": "ghost" }
+    ]
+  },
+  "intro": {
+    "lead": "Kein klassisches Profil.",
+    "text": "LinkedIn zeigt Stationen. Diese Seite zeigt meine Arbeitsweise: wie ich Muster erkenne, Systeme entwerfe und KI in kontrollierbare Prozesse übersetze."
+  },
+  "process": {
+    "kicker": "01 / Denkweise",
+    "title": "Von losen Signalen zu belastbaren Strukturen.",
+    "text": "Der vertikale Scroll bewegt die Prozesskette horizontal: wie ein kuratierter Denkraum, in dem jeder Schritt eine neue Systemebene freilegt.",
+    "chain": ["Signale", "Muster", "Struktur", "Kontrolle", "Umsetzung"],
+    "steps": [
+      {
+        "stepLabel": "Step 01 / Signale",
+        "title": "Informationen, Probleme und Möglichkeiten aufnehmen.",
+        "text": "Am Anfang steht kein perfektes Briefing, sondern eine Mischung aus Beobachtungen, Reibung, Tools, Ideen, Daten und offenen Entscheidungspunkten.",
+        "bullets": ["operative Abläufe beobachten", "Reibung und Prozesslücken markieren", "relevante Eingangssignale sammeln"]
+      },
+      {
+        "stepLabel": "Step 02 / Muster",
+        "title": "Zusammenhänge, Risiken und Abhängigkeiten erkennen.",
+        "text": "Ich suche nicht nur Einzelpunkte, sondern wiederkehrende Strukturen: Wo entstehen Risiken? Wer entscheidet? Was hängt voneinander ab?",
+        "bullets": ["Rollen und Übergaben klären", "Risiko- und Abhängigkeitsketten bilden", "wiederkehrende Muster isolieren"]
+      },
+      {
+        "stepLabel": "Step 03 / Struktur",
+        "title": "Rollen, Regeln, Datenflüsse und Interfaces ableiten.",
+        "text": "Aus Mustern wird Architektur: Systemgrenzen, Zustände, Backend-Logik und Interfaces werden so definiert, dass Arbeit steuerbar wird.",
+        "bullets": ["Verantwortlichkeiten modellieren", "Backend-first Logik definieren", "Interfaces als Arbeitsräume gestalten"]
+      },
+      {
+        "stepLabel": "Step 04 / Kontrolle",
+        "title": "Reviews, Gates, Evidenz und Eskalationen einbauen.",
+        "text": "Kontrolle ist kein Add-on. Ein KI-Workflow ist erst belastbar, wenn Stop-Bedingungen, Review-Pfade und Evidenz sichtbar sind.",
+        "bullets": ["Review Gates definieren", "Evidenz und Logs sichtbar machen", "Fail-Closed-Regeln integrieren"]
+      },
+      {
+        "stepLabel": "Step 05 / Umsetzung",
+        "title": "Praxistauglichkeit prüfen.",
+        "text": "Die Umsetzung zeigt, ob ein System in echten Abläufen funktioniert: mit echten Menschen, echten Einschränkungen und echten Entscheidungen.",
+        "bullets": ["Prototypen statt reine Theorie", "Validierung mit klaren Kriterien", "Verbesserung durch beobachtete Reibung"]
+      }
+    ]
+  },
+  "principles": {
+    "kicker": "02 / Arbeitsprinzipien",
+    "title": "Kontrolle ist kein Add-on. Kontrolle ist Architektur.",
+    "text": "Die Prinzipien positionieren KI nicht als blinde Automatisierung, sondern als verantwortbaren Teil eines nachvollziehbaren Systems.",
+    "items": [
+      { "title": "Erst verstehen, dann automatisieren", "text": "Bevor ein Prozess automatisiert wird, müssen Verantwortung, Risiko und Entscheidungspunkte klar sein." },
+      { "title": "KI braucht Rollen und Grenzen", "text": "Ein Agent ohne klare Aufgabe, Scope und Eskalationslogik ist kein System, sondern ein Risiko." },
+      { "title": "Nachvollziehbarkeit schlägt Geschwindigkeit", "text": "Schnelle Ergebnisse sind wertlos, wenn später niemand erklären kann, wie sie entstanden sind." },
+      { "title": "Backend-seitige Autorität", "text": "Kritische Aktionen gehören nicht nur ins Interface, sondern in kontrollierte Logik mit Berechtigungen." },
+      { "title": "Validierung statt Behauptung", "text": "Outputs müssen prüfbar sein: mit Evidenz, Logs, Review-Pfaden und klaren Abschlusskriterien." },
+      { "title": "Praktische Umsetzbarkeit zählt", "text": "Architektur muss mit echten Menschen, echten Workflows und echten Einschränkungen funktionieren." }
+    ]
+  },
+  "projects": {
+    "kicker": "03 / Projekte",
+    "title": "Projekte als Beweise für Denkweise.",
+    "text": "Die Projekte sind nicht als klassische Portfolio-Liste inszeniert, sondern als Fallbeispiele für Systemdenken, Governance und kontrollierbare Umsetzung."
+  },
+  "capabilities": {
+    "kicker": "04 / Kompetenzfelder",
+    "title": "Wo mein Wert am stärksten ist.",
+    "text": "Besonders relevant werde ich, wenn ein KI-Projekt noch keine klare Struktur hat: viele lose Punkte, aber noch kein belastbares Systemdesign.",
+    "valueZoneLabel": "Value Zone",
+    "valueZoneTitle": "Unklare Probleme in klare Systeme übersetzen.",
+    "valueZoneText": "Mein Beitrag beginnt oft dort, wo andere noch versuchen, das Problem überhaupt zu greifen.",
+    "valueList": [
+      "KI-Projekte strukturieren",
+      "Mensch-KI-Workflows kontrollierbar machen",
+      "Review- und Entscheidungswege definieren",
+      "technische Umsetzung und strategische Logik verbinden"
+    ],
+    "capabilitiesLabel": "Capabilities",
+    "rows": [
+      { "title": "Systemdenken", "text": "Komplexe Zusammenhänge in Rollen, Regeln und Abläufe übersetzen." },
+      { "title": "KI-Automatisierung", "text": "KI sinnvoll in reale Workflows integrieren." },
+      { "title": "AI Governance", "text": "Kontrolle, Review, Evidenz und Verantwortung einbauen." },
+      { "title": "Backend-Logik", "text": "Systeme strukturell und technisch denken." },
+      { "title": "Validierung", "text": "Ergebnisse prüfbar machen." }
+    ]
+  },
+  "contact": {
+    "kicker": "05 / Kontakt",
+    "title": "Lass uns über kontrollierbare KI-Systeme sprechen.",
+    "text": "Ich interessiere mich für Projekte, in denen KI nicht nur produktiver machen soll, sondern strukturiert, erklärbar und verantwortbar eingesetzt wird.",
+    "ctas": [
+      { "href": "mailto:cheikh.witm@proton.me", "label": "Kontakt aufnehmen →", "variant": "primary" },
+      { "href": "#denken", "label": "Systeme ansehen", "variant": "ghost" }
+    ]
+  }
+}

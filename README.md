@@ -1,49 +1,43 @@
 # Cheikh Kai Portfolio
 
-Statische Onepage-Landingpage für Cheikh Kai mit Fokus auf kontrollierbare KI-Systeme, AI Governance, Automatisierung und Systemdenken.
+Dynamische Website auf Basis von Next.js App Router mit Fokus auf kontrollierbare KI-Systeme, AI Governance, Automatisierung und Systemdenken.
 
-## Inhalt
+## Architektur
 
-- `cheikh-kai-kontrollierbare-ki-systeme-scroll-page.html` — vollständige statische HTML/CSS/JS-Seite ohne Build-System.
-- `cheikh-kai-scroll-page-handoff.md` — kurzer Handoff zur Umsetzung, zum Scroll-Konzept und zu externen Font-Abhängigkeiten.
-- `02-wiki/index.md` — flacher Projektindex.
-- `02-wiki/log.md` — chronologisches Arbeitslog.
+- `app/` — Routen (`/`, `/projekte/[slug]`)
+- `components/` — Seitenkomponenten
+- `hooks/` — Theme- und Scroll-Interaktionen
+- `content/site.de.json` — globale Inhalte (Deutsch)
+- `content/projects/*.md` — Projektdetails mit Frontmatter + Markdown-Body
+- `lib/` — Typen, Validierung, Loader, Markdown-Parser
 
-## Lokal öffnen
-
-Direkt im Browser:
-
-```bash
-xdg-open cheikh-kai-kontrollierbare-ki-systeme-scroll-page.html
-```
-
-Oder über einen lokalen Server:
+## Lokal starten
 
 ```bash
-python3 -m http.server 8765 --bind 127.0.0.1
+npm install
+npm run dev
 ```
 
 Danach:
 
 ```text
-http://127.0.0.1:8765/cheikh-kai-kontrollierbare-ki-systeme-scroll-page.html
+http://127.0.0.1:3000
 ```
 
-## Verifikation
+## Qualitätssicherung
 
-Observed am 2026-05-18:
+```bash
+npm run lint
+npm run build
+```
 
-- Desktop und Mobile wurden im In-App-Browser geprüft.
-- Horizontaler Seiten-Overflow wurde behoben.
-- Dark und Light Theme wurden geprüft.
-- Es gab keine App-Console-Errors; nur Electron-CSP-Warnungen aus der Prüf-Umgebung.
+## Referenz-Artefakte
 
-## Hinweise
+Die frühere Single-File-Version bleibt als Referenz im Repository:
 
-Die Seite lädt Google Fonts über CDN:
+- `cheikh-kai-kontrollierbare-ki-systeme-scroll-page.html`
+- `cheikh-kai-scroll-page-handoff.md`
 
-- Syne
-- DM Mono
-- Instrument Serif
+## Deployment
 
-Bei Offline-Nutzung greifen System-Fallbacks.
+Deployment erfolgt über das bestehende Vercel-Projekt mit Root auf dieses Verzeichnis.
