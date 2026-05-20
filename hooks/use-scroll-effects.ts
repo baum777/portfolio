@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const MOBILE_BREAKPOINT = 900;
+const MOBILE_BREAKPOINT = 1120;
 
 function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);

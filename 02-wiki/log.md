@@ -19,3 +19,17 @@
 ## [2026-05-19] verify | Lint und Build erfolgreich ausgeführt (SSG für Home und 3 Projektseiten bestätigt) [[README]] [[app/page]] [[app/projekte/[slug]/page]]
 
 ## [2026-05-19] cleanup | Legacy-Root-Redirect entfernt; `/` wird jetzt ausschließlich über Next.js App Router gerendert [[app/page]] [[README]]
+
+## [2026-05-19] fix | Vercel-Deployment gegen veraltete Output-Directory-Einstellung `public` abgesichert [[vercel.json]]
+
+## [2026-05-19] deploy | Preview-Deployment nach Vercel-Output-Fix erfolgreich wiederholt [[vercel.json]]
+
+## [2026-05-19] deploy | Production-Deployment mit prebuilt Vercel-Output erfolgreich veröffentlicht [[vercel.json]]
+
+## [2026-05-19] fix | Hero-Headline gegen Text-Overflow in mittleren Viewports abgesichert [[app/globals]]
+
+## [2026-05-19] deploy | Production-Deployment mit Hero-Overflow-Fix veröffentlicht [[app/globals]] [[vercel.json]]
+
+## [2026-05-19] fix | Prozesskarten in mittleren Viewports harmonisch ausgerichtet [[app/globals]]
+
+## [2026-05-19] deploy | Production-Deployment mit Prozesskarten-Alignment-Fix veröffentlicht [[app/globals]] [[vercel.json]]

@@ -258,6 +258,10 @@ button:focus-visible {
   align-items: center;
 }
 
+.hero-copyblock {
+  min-width: 0;
+}
+
 .kicker {
   display: inline-flex;
   align-items: center;
@@ -291,12 +295,13 @@ p {
 }
 
 h1 {
-  max-width: 920px;
+  max-width: min(920px, 100%);
   margin-bottom: 0;
   font-size: clamp(50px, 8vw, 108px);
   line-height: 0.88;
   letter-spacing: -0.085em;
   font-weight: 800;
+  text-wrap: balance;
 }
 
 h1 .highlight {
@@ -1464,6 +1469,91 @@ html[data-theme="light"] .intro-card {
   margin-bottom: 6px;
 }
 
+@media (max-width: 1120px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: clamp(42px, 5.8vw, 58px);
+  }
+
+  .system-panel {
+    min-height: 520px;
+  }
+
+  .process-scroll {
+    height: auto;
+    border: 0;
+  }
+
+  .process-sticky {
+    position: relative;
+    height: auto;
+    overflow: visible;
+    padding: 84px 0 70px;
+  }
+
+  .process-sticky::before,
+  .process-progress {
+    display: none;
+  }
+
+  .process-meta {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    width: min(100% - 48px, var(--max));
+    margin-inline: auto;
+    margin-bottom: 24px;
+  }
+
+  .process-chain {
+    display: none;
+  }
+
+  .process-title h2 {
+    font-size: clamp(38px, 5vw, 56px);
+  }
+
+  .process-track {
+    display: grid;
+    width: min(100% - 48px, var(--max));
+    margin-inline: auto;
+    padding: 0;
+    gap: 18px;
+    transform: none !important;
+  }
+
+  .process-card {
+    grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+    gap: 26px;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    padding: 22px;
+  }
+
+  .process-visual {
+    min-height: 350px;
+  }
+
+  .process-copy h3 {
+    font-size: clamp(30px, 3.6vw, 42px);
+    line-height: 0.96;
+  }
+
+  .process-copy p {
+    margin-top: 18px;
+    font-size: 16px;
+  }
+
+  .micro-list {
+    margin-top: 22px;
+  }
+}
+
 @media (max-width: 1000px) {
   .hero-grid,
   .capabilities {
@@ -1605,7 +1695,9 @@ html[data-theme="light"] .intro-card {
   }
 
   h1 {
-    font-size: clamp(46px, 14vw, 70px);
+    font-size: clamp(40px, 10vw, 46px);
+    hyphens: auto;
+    overflow-wrap: break-word;
   }
 
   .system-panel {
