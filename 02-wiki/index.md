@@ -7,7 +7,8 @@
 [[02-wiki/log]] | Append-only Arbeitslog | #log #governance | 2026-05-18
 [[index]] | Historischer Root-Redirect (durch Next.js-App-Routing ersetzt) | #legacy #entrypoint | 2026-05-18
 [[app/page]] | Dynamische Startseite im Next.js App Router, datengetrieben aus JSON und Projekt-Metadaten | #nextjs #routing #homepage | 2026-05-19
-[[app/globals]] | Globales CSS für Layout, Hero, Prozess-Scroll und responsive Oberflächen | #css #responsive #frontend | 2026-05-19
+[[app/globals]] | Globales CSS für Layout, Hero, Prozess-Scroll und responsive Oberflächen | #css #responsive #frontend | 2026-05-20
+[[components/home-page-client]] | Clientseitige Startseiten-Komponente mit Hero-Systempanel, Scroll-Effekten und Prozessvisualisierung | #nextjs #react #frontend | 2026-05-20
 [[app/projekte/[slug]/page]] | Statisch generierte Projekt-Detailseiten aus Markdown mit dynamischer Slug-Route | #nextjs #ssg #projects | 2026-05-19
 [[content/site.de]] | Zentraler deutscher Content-Satz für Navigation, Hero, Process, Principles, Capabilities und Kontakt | #content #json #de | 2026-05-19
 [[content/projects]] | Projektquellen als Markdown mit Frontmatter (slug, facts, tags, order) | #content #markdown #projects | 2026-05-19

@@ -33,3 +33,19 @@
 ## [2026-05-19] fix | Prozesskarten in mittleren Viewports harmonisch ausgerichtet [[app/globals]]
 
 ## [2026-05-19] deploy | Production-Deployment mit Prozesskarten-Alignment-Fix veröffentlicht [[app/globals]] [[vercel.json]]
+
+## [2026-05-20] fix | Systempanel-Nodes proportional am Data-Stream-Raster ausgerichtet [[app/globals]] [[components/home-page-client]]
+
+## [2026-05-20] deploy | Production-Deployment mit Systempanel-Node-Fix veröffentlicht [[app/globals]] [[components/home-page-client]] [[vercel.json]]
+
+## [2026-05-20] update | Kontextbezogene ruhige Motion-Layer für Prozesskarten 1 und 2 ergänzt [[app/globals]] [[components/home-page-client]]
+
+## [2026-05-20] deploy | Production-Deployment mit Prozesskarten-Motion-Layern veröffentlicht [[app/globals]] [[components/home-page-client]] [[vercel.json]]
+
+## [2026-05-20] update | Ruhige Kontext-Motion auf alle Prozesskarten erweitert [[app/globals]] [[components/home-page-client]]
+
+## [2026-05-20] deploy | Production-Deployment mit Motion-Layern für alle Prozesskarten veröffentlicht [[app/globals]] [[components/home-page-client]] [[vercel.json]]
+
+## [2026-05-20] update | Hero-Systempanel als Denkbewegung von losen Signalen zu kontrollierter Evidenz neu erzählt [[app/globals]] [[components/home-page-client]]
+
+## [2026-05-20] deploy | Production-Deployment mit neu erzähltem Hero-Systempanel veröffentlicht [[app/globals]] [[components/home-page-client]] [[vercel.json]]

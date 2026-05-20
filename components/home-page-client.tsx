@@ -11,11 +11,16 @@ interface HomePageClientProps {
 }
 
 type VisualNode = { className: string; label: string; violet?: boolean };
+type VisualMotion = "scan" | "map" | "compose" | "gate" | "loop";
 type VisualTerminal = { left: string; right: string; lines: Array<{ strong: string; text: string }> };
 
-const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: VisualTerminal }> = [
+const CONTEXT_MOTION_PULSES = [0, 1, 2, 3];
+const SIGNAL_CLOUD_DOTS = [0, 1, 2, 3, 4, 5, 6];
+
+const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: VisualTerminal; motion?: VisualMotion }> = [
   {
     lines: ["vl1", "vl2"],
+    motion: "scan",
     nodes: [
       { className: "fn1", label: "Input" },
       { className: "fn2", label: "Context", violet: true },
@@ -33,6 +38,7 @@ const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: V
   },
   {
     lines: ["vl1", "vl3"],
+    motion: "map",
     nodes: [
       { className: "fn1", label: "Patterns" },
       { className: "fn2", label: "Risks", violet: true },
@@ -51,6 +57,7 @@ const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: V
   },
   {
     lines: ["vl1", "vl2", "vl3"],
+    motion: "compose",
     nodes: [
       { className: "fn1", label: "Flow" },
       { className: "fn2", label: "Rules", violet: true },
@@ -69,6 +76,7 @@ const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: V
   },
   {
     lines: ["vl2", "vl3"],
+    motion: "gate",
     nodes: [
       { className: "fn1", label: "Gate", violet: true },
       { className: "fn2", label: "Review" },
@@ -87,6 +95,7 @@ const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: V
   },
   {
     lines: ["vl1", "vl2"],
+    motion: "loop",
     nodes: [
       { className: "fn1", label: "Prototype" },
       { className: "fn2", label: "Validate", violet: true },
@@ -151,33 +160,40 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
             </div>
 
             <aside className="system-panel" aria-label="Abstraktes Systempanel für Governance-Architektur">
+              <div className="system-panel-title">Controlled Thinking System</div>
+              <div className="signal-cloud" aria-hidden="true">
+                {SIGNAL_CLOUD_DOTS.map((dot) => (
+                  <span key={dot} />
+                ))}
+              </div>
               <svg className="wires" viewBox="0 0 480 560" aria-hidden="true" preserveAspectRatio="none">
-                <path className="wire" d="M92,96 C160,86 210,120 304,158" />
-                <path className="wire violet" d="M352,170 C306,230 250,250 180,266" />
-                <path className="wire" d="M172,302 C120,352 108,392 92,452" />
-                <path className="wire violet" d="M196,294 C278,330 330,344 360,382" />
-                <path className="wire" d="M110,474 C188,500 286,474 360,414" />
+                <path className="wire" d="M74,124 C94,110 116,106 134,112" />
+                <path className="wire violet" d="M134,112 C180,94 246,102 298,123" />
+                <path className="wire" d="M298,123 C266,160 234,192 202,224" />
+                <path className="wire violet" d="M202,224 C254,202 318,206 365,230" />
+                <path className="wire" d="M365,230 C348,270 326,298 283,314" />
+                <path className="wire violet" d="M283,314 C254,356 198,386 138,406" />
               </svg>
 
               <div className="node signals">
-                <strong>Signals</strong>
-                <span>input.scan()</span>
+                <strong>Loose Signals</strong>
+                <span>scan(signals)</span>
               </div>
               <div className="node violet patterns">
                 <strong>Patterns</strong>
-                <span>risk.map()</span>
+                <span>map(risks + deps)</span>
               </div>
-              <div className="node workflow">
-                <strong>Workflow</strong>
-                <span>roles.flow()</span>
+              <div className="node structure">
+                <strong>Structure</strong>
+                <span>bind(roles + scope)</span>
               </div>
               <div className="node violet review">
                 <strong>Review Gate</strong>
-                <span>human.check()</span>
+                <span>owner.approve()</span>
               </div>
-              <div className="node evidence">
-                <strong>Evidence</strong>
-                <span>audit.log()</span>
+              <div className="node execution">
+                <strong>Execution</strong>
+                <span>run_if(traceable)</span>
               </div>
 
               <div className="terminal">
@@ -187,27 +203,29 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
                     <i />
                     <i />
                   </div>
-                  <span>controlled-system.log</span>
+                  <span>evidence layer / audit.log</span>
                 </div>
                 <div className="terminal-body">
                   <div className="terminal-line">
                     <strong>01</strong>
-                    <span>
-                      input.scan(<em>signals</em>)
-                    </span>
+                    <span>read.loose_signals()</span>
                   </div>
                   <div className="terminal-line">
                     <strong>02</strong>
-                    <span>map.dependencies → roles / risks / decisions</span>
+                    <span>map.dependencies(<em>risks</em>, owners, decisions)</span>
                   </div>
                   <div className="terminal-line">
                     <strong>03</strong>
-                    <span>define.review_gate(scope, evidence, owner)</span>
+                    <span>structure.roles_risks_decisions()</span>
                   </div>
                   <div className="terminal-line">
                     <strong>04</strong>
+                    <span>gate.with_owner_scope_evidence()</span>
+                  </div>
+                  <div className="terminal-line">
+                    <strong>05</strong>
                     <span>
-                      execute only if: accountable &amp;&amp; traceable<span className="cursor" aria-hidden="true" />
+                      execute only_if accountable &amp;&amp; traceable<span className="cursor" aria-hidden="true" />
                     </span>
                   </div>
                 </div>
@@ -245,6 +263,13 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
                 return (
                   <article className="process-card" data-num={String(index + 1).padStart(2, "0")} key={step.stepLabel}>
                     <div className="process-visual">
+                      {visual.motion ? (
+                        <div className={`context-motion context-motion-${visual.motion}`} aria-hidden="true">
+                          {CONTEXT_MOTION_PULSES.map((pulse) => (
+                            <span key={pulse} />
+                          ))}
+                        </div>
+                      ) : null}
                       {visual.lines.map((lineClass) => (
                         <div key={lineClass} className={`visual-line ${lineClass}`} />
                       ))}
