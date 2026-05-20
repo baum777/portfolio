@@ -6,9 +6,10 @@
     "footerClaim": "Signals → Patterns → Structure → Control → Execution"
   },
   "nav": [
-    { "href": "#denken", "label": "Denken" },
-    { "href": "#arbeiten", "label": "Arbeiten" },
+    { "href": "#denken", "label": "Denkweise" },
+    { "href": "#arbeiten", "label": "Prinzipien" },
     { "href": "#projekte", "label": "Projekte" },
+    { "href": "#kompetenz", "label": "Kompetenz" },
     { "href": "#kontakt", "label": "Kontakt" }
   ],
   "hero": {
@@ -19,8 +20,7 @@
     "subline": "Ich verbinde operative Erfahrung, Systemdenken und KI-Automatisierung, um Workflows zu entwickeln, die nachvollziehbar, prüfbar und verantwortbar bleiben.",
     "ctas": [
       { "href": "#denken", "label": "Arbeitsweise →", "variant": "primary" },
-      { "href": "#projekte", "label": "Projekte", "variant": "secondary" },
-      { "href": "#kontakt", "label": "Kontakt", "variant": "ghost" }
+      { "href": "#projekte", "label": "Projekte", "variant": "secondary" }
     ]
   },
   "intro": {

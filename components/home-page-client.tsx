@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { useScrollEffects } from "@/hooks/use-scroll-effects";
-import { useThemeToggle } from "@/hooks/use-theme";
+import { ThemeMode, useThemeToggle } from "@/hooks/use-theme";
 import { ProjectSummary, SiteContent } from "@/lib/types";
 
 interface HomePageClientProps {
@@ -10,20 +11,15 @@ interface HomePageClientProps {
   projects: ProjectSummary[];
 }
 
-type VisualNode = { className: string; label: string; violet?: boolean };
-type VisualMotion = "scan" | "map" | "compose" | "gate" | "loop";
+type VisualNode = { className: string; label: string; emphasized?: boolean };
 type VisualTerminal = { left: string; right: string; lines: Array<{ strong: string; text: string }> };
 
-const CONTEXT_MOTION_PULSES = [0, 1, 2, 3];
-const SIGNAL_CLOUD_DOTS = [0, 1, 2, 3, 4, 5, 6];
-
-const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: VisualTerminal; motion?: VisualMotion }> = [
+const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: VisualTerminal }> = [
   {
     lines: ["vl1", "vl2"],
-    motion: "scan",
     nodes: [
       { className: "fn1", label: "Input" },
-      { className: "fn2", label: "Context", violet: true },
+      { className: "fn2", label: "Context", emphasized: true },
       { className: "fn3", label: "Friction" }
     ],
     terminal: {
@@ -38,12 +34,11 @@ const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: V
   },
   {
     lines: ["vl1", "vl3"],
-    motion: "map",
     nodes: [
       { className: "fn1", label: "Patterns" },
-      { className: "fn2", label: "Risks", violet: true },
+      { className: "fn2", label: "Risks", emphasized: true },
       { className: "fn3", label: "Roles" },
-      { className: "fn4", label: "Dependencies", violet: true }
+      { className: "fn4", label: "Dependencies", emphasized: true }
     ],
     terminal: {
       left: "pattern.map",
@@ -57,12 +52,11 @@ const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: V
   },
   {
     lines: ["vl1", "vl2", "vl3"],
-    motion: "compose",
     nodes: [
       { className: "fn1", label: "Flow" },
-      { className: "fn2", label: "Rules", violet: true },
+      { className: "fn2", label: "Rules", emphasized: true },
       { className: "fn3", label: "Interface" },
-      { className: "fn4", label: "Backend", violet: true }
+      { className: "fn4", label: "Backend", emphasized: true }
     ],
     terminal: {
       left: "system.compose",
@@ -76,11 +70,10 @@ const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: V
   },
   {
     lines: ["vl2", "vl3"],
-    motion: "gate",
     nodes: [
-      { className: "fn1", label: "Gate", violet: true },
+      { className: "fn1", label: "Gate", emphasized: true },
       { className: "fn2", label: "Review" },
-      { className: "fn3", label: "Evidence", violet: true },
+      { className: "fn3", label: "Evidence", emphasized: true },
       { className: "fn4", label: "Escalate" }
     ],
     terminal: {
@@ -95,12 +88,11 @@ const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: V
   },
   {
     lines: ["vl1", "vl2"],
-    motion: "loop",
     nodes: [
       { className: "fn1", label: "Prototype" },
-      { className: "fn2", label: "Validate", violet: true },
+      { className: "fn2", label: "Validate", emphasized: true },
       { className: "fn3", label: "Operate" },
-      { className: "fn4", label: "Improve", violet: true }
+      { className: "fn4", label: "Improve", emphasized: true }
     ],
     terminal: {
       left: "execution.loop",
@@ -114,137 +106,101 @@ const PROCESS_VISUALS: Array<{ lines: string[]; nodes: VisualNode[]; terminal: V
   }
 ];
 
+function parseStepLabel(stepLabel: string) {
+  const match = stepLabel.match(/Step\s+(\d+)\s*\/\s*(.+)$/);
+  return {
+    number: match?.[1] ?? stepLabel.slice(0, 2),
+    label: match?.[2] ?? stepLabel
+  };
+}
+
+function heroTitleParts(site: SiteContent) {
+  return {
+    first: site.hero.titlePrefix.replace(/\s+in$/, ""),
+    second: `in ${site.hero.titleHighlight}`,
+    third: site.hero.titleSuffix
+  };
+}
+
+function ThemeToggle({ theme, onToggle }: { theme: ThemeMode; onToggle: () => void }) {
+  return (
+    <button className="theme-toggle" type="button" aria-label="Theme wechseln" data-current={theme} onClick={onToggle}>
+      <svg className="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M19.5 15.2A7.6 7.6 0 0 1 8.8 4.5a8.2 8.2 0 1 0 10.7 10.7Z" />
+      </svg>
+      <svg className="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2" />
+        <path d="M12 2.8v2.1M12 19.1v2.1M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M2.8 12h2.1M19.1 12h2.1M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5" />
+      </svg>
+    </button>
+  );
+}
+
 export function HomePageClient({ site, projects }: HomePageClientProps) {
-  useThemeToggle();
   useScrollEffects();
+  const { theme, toggleTheme } = useThemeToggle();
+  const [openStepIndex, setOpenStepIndex] = useState(0);
+  const heroTitle = heroTitleParts(site);
 
   return (
-    <>
-      <div className="scroll-progress" aria-hidden="true" />
+    <div className="site-shell">
+      <aside className="side-nav" aria-label="Hauptnavigation">
+        <a href="#top" className="side-brand" aria-label="Zur Startsektion">
+          <span aria-hidden="true">◑</span>
+          <span>CK</span>
+        </a>
 
-      <button className="theme-toggle" type="button" aria-label="Theme wechseln" data-theme-toggle>
-        ◑
-      </button>
-
-      <header className="site-header">
-        <nav className="nav" aria-label="Hauptnavigation">
-          <a href="#top" className="brand">
-            {site.meta.brand}
-          </a>
-          <div className="nav-links">
-            {site.nav.map((item) => (
-              <a key={item.href} className="nav-link" href={item.href}>
-                {item.label}
-              </a>
-            ))}
-          </div>
+        <nav className="side-nav-list">
+          {site.nav.map((item, index) => (
+            <a key={item.href} className="side-nav-link" href={item.href}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {item.label}
+            </a>
+          ))}
         </nav>
+
+        <a className="side-email" href="mailto:cheikh.witm@proton.me">
+          <span>cheikh.witm@</span>
+          <span>proton.me</span>
+        </a>
+        <ThemeToggle theme={theme} onToggle={toggleTheme} />
+      </aside>
+
+      <header className="mobile-nav">
+        <a href="#top" className="mobile-brand" aria-label="Zur Startsektion">
+          <span aria-hidden="true">◑</span>
+          <span>CK</span>
+        </a>
+        <ThemeToggle theme={theme} onToggle={toggleTheme} />
+        <a className="mobile-nav-link" href="#kontakt">
+          Kontakt
+        </a>
       </header>
 
       <main id="top">
         <section className="hero wrap" aria-labelledby="hero-title">
-          <div className="hero-grid">
-            <div className="hero-copyblock">
-              <div className="kicker">{site.hero.kicker}</div>
-              <h1 id="hero-title">
-                {site.hero.titlePrefix} <span className="highlight serif">{site.hero.titleHighlight}</span> {site.hero.titleSuffix}
-              </h1>
-              <p className="subline">{site.hero.subline}</p>
-              <div className="cta-row">
-                {site.hero.ctas.map((cta) => (
-                  <a key={cta.label} className={`button ${cta.variant}`} href={cta.href}>
-                    {cta.label}
-                  </a>
-                ))}
-              </div>
+          <div className="hero-copyblock">
+            <div className="hero-kicker">{site.hero.kicker}</div>
+            <h1 id="hero-title">
+              {heroTitle.first}
+              <br />
+              {heroTitle.second}
+              <br />
+              {heroTitle.third}
+            </h1>
+            <div className="cta-row">
+              {site.hero.ctas.map((cta) => (
+                <a key={cta.label} className={`button ${cta.variant}`} href={cta.href}>
+                  {cta.label}
+                </a>
+              ))}
             </div>
-
-            <aside className="system-panel" aria-label="Abstraktes Systempanel für Governance-Architektur">
-              <div className="system-panel-title">Controlled Thinking System</div>
-              <div className="signal-cloud" aria-hidden="true">
-                {SIGNAL_CLOUD_DOTS.map((dot) => (
-                  <span key={dot} />
-                ))}
-              </div>
-              <svg className="wires" viewBox="0 0 480 560" aria-hidden="true" preserveAspectRatio="none">
-                <path className="wire" d="M74,124 C94,110 116,106 134,112" />
-                <path className="wire violet" d="M134,112 C180,94 246,102 298,123" />
-                <path className="wire" d="M298,123 C266,160 234,192 202,224" />
-                <path className="wire violet" d="M202,224 C254,202 318,206 365,230" />
-                <path className="wire" d="M365,230 C348,270 326,298 283,314" />
-                <path className="wire violet" d="M283,314 C254,356 198,386 138,406" />
-              </svg>
-
-              <div className="node signals">
-                <strong>Loose Signals</strong>
-                <span>scan(signals)</span>
-              </div>
-              <div className="node violet patterns">
-                <strong>Patterns</strong>
-                <span>map(risks + deps)</span>
-              </div>
-              <div className="node structure">
-                <strong>Structure</strong>
-                <span>bind(roles + scope)</span>
-              </div>
-              <div className="node violet review">
-                <strong>Review Gate</strong>
-                <span>owner.approve()</span>
-              </div>
-              <div className="node execution">
-                <strong>Execution</strong>
-                <span>run_if(traceable)</span>
-              </div>
-
-              <div className="terminal">
-                <div className="terminal-head">
-                  <div className="traffic" aria-hidden="true">
-                    <i />
-                    <i />
-                    <i />
-                  </div>
-                  <span>evidence layer / audit.log</span>
-                </div>
-                <div className="terminal-body">
-                  <div className="terminal-line">
-                    <strong>01</strong>
-                    <span>read.loose_signals()</span>
-                  </div>
-                  <div className="terminal-line">
-                    <strong>02</strong>
-                    <span>map.dependencies(<em>risks</em>, owners, decisions)</span>
-                  </div>
-                  <div className="terminal-line">
-                    <strong>03</strong>
-                    <span>structure.roles_risks_decisions()</span>
-                  </div>
-                  <div className="terminal-line">
-                    <strong>04</strong>
-                    <span>gate.with_owner_scope_evidence()</span>
-                  </div>
-                  <div className="terminal-line">
-                    <strong>05</strong>
-                    <span>
-                      execute only_if accountable &amp;&amp; traceable<span className="cursor" aria-hidden="true" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </aside>
-          </div>
-        </section>
-
-        <section className="intro wrap" aria-label="Einführung">
-          <div className="intro-card masked">
-            <p>
-              <strong>{site.intro.lead}</strong> {site.intro.text}
-            </p>
           </div>
         </section>
 
         <section className="process-scroll" id="denken" aria-label="Denkweise als horizontale Scroll-Ausstellung">
           <div className="process-sticky">
-            <div className="process-meta">
+            <div className="process-meta wrap">
               <div className="process-title">
                 <div className="section-kicker">{site.process.kicker}</div>
                 <h2>{site.process.title}</h2>
@@ -252,7 +208,9 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
               </div>
               <div className="process-chain" aria-hidden="true">
                 {site.process.chain.map((item) => (
-                  <span key={item}>{item}</span>
+                  <span className="tag" key={item}>
+                    {item}
+                  </span>
                 ))}
               </div>
             </div>
@@ -260,48 +218,66 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
             <div className="process-track" data-process-track>
               {site.process.steps.map((step, index) => {
                 const visual = PROCESS_VISUALS[index] ?? PROCESS_VISUALS[0];
-                return (
-                  <article className="process-card" data-num={String(index + 1).padStart(2, "0")} key={step.stepLabel}>
-                    <div className="process-visual">
-                      {visual.motion ? (
-                        <div className={`context-motion context-motion-${visual.motion}`} aria-hidden="true">
-                          {CONTEXT_MOTION_PULSES.map((pulse) => (
-                            <span key={pulse} />
-                          ))}
-                        </div>
-                      ) : null}
-                      {visual.lines.map((lineClass) => (
-                        <div key={lineClass} className={`visual-line ${lineClass}`} />
-                      ))}
-                      {visual.nodes.map((node) => (
-                        <div key={`${node.className}-${node.label}`} className={`floating-node ${node.violet ? "violet" : ""} ${node.className}`.trim()}>
-                          {node.label}
-                        </div>
-                      ))}
+                const stepMeta = parseStepLabel(step.stepLabel);
+                const isOpen = openStepIndex === index;
 
-                      <div className="mini-terminal">
-                        <div className="mini-terminal-head">
-                          <span>{visual.terminal.left}</span>
-                          <span>{visual.terminal.right}</span>
-                        </div>
-                        <div className="mini-terminal-body">
-                          {visual.terminal.lines.map((line) => (
-                            <div key={line.strong}>
-                              <strong>{line.strong}</strong> {line.text}
-                            </div>
+                return (
+                  <article className={`process-card ${isOpen ? "open" : ""}`} data-num={stepMeta.number} key={step.stepLabel}>
+                    <button
+                      className={`step-header ${isOpen ? "open" : ""}`}
+                      type="button"
+                      aria-expanded={isOpen}
+                      onClick={() => setOpenStepIndex(isOpen ? -1 : index)}
+                    >
+                      <span className="step-meta">
+                        <span className="step-number">{stepMeta.number}</span>
+                        <span className="step-title">{stepMeta.label}</span>
+                      </span>
+                      <span className="step-toggle" aria-hidden="true">
+                        +
+                      </span>
+                    </button>
+
+                    <div className="step-body">
+                      <div className="process-copy">
+                        <div className="step-label">{step.stepLabel}</div>
+                        <h3>{step.title}</h3>
+                        <p>{step.text}</p>
+                        <div className="process-tags">
+                          {step.bullets.map((item) => (
+                            <span className="tag" key={item}>
+                              {item}
+                            </span>
                           ))}
                         </div>
                       </div>
-                    </div>
 
-                    <div className="process-copy">
-                      <div className="step-label">{step.stepLabel}</div>
-                      <h3>{step.title}</h3>
-                      <p>{step.text}</p>
-                      <div className="micro-list">
-                        {step.bullets.map((item) => (
-                          <span key={item}>{item}</span>
+                      <div className="process-visual" aria-hidden="true">
+                        {visual.lines.map((lineClass) => (
+                          <div key={lineClass} className={`visual-line ${lineClass}`} />
                         ))}
+                        {visual.nodes.map((node) => (
+                          <div
+                            key={`${node.className}-${node.label}`}
+                            className={`floating-node ${node.emphasized ? "emphasized" : ""} ${node.className}`.trim()}
+                          >
+                            {node.label}
+                          </div>
+                        ))}
+
+                        <div className="mini-terminal">
+                          <div className="mini-terminal-head">
+                            <span>{visual.terminal.left}</span>
+                            <span>{visual.terminal.right}</span>
+                          </div>
+                          <div className="mini-terminal-body">
+                            {visual.terminal.lines.map((line) => (
+                              <div key={line.strong}>
+                                <strong>{line.strong}</strong> {line.text}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </article>
@@ -309,7 +285,19 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
               })}
             </div>
 
-            <div className="process-progress" aria-hidden="true" />
+            <div className="process-indicator" data-process-indicator aria-hidden="true">
+              <div className="indicator-dots">
+                {site.process.chain.map((item, index) => (
+                  <span
+                    key={item}
+                    className={`indicator-dot ${index === 0 ? "active" : ""}`}
+                    data-process-dot
+                    data-label={`${String(index + 1).padStart(2, "0")} ${item}`}
+                  />
+                ))}
+              </div>
+              <span data-process-label>01 {site.process.chain[0]}</span>
+            </div>
           </div>
         </section>
 
@@ -324,8 +312,8 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
 
           <div className="principles">
             {site.principles.items.map((principle, index) => (
-              <article className="principle-card masked" data-num={String(index + 1).padStart(2, "0")} key={principle.title}>
-                <div className="label">Principle</div>
+              <article className="principle-card masked" key={principle.title}>
+                <div className="card-number">{String(index + 1).padStart(2, "0")}</div>
                 <h3>{principle.title}</h3>
                 <p>{principle.text}</p>
               </article>
@@ -344,40 +332,34 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
 
           <div className="projects">
             {projects.map((project) => (
-              <article className="project-card masked" data-watermark={project.watermark} key={project.slug}>
-                <div>
-                  <div className="label">{project.badge}</div>
-                  <h3 className="project-title">{project.title}</h3>
-                  <p className="project-text">{project.teaser}</p>
-                  <div className="project-facts">
-                    {project.facts.map((fact) => (
-                      <div className="fact" key={fact.label}>
-                        <strong>{fact.label}</strong>
-                        <span>{fact.text}</span>
-                      </div>
-                    ))}
-                  </div>
+              <article className="project-card masked" key={project.slug}>
+                <div className="label">{project.badge}</div>
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-text">{project.teaser}</p>
+                <div className="project-facts">
+                  {project.facts.map((fact) => (
+                    <div className="fact" key={fact.label}>
+                      <strong>{fact.label}</strong>
+                      <span>{fact.text}</span>
+                    </div>
+                  ))}
                 </div>
-                <div>
-                  <div className="tags">
-                    {project.tags.map((tag) => (
-                      <span className="tag" key={tag}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="project-link">
-                    <Link className="button ghost" href={`/projekte/${project.slug}`}>
-                      Projektdetail öffnen →
-                    </Link>
-                  </div>
+                <div className="tags">
+                  {project.tags.map((tag) => (
+                    <span className="tag" key={tag}>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
+                <Link className="text-link" href={`/projekte/${project.slug}`}>
+                  Projektdetail öffnen →
+                </Link>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="section wrap" aria-labelledby="kompetenz-title">
+        <section className="section wrap" id="kompetenz" aria-labelledby="kompetenz-title">
           <div className="section-head masked">
             <div className="section-kicker">{site.capabilities.kicker}</div>
             <div>
@@ -413,29 +395,25 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
         </section>
 
         <section className="contact wrap" id="kontakt">
-          <div className="contact-box masked">
-            <div className="contact-content">
-              <div className="section-kicker">{site.contact.kicker}</div>
-              <h2>{site.contact.title}</h2>
-              <p>{site.contact.text}</p>
-              <div className="cta-row center">
-                {site.contact.ctas.map((cta) => (
-                  <a key={cta.label} className={`button ${cta.variant}`} href={cta.href}>
-                    {cta.label}
-                  </a>
-                ))}
-              </div>
+          <div className="contact-content masked">
+            <div className="section-kicker">{site.contact.kicker}</div>
+            <h2>{site.contact.title}</h2>
+            <p>{site.contact.text}</p>
+            <div className="cta-row center">
+              {site.contact.ctas.map((cta) => (
+                <a key={cta.label} className={`button ${cta.variant}`} href={cta.href}>
+                  {cta.label}
+                </a>
+              ))}
             </div>
           </div>
         </section>
-      </main>
 
-      <footer className="footer">
-        <div className="wrap footer-inner">
+        <footer className="footer">
           <span>Cheikh Kai · AI Governance &amp; Automation</span>
           <span>{site.meta.footerClaim}</span>
-        </div>
-      </footer>
-    </>
+        </footer>
+      </main>
+    </div>
   );
 }

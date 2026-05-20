@@ -49,3 +49,7 @@
 ## [2026-05-20] update | Hero-Systempanel als Denkbewegung von losen Signalen zu kontrollierter Evidenz neu erzählt [[app/globals]] [[components/home-page-client]]
 
 ## [2026-05-20] deploy | Production-Deployment mit neu erzähltem Hero-Systempanel veröffentlicht [[app/globals]] [[components/home-page-client]] [[vercel.json]]
+
+## [2026-05-20] update | Portfolio-Startseite nach v2-Spec beruhigt: DM-Typografie, warme Off-White-Palette, Sticky-Side-Nav, reduzierte Hero-Zone, Prozessindikator und Mobile-Accordion-Fallback umgesetzt [[app/layout]] [[app/globals]] [[components/home-page-client]] [[hooks/use-scroll-effects]] [[content/site.de]]
+
+## [2026-05-20] update | Spec v1.2 umgesetzt: Lora/IBM-Plex-Typografie, Paper-Notepad/Tokyo-Night-Theme-System und Dark/Light-Toggle ergänzt [[app/layout]] [[app/globals]] [[components/home-page-client]] [[hooks/use-theme]]
