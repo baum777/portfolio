@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useScrollEffects } from "@/hooks/use-scroll-effects";
@@ -136,6 +137,15 @@ function ThemeToggle({ theme, onToggle }: { theme: ThemeMode; onToggle: () => vo
   );
 }
 
+function BrandMark() {
+  return (
+    <span className="brand-mark" aria-hidden="true">
+      <Image className="brand-logo brand-logo-light" src="/logo-light-round.png" width={34} height={34} alt="" priority />
+      <Image className="brand-logo brand-logo-dark" src="/logo-dark-round.png" width={34} height={34} alt="" priority />
+    </span>
+  );
+}
+
 export function HomePageClient({ site, projects }: HomePageClientProps) {
   useScrollEffects();
   const { theme, toggleTheme } = useThemeToggle();
@@ -145,9 +155,9 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
   return (
     <div className="site-shell">
       <aside className="side-nav" aria-label="Hauptnavigation">
-        <a href="#top" className="side-brand" aria-label="Zur Startsektion">
-          <span aria-hidden="true">◑</span>
-          <span>CK</span>
+        <a href="#top" className="side-brand" aria-label="Cheikh Fall — zur Startsektion">
+          <BrandMark />
+          <span>CF</span>
         </a>
 
         <nav className="side-nav-list">
@@ -159,17 +169,17 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
           ))}
         </nav>
 
-        <a className="side-email" href="mailto:cheikh.witm@proton.me">
-          <span>cheikh.witm@</span>
+        <a className="side-email" href="mailto:twim.baum@proton.me">
+          <span>twim.baum@</span>
           <span>proton.me</span>
         </a>
         <ThemeToggle theme={theme} onToggle={toggleTheme} />
       </aside>
 
       <header className="mobile-nav">
-        <a href="#top" className="mobile-brand" aria-label="Zur Startsektion">
-          <span aria-hidden="true">◑</span>
-          <span>CK</span>
+        <a href="#top" className="mobile-brand" aria-label="Cheikh Fall — zur Startsektion">
+          <BrandMark />
+          <span>CF</span>
         </a>
         <ThemeToggle theme={theme} onToggle={toggleTheme} />
         <a className="mobile-nav-link" href="#kontakt">
@@ -188,6 +198,7 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
               <br />
               {heroTitle.third}
             </h1>
+            <p className="hero-subline">{site.hero.subline}</p>
             <div className="cta-row">
               {site.hero.ctas.map((cta) => (
                 <a key={cta.label} className={`button ${cta.variant}`} href={cta.href}>
@@ -410,7 +421,7 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
         </section>
 
         <footer className="footer">
-          <span>Cheikh Kai · AI Governance &amp; Automation</span>
+          <span>Cheikh Fall · AI Governance &amp; Agentic Systems</span>
           <span>{site.meta.footerClaim}</span>
         </footer>
       </main>

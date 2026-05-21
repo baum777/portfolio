@@ -53,3 +53,7 @@
 ## [2026-05-20] update | Portfolio-Startseite nach v2-Spec beruhigt: DM-Typografie, warme Off-White-Palette, Sticky-Side-Nav, reduzierte Hero-Zone, Prozessindikator und Mobile-Accordion-Fallback umgesetzt [[app/layout]] [[app/globals]] [[components/home-page-client]] [[hooks/use-scroll-effects]] [[content/site.de]]
 
 ## [2026-05-20] update | Spec v1.2 umgesetzt: Lora/IBM-Plex-Typografie, Paper-Notepad/Tokyo-Night-Theme-System und Dark/Light-Toggle ergänzt [[app/layout]] [[app/globals]] [[components/home-page-client]] [[hooks/use-theme]]
+
+## [2026-05-21] update | Portfolio-Showcase-Update aus bereitgestelltem Import-Paket übernommen: Cheikh-Fall-Content, drei Showcases, Hero-Subline, Kontakt-E-Mail und Footer aktualisiert [[content/site.de]] [[content/projects]] [[components/home-page-client]] [[app/globals]]
+
+## [2026-05-21] update | Portfolio-Bundle 2 und Fokus-Sigil-Brandassets integriert: Unitera als Main Development, Model-Agnostic Architecture Layer, CF-Logo-Navigation, Favicons und Webmanifest ergänzt [[content/site.de]] [[content/projects]] [[components/home-page-client]] [[app/globals]] [[app/layout]] [[public/brand-assets]]

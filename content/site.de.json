@@ -1,117 +1,207 @@
 {
   "meta": {
-    "title": "Cheikh Kai — Kontrollierbare KI-Systeme",
-    "description": "Cheikh Kai — Kontrollierbare KI-Systeme. Persönliche Landingpage für AI Governance, Automatisierung, Systemdenken und kontrollierbare KI-Prozesse.",
-    "brand": "CK — Cheikh Kai / Systems",
-    "footerClaim": "Signals → Patterns → Structure → Control → Execution"
+    "title": "Cheikh Fall — Kontrollierbare KI-Systeme",
+    "description": "Portfolio von Cheikh Fall: Unitera als Main Development, SOL-Trading-Systeme und model-agnostische Arbeitsumgebungen.",
+    "brand": "CF — Cheikh Fall / Unitera Systems",
+    "footerClaim": "Signals → Boundaries → Authority → Evidence → Execution"
   },
   "nav": [
-    { "href": "#denken", "label": "Denkweise" },
-    { "href": "#arbeiten", "label": "Prinzipien" },
-    { "href": "#projekte", "label": "Projekte" },
-    { "href": "#kompetenz", "label": "Kompetenz" },
-    { "href": "#kontakt", "label": "Kontakt" }
+    {
+      "href": "#denken",
+      "label": "Denkweise"
+    },
+    {
+      "href": "#arbeiten",
+      "label": "Prinzipien"
+    },
+    {
+      "href": "#projekte",
+      "label": "Showcases"
+    },
+    {
+      "href": "#kompetenz",
+      "label": "Kompetenz"
+    },
+    {
+      "href": "#kontakt",
+      "label": "Kontakt"
+    }
   ],
   "hero": {
-    "kicker": "AI Governance · Automation · Systems Thinking",
-    "titlePrefix": "Komplexe Zusammenhänge in",
+    "kicker": "AI Governance · Agentic Systems · Backend-first Workflows",
+    "titlePrefix": "Komplexe Systeme in",
     "titleHighlight": "kontrollierbare",
-    "titleSuffix": "KI-Systeme.",
-    "subline": "Ich verbinde operative Erfahrung, Systemdenken und KI-Automatisierung, um Workflows zu entwickeln, die nachvollziehbar, prüfbar und verantwortbar bleiben.",
+    "titleSuffix": "Arbeitsräume.",
+    "subline": "Ich übersetze lose Signale, riskante Übergaben und agentische Toolchains in Rollen, Gates, Backend-Authority und prüfbare Evidence.",
     "ctas": [
-      { "href": "#denken", "label": "Arbeitsweise →", "variant": "primary" },
-      { "href": "#projekte", "label": "Projekte", "variant": "secondary" }
+      {
+        "href": "#denken",
+        "label": "Arbeitsweise →",
+        "variant": "primary"
+      },
+      {
+        "href": "#projekte",
+        "label": "Showcases",
+        "variant": "secondary"
+      }
     ]
   },
   "intro": {
     "lead": "Kein klassisches Profil.",
-    "text": "LinkedIn zeigt Stationen. Diese Seite zeigt meine Arbeitsweise: wie ich Muster erkenne, Systeme entwerfe und KI in kontrollierbare Prozesse übersetze."
+    "text": "Diese Seite zeigt, wie ich aus Reibung, Risiken und Tool-Chaos kontrollierbare Arbeitsräume baue: zuerst die Grenze, dann die Logik, dann die Umsetzung."
   },
   "process": {
     "kicker": "01 / Denkweise",
-    "title": "Von losen Signalen zu belastbaren Strukturen.",
-    "text": "Der vertikale Scroll bewegt die Prozesskette horizontal: wie ein kuratierter Denkraum, in dem jeder Schritt eine neue Systemebene freilegt.",
-    "chain": ["Signale", "Muster", "Struktur", "Kontrolle", "Umsetzung"],
+    "title": "Von losen Signalen zu belastbaren Kontrollpfaden.",
+    "text": "Jeder Showcase folgt derselben Kette: Eingangssignale klären, Grenzen sichtbar machen, Systemlogik modellieren, Authority begrenzen und Evidence erzeugen.",
+    "chain": [
+      "Signale",
+      "Grenzen",
+      "Struktur",
+      "Kontrolle",
+      "Betrieb"
+    ],
     "steps": [
       {
         "stepLabel": "Step 01 / Signale",
-        "title": "Informationen, Probleme und Möglichkeiten aufnehmen.",
-        "text": "Am Anfang steht kein perfektes Briefing, sondern eine Mischung aus Beobachtungen, Reibung, Tools, Ideen, Daten und offenen Entscheidungspunkten.",
-        "bullets": ["operative Abläufe beobachten", "Reibung und Prozesslücken markieren", "relevante Eingangssignale sammeln"]
+        "title": "Informationen, Reibung und Entscheidungspunkte aufnehmen.",
+        "text": "Am Anfang steht selten ein perfektes Briefing. Ich sammle Signale aus Abläufen, Tools, Risiken, Nutzerverhalten und bestehenden Artefakten.",
+        "bullets": [
+          "operative Reibung lesen",
+          "Tool- und Datenbrüche erkennen",
+          "unklare Entscheidungen markieren"
+        ]
       },
       {
-        "stepLabel": "Step 02 / Muster",
-        "title": "Zusammenhänge, Risiken und Abhängigkeiten erkennen.",
-        "text": "Ich suche nicht nur Einzelpunkte, sondern wiederkehrende Strukturen: Wo entstehen Risiken? Wer entscheidet? Was hängt voneinander ab?",
-        "bullets": ["Rollen und Übergaben klären", "Risiko- und Abhängigkeitsketten bilden", "wiederkehrende Muster isolieren"]
+        "stepLabel": "Step 02 / Grenzen",
+        "title": "Authority, Scope und Nicht-Ziele explizit machen.",
+        "text": "Bevor Automatisierung entsteht, muss klar sein, was ein System darf, was es nur vorschlagen darf und wann ein Mensch oder Gate übernehmen muss.",
+        "bullets": [
+          "Authority Boundary definieren",
+          "Nicht-Claims festhalten",
+          "Risiko- und Owner-Ketten bilden"
+        ]
       },
       {
         "stepLabel": "Step 03 / Struktur",
-        "title": "Rollen, Regeln, Datenflüsse und Interfaces ableiten.",
-        "text": "Aus Mustern wird Architektur: Systemgrenzen, Zustände, Backend-Logik und Interfaces werden so definiert, dass Arbeit steuerbar wird.",
-        "bullets": ["Verantwortlichkeiten modellieren", "Backend-first Logik definieren", "Interfaces als Arbeitsräume gestalten"]
+        "title": "Rollen, Datenflüsse, Contracts und Interfaces ableiten.",
+        "text": "Aus Mustern wird Architektur: Zustände, Übergaben, Backend-Logik und UI-Flächen werden so modelliert, dass Arbeit steuerbar bleibt.",
+        "bullets": [
+          "Contracts und States modellieren",
+          "Backend-first Logik definieren",
+          "Interfaces als Arbeitsräume gestalten"
+        ]
       },
       {
         "stepLabel": "Step 04 / Kontrolle",
-        "title": "Reviews, Gates, Evidenz und Eskalationen einbauen.",
-        "text": "Kontrolle ist kein Add-on. Ein KI-Workflow ist erst belastbar, wenn Stop-Bedingungen, Review-Pfade und Evidenz sichtbar sind.",
-        "bullets": ["Review Gates definieren", "Evidenz und Logs sichtbar machen", "Fail-Closed-Regeln integrieren"]
+        "title": "Review, Gates, Evidence und Eskalation einbauen.",
+        "text": "Kontrolle ist kein Zusatz. Ein agentischer Workflow ist erst belastbar, wenn Stop-Bedingungen, Logs und Review-Pfade Teil des Systems sind.",
+        "bullets": [
+          "Review-Gates definieren",
+          "Evidence sichtbar machen",
+          "fail-closed Verhalten einbauen"
+        ]
       },
       {
-        "stepLabel": "Step 05 / Umsetzung",
-        "title": "Praxistauglichkeit prüfen.",
-        "text": "Die Umsetzung zeigt, ob ein System in echten Abläufen funktioniert: mit echten Menschen, echten Einschränkungen und echten Entscheidungen.",
-        "bullets": ["Prototypen statt reine Theorie", "Validierung mit klaren Kriterien", "Verbesserung durch beobachtete Reibung"]
+        "stepLabel": "Step 05 / Betrieb",
+        "title": "Umsetzung gegen echte Einschränkungen prüfen.",
+        "text": "Die Umsetzung zeigt, ob ein System in realen Arbeitsbedingungen tragfähig ist: mit begrenzter Zeit, begrenzten Daten, echten Rollen und klaren Abschlusskriterien.",
+        "bullets": [
+          "Prototypen bauen",
+          "Validierung statt Behauptung",
+          "aus Reibung verbessern"
+        ]
       }
     ]
   },
   "principles": {
     "kicker": "02 / Arbeitsprinzipien",
-    "title": "Kontrolle ist kein Add-on. Kontrolle ist Architektur.",
-    "text": "Die Prinzipien positionieren KI nicht als blinde Automatisierung, sondern als verantwortbaren Teil eines nachvollziehbaren Systems.",
+    "title": "Kontrolle ist Architektur, nicht Nacharbeit.",
+    "text": "Ich positioniere KI und Agenten nicht als blinde Automatisierung, sondern als begrenzte Systemteile mit Rollen, Grenzen, Nachweisen und Eskalationswegen.",
     "items": [
-      { "title": "Erst verstehen, dann automatisieren", "text": "Bevor ein Prozess automatisiert wird, müssen Verantwortung, Risiko und Entscheidungspunkte klar sein." },
-      { "title": "KI braucht Rollen und Grenzen", "text": "Ein Agent ohne klare Aufgabe, Scope und Eskalationslogik ist kein System, sondern ein Risiko." },
-      { "title": "Nachvollziehbarkeit schlägt Geschwindigkeit", "text": "Schnelle Ergebnisse sind wertlos, wenn später niemand erklären kann, wie sie entstanden sind." },
-      { "title": "Backend-seitige Autorität", "text": "Kritische Aktionen gehören nicht nur ins Interface, sondern in kontrollierte Logik mit Berechtigungen." },
-      { "title": "Validierung statt Behauptung", "text": "Outputs müssen prüfbar sein: mit Evidenz, Logs, Review-Pfaden und klaren Abschlusskriterien." },
-      { "title": "Praktische Umsetzbarkeit zählt", "text": "Architektur muss mit echten Menschen, echten Workflows und echten Einschränkungen funktionieren." }
+      {
+        "title": "Erst die Grenze, dann die Automatisierung",
+        "text": "Ein Prozess wird erst automatisiert, wenn Scope, Risiko, Owner und Nicht-Ziele klar sind."
+      },
+      {
+        "title": "Backend besitzt Authority",
+        "text": "Kritische Wahrheit liegt nicht in der Oberfläche, sondern in kontrollierter Logik, Contracts und Server-State."
+      },
+      {
+        "title": "UI zeigt Absicht, nicht Wahrheit",
+        "text": "Interfaces sollen Entscheidungen lesbar machen, aber keine implizite Ausführungsautorität erzeugen."
+      },
+      {
+        "title": "Review ist Teil des Systems",
+        "text": "Approval, Return, Reject, Verify und Escalate gehören in den Workflow, nicht in informelle Nebenkanäle."
+      },
+      {
+        "title": "Evidence statt Demo-Claim",
+        "text": "Ein Ergebnis ist erst stark, wenn Herkunft, Gate-Status, Version und Entscheidungspfad nachvollziehbar sind."
+      },
+      {
+        "title": "Modelle bleiben austauschbar",
+        "text": "Gute Systeme binden sich nicht blind an ein Modell, sondern an Rollen, Contracts, Validierung und Adapter-Grenzen."
+      }
     ]
   },
   "projects": {
-    "kicker": "03 / Projekte",
-    "title": "Projekte als Beweise für Denkweise.",
-    "text": "Die Projekte sind nicht als klassische Portfolio-Liste inszeniert, sondern als Fallbeispiele für Systemdenken, Governance und kontrollierbare Umsetzung."
+    "kicker": "03 / Showcases",
+    "title": "Unitera als Hauptentwicklung. Zwei weitere Systeme als Architekturbeweise.",
+    "text": "Die Seite zeigt drei präsentierbare Projekte: Unitera als Main Development, Sparkfined/BobbyExecute als Trading- und Execution-System, und Model-Agnostic Working als Ersatz für Email Automation mit stärkerer Architektur- und Governance-Logik."
   },
   "capabilities": {
     "kicker": "04 / Kompetenzfelder",
     "title": "Wo mein Wert am stärksten ist.",
-    "text": "Besonders relevant werde ich, wenn ein KI-Projekt noch keine klare Struktur hat: viele lose Punkte, aber noch kein belastbares Systemdesign.",
+    "text": "Besonders stark werde ich dort, wo AI-Nutzung, Verantwortung, Tooling und Ausführung noch nicht sauber getrennt sind.",
     "valueZoneLabel": "Value Zone",
-    "valueZoneTitle": "Unklare Probleme in klare Systeme übersetzen.",
-    "valueZoneText": "Mein Beitrag beginnt oft dort, wo andere noch versuchen, das Problem überhaupt zu greifen.",
+    "valueZoneTitle": "Unklare Abläufe in kontrollierbare KI-Systeme übersetzen.",
+    "valueZoneText": "Mein stärkster Beitrag liegt dort, wo ein Projekt zwar Energie, Tools und Ideen hat, aber noch keine stabile Logik für Verantwortung, Ausführung und Nachweis.",
     "valueList": [
-      "KI-Projekte strukturieren",
-      "Mensch-KI-Workflows kontrollierbar machen",
-      "Review- und Entscheidungswege definieren",
-      "technische Umsetzung und strategische Logik verbinden"
+      "Unitera als Main Development: Draft-to-Commit Governance sichtbar machen",
+      "AI-/Agenten-Systeme mit klaren Authority Boundaries entwerfen",
+      "Trading- und Research-Systeme mit deterministischen Kontrollpfaden strukturieren",
+      "model-agnostische Arbeitsumgebungen über Contracts, Adapter, Validators und Review Cards stabilisieren"
     ],
     "capabilitiesLabel": "Capabilities",
     "rows": [
-      { "title": "Systemdenken", "text": "Komplexe Zusammenhänge in Rollen, Regeln und Abläufe übersetzen." },
-      { "title": "KI-Automatisierung", "text": "KI sinnvoll in reale Workflows integrieren." },
-      { "title": "AI Governance", "text": "Kontrolle, Review, Evidenz und Verantwortung einbauen." },
-      { "title": "Backend-Logik", "text": "Systeme strukturell und technisch denken." },
-      { "title": "Validierung", "text": "Ergebnisse prüfbar machen." }
+      {
+        "title": "AI Governance",
+        "text": "Review, Approval, Evidence, Audit Trail und Verantwortlichkeit in Workflows einbauen."
+      },
+      {
+        "title": "Backend-first Architektur",
+        "text": "Serverseitige Wahrheit, Credentials, Routing, Execute und Verify sauber begrenzen."
+      },
+      {
+        "title": "Agentic Workflow Design",
+        "text": "Mensch-Agent-Übergänge, Tool-Flächen, Gate-Logik und Eskalationen modellieren."
+      },
+      {
+        "title": "Model-Agnostic Systems",
+        "text": "Provider-neutrale Contracts, Adapter, Exports und Validierung für austauschbare Modelle entwerfen."
+      },
+      {
+        "title": "Evidence & Validation",
+        "text": "Behauptungen durch Artefakte, Gates, Logs, Fixtures und klare Nicht-Claims absichern."
+      }
     ]
   },
   "contact": {
     "kicker": "05 / Kontakt",
     "title": "Lass uns über kontrollierbare KI-Systeme sprechen.",
-    "text": "Ich interessiere mich für Projekte, in denen KI nicht nur produktiver machen soll, sondern strukturiert, erklärbar und verantwortbar eingesetzt wird.",
+    "text": "Ich interessiere mich für Projekte, in denen KI, Agenten oder Trading-Workflows nicht nur schneller, sondern strukturierter, erklärbarer und verantwortbarer werden sollen.",
     "ctas": [
-      { "href": "mailto:cheikh.witm@proton.me", "label": "Kontakt aufnehmen →", "variant": "primary" },
-      { "href": "#denken", "label": "Systeme ansehen", "variant": "ghost" }
+      {
+        "href": "mailto:twim.baum@proton.me",
+        "label": "twim.baum@proton.me →",
+        "variant": "primary"
+      },
+      {
+        "href": "mailto:founder@uniterasystems.com",
+        "label": "founder@uniterasystems.com",
+        "variant": "ghost"
+      }
     ]
   }
 }
