@@ -59,3 +59,5 @@
 ## [2026-05-21] update | Portfolio-Bundle 2 und Fokus-Sigil-Brandassets integriert: Unitera als Main Development, Model-Agnostic Architecture Layer, CF-Logo-Navigation, Favicons und Webmanifest ergänzt [[content/site.de]] [[content/projects]] [[components/home-page-client]] [[app/globals]] [[app/layout]] [[public/brand-assets]]
 
 ## [2026-05-21] deploy | Production-Deployment von Commit b1c76bb auf Vercel veröffentlicht und Alias `portfolio.uniterasystems.com` als Ready verifiziert [[vercel.json]]
+
+## [2026-05-21] update | SOL-Trading-Showcase auf kontrolliertes Solana-Trading mit Dominance Layer, Governance, Execution-Gates und Architekturbeweis umgestellt [[content/projects/sol-trading-systems]] [[02-wiki/index]]

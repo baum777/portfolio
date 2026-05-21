@@ -15,5 +15,6 @@
 [[app/projekte/[slug]/page]] | Statisch generierte Projekt-Detailseiten aus Markdown mit dynamischer Slug-Route | #nextjs #ssg #projects | 2026-05-19
 [[content/site.de]] | Zentraler deutscher Content-Satz für Cheikh-Fall-Portfolio, Showcases, Denkprozess, Kompetenzfelder und Kontakt-CTAs | #content #json #de | 2026-05-21
 [[content/projects]] | Projektquellen als Markdown mit drei Showcases: Unitera Systems, SOL Trading Systems und Model-Agnostic Working | #content #markdown #projects #showcases | 2026-05-21
+[[content/projects/sol-trading-systems]] | Kontrolliertes Trading auf Solana mit Architekturbeweis, Governance, Execution-Gates und Non-Custodial-Terminal | #content #markdown #projects #solana | 2026-05-21
 [[public/brand-assets]] | Fokus-Sigil/Baum-Sigil Logo-, Favicon-, Manifest- und Referenzassets für helles und dunkles Branding | #brand #assets #favicon #public | 2026-05-21
 [[vercel.json]] | Vercel-Projektkonfiguration für Next.js-Framework und Dashboard-Output-Override | #vercel #deployment #nextjs | 2026-05-19
