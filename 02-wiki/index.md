@@ -4,7 +4,7 @@
 [[AGENTS]] | Agenten-Regeln für governance-orientierte Arbeit im Repo | #governance #workflow | 2026-05-18
 [[cheikh-kai-kontrollierbare-ki-systeme-scroll-page]] | Kanonische statische Scroll-Landingpage mit justierter Section-1-Horizontalführung für vollständig lesbare Prozesskarten | #landingpage #html #css #javascript #scroll | 2026-05-18
 [[cheikh-kai-scroll-page-handoff]] | Handoff mit Umsetzung, Scroll-Konzept und Hinweisen | #handoff #documentation | 2026-05-18
-[[02-wiki/log]] | Append-only Arbeitslog | #log #governance | 2026-05-18
+[[02-wiki/log]] | Append-only Arbeitslog mit Umsetzung, QA- und Deployment-Nachweisen | #log #governance | 2026-05-21
 [[index]] | Historischer Root-Redirect (durch Next.js-App-Routing ersetzt) | #legacy #entrypoint | 2026-05-18
 [[app/page]] | Dynamische Startseite im Next.js App Router, datengetrieben aus JSON und Projekt-Metadaten | #nextjs #routing #homepage | 2026-05-19
 [[app/layout]] | App-Rahmen mit Metadaten, Lora/IBM-Plex-Fonts, initialer Theme-Auflösung und Fokus-Sigil-Favicon-/Manifest-Einbindung | #nextjs #layout #fonts #theme #favicon | 2026-05-21

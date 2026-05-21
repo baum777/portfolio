@@ -63,3 +63,7 @@
 ## [2026-05-21] update | SOL-Trading-Showcase auf kontrolliertes Solana-Trading mit Dominance Layer, Governance, Execution-Gates und Architekturbeweis umgestellt [[content/projects/sol-trading-systems]] [[02-wiki/index]]
 
 ## [2026-05-21] update | Patch Spec v2 umgesetzt: Startseite und drei Showcase-Detailseiten mit emotionaler Handlungslogik, Sprachkorrekturen, Kontaktbrücken und konsistenten Boundaries geschärft [[content/site.de]] [[content/projects/unitera-systems]] [[content/projects/sol-trading-systems]] [[content/projects/model-agnostic-working]] [[components/home-page-client]] [[app/projekte/[slug]/page]] [[app/globals]] [[02-wiki/index]]
+
+## [2026-05-21] verify+deploy | Browser-QA lokal und live für Startseite sowie drei Showcase-Detailseiten durchgeführt; Production-Deployment `dpl_4eJu2qAQyrvngTJ9aRR56sHBGHpW` als Ready auf `portfolio.uniterasystems.com` verifiziert [[content/site.de]] [[content/projects]] [[vercel.json]]
+
+## [2026-05-21] deploy | Production-Deployment erneut über prebuilt Vercel-Output veröffentlicht; Deployment `dpl_3zWxeDBERRbCTErb8sUN4GvZMWdH` als Ready auf `portfolio.uniterasystems.com` verifiziert [[vercel.json]]
