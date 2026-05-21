@@ -123,6 +123,15 @@ function heroTitleParts(site: SiteContent) {
   };
 }
 
+function renderLines(text: string) {
+  return text.split("\n").map((line, index) => (
+    <span key={`${line}-${index}`}>
+      {index > 0 ? <br /> : null}
+      {line}
+    </span>
+  ));
+}
+
 function ThemeToggle({ theme, onToggle }: { theme: ThemeMode; onToggle: () => void }) {
   return (
     <button className="theme-toggle" type="button" aria-label="Theme wechseln" data-current={theme} onClick={onToggle}>
@@ -198,7 +207,7 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
               <br />
               {heroTitle.third}
             </h1>
-            <p className="hero-subline">{site.hero.subline}</p>
+            <p className="hero-subline">{renderLines(site.hero.subline)}</p>
             <div className="cta-row">
               {site.hero.ctas.map((cta) => (
                 <a key={cta.label} className={`button ${cta.variant}`} href={cta.href}>
@@ -409,7 +418,9 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
           <div className="contact-content masked">
             <div className="section-kicker">{site.contact.kicker}</div>
             <h2>{site.contact.title}</h2>
-            <p>{site.contact.text}</p>
+            {site.contact.text.split("\n\n").map((paragraph, index) => (
+              <p key={`${paragraph}-${index}`}>{paragraph}</p>
+            ))}
             <div className="cta-row center">
               {site.contact.ctas.map((cta) => (
                 <a key={cta.label} className={`button ${cta.variant}`} href={cta.href}>

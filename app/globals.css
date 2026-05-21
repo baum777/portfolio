@@ -1009,6 +1009,12 @@ h1 {
   margin: 0 0 14px;
 }
 
+.project-richtext a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 .project-richtext ul {
   margin: 8px 0 18px;
   padding-left: 20px;

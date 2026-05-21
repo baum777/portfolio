@@ -32,7 +32,7 @@
     "titlePrefix": "Komplexe Systeme in",
     "titleHighlight": "kontrollierbare",
     "titleSuffix": "Arbeitsräume.",
-    "subline": "Ich übersetze lose Signale, riskante Übergaben und agentische Toolchains in Rollen, Gates, Backend-Authority und prüfbare Evidence.",
+    "subline": "Ich übersetze lose Signale, riskante Übergaben und agentische Toolchains in Rollen, Gates, Backend-Authority und prüfbare Evidence.\nFür Menschen, die wissen: schnell gebaut ist nicht dasselbe wie kontrolliert gebaut.",
     "ctas": [
       {
         "href": "#denken",
@@ -148,7 +148,7 @@
   "projects": {
     "kicker": "03 / Showcases",
     "title": "Unitera als Hauptentwicklung. Zwei weitere Systeme als Architekturbeweise.",
-    "text": "Die Seite zeigt drei präsentierbare Projekte: Unitera als Main Development, Sparkfined/BobbyExecute als Trading- und Execution-System, und Model-Agnostic Working als Ersatz für Email Automation mit stärkerer Architektur- und Governance-Logik."
+    "text": "Drei Systeme — ein gemeinsames Prinzip: KI und Agenten sind dann verlässlich, wenn Rollen, Grenzen und Nachweise Teil der Architektur sind — nicht informelle Nacharbeit. Unitera ist die Hauptentwicklung. Sparkfined / BobbyExecute zeigt kontrollierte Execution in schnellen Märkten. Model-Agnostic Working zeigt, wie Systemlogik stabil bleibt, wenn Modelle wechseln."
   },
   "capabilities": {
     "kicker": "04 / Kompetenzfelder",
@@ -190,7 +190,7 @@
   "contact": {
     "kicker": "05 / Kontakt",
     "title": "Lass uns über kontrollierbare KI-Systeme sprechen.",
-    "text": "Ich interessiere mich für Projekte, in denen KI, Agenten oder Trading-Workflows nicht nur schneller, sondern strukturierter, erklärbarer und verantwortbarer werden sollen.",
+    "text": "Wenn du an einem Punkt bist, an dem dein System läuft — aber du nicht mehr sicher bist, wer wirklich entscheidet: dann ist das die Art Frage, mit der ich arbeite.\n\nIch interessiere mich für Projekte, in denen Kontrolle, Rollen und Nachvollziehbarkeit keine nachträgliche Anforderung sein dürfen, sondern von Anfang an eingebaut werden müssen.",
     "ctas": [
       {
         "href": "mailto:twim.baum@proton.me",

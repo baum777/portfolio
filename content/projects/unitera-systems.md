@@ -5,9 +5,13 @@ teaser: "Hauptentwicklung: eine Draft-to-Commit-Governance-Schicht für AI-gest�
 badge: "Main Development · AI Governance"
 tags: ["Main Development", "Draft-to-Commit", "Review Gates", "Audit Evidence"]
 watermark: "UNITERA"
-facts: [{"label":"Rolle","text":"Unitera ist die Hauptentwicklung: der stärkste Beleg für mein Denken in kontrollierbaren KI-Systemen."},{"label":"Problem","text":"AI-Drafts beschleunigen Entwürfe, aber Preis, Scope, Claims und Freigabe brauchen belastbare Übergabe."},{"label":"Systemlogik","text":"Intake, Context Binding, Governed Draft, Policy Evaluation, Multi-Role Review, Approval Console, Traceable Commit und Audit Evidence."},{"label":"Boundary","text":"Ausführlich, aber sensitiv: synthetische Orientierung, kein Kundenproof, kein Integrations- oder Compliance-Claim."}]
+facts: [{"label":"Rolle","text":"Unitera ist die Hauptentwicklung: der stärkste Beleg für mein Denken in kontrollierbaren KI-Systemen."},{"label":"Problem","text":"AI-Drafts beschleunigen Entwürfe, aber Preis, Scope, Claims und Freigabe brauchen belastbare Übergabe."},{"label":"Systemlogik","text":"Intake, Context Binding, Governed Draft, Policy Evaluation, Multi-Role Review, Approval Console, Traceable Commit und Audit Evidence."},{"label":"Boundary","text":"Systemlogik auf synthetischen, nicht produktiven Daten; kein Kundenproof, kein Integrations- oder Compliance-Claim."}]
 order: 1
 ---
+Es gibt einen Moment in jedem AI-gestützten Prozess, an dem die Geschwindigkeit kippt. Der Draft ist fertig. Er klingt gut. Aber niemand ist sicher, welcher Kontext gebunden wurde. Ob ein Preis drin steckt, der nicht freigegeben ist. Ob jemand formal zugestimmt hat — oder nur nicht widersprochen.
+
+Das ist kein Prompting-Problem. Das ist ein Governance-Problem. Unitera setzt dort an.
+
 ## Warum Unitera die Hauptentwicklung ist
 Unitera ist der Kern meiner aktuellen Arbeit: nicht nur ein AI-Tool, sondern eine Governance-Schicht zwischen generiertem Entwurf und verantwortbarer geschäftlicher Zusage.
 
@@ -52,6 +56,10 @@ Ich arbeite dabei in vier Bewegungen:
 - Authority platzieren: kritische Wahrheit nicht in der Oberfläche lassen, sondern in definierten Zuständen, Rollen und Gates verankern.
 - Evidence sichtbar machen: Entscheidungen nicht nur treffen, sondern versioniert, überprüfbar und rückverfolgbar machen.
 
+Wenn du ein System baust, in dem AI-Drafts Tempo bringen sollen — aber Preise, Scope-Versprechen oder Freigaben nicht mehr lose enden dürfen: das ist der Punkt, an dem diese Arbeitsweise einen konkreten Unterschied macht.
+
+→ [twim.baum@proton.me](mailto:twim.baum@proton.me)
+
 ## Visuelle Darstellung auf der Portfolio-Seite
 Die Projektkarte sollte Unitera nicht wie ein Nebenprojekt zeigen, sondern als Main Development.
 
@@ -64,8 +72,8 @@ Empfohlene visuelle Logik:
 - Gate-Liste: Missing Context, Pricing Threshold, Restricted Claims, Multi-Role Review, Commit Readiness.
 - Outcome-Claim: auditierbare Übergabe zwischen AI-Draft und Business Commitment.
 
-## Warum es präsentierbar ist, ohne zu leaken
+## Warum die Darstellung begrenzt bleibt
 Die Darstellung bleibt stark, weil sie das Problem, die Architektur und die Arbeitsweise zeigt. Sie bleibt sicher, weil keine Kundendaten, keine echte Opportunity, keine produktive Integration und keine Compliance-Behauptung offengelegt werden.
 
 ## Boundary
-Unitera wird als synthetische, präsentierbare Orientierung dargestellt. Es behauptet keine aktive Kundenimplementierung, keinen produktiven Integrationspfad, keine regulatorische Konformität und keinen Procurement- oder Legal-Proof.
+Unitera zeigt eine Systemlogik und Arbeitsweise — auf Basis synthetischer, nicht produktiver Daten. Kein Kundenproof, keine aktive Integration, keine Compliance-Behauptung. Die Architektur ist real. Die Darstellung ist bewusst begrenzt.

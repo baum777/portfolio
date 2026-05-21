@@ -5,22 +5,25 @@ teaser: "Ein non-custodiales Solana Trading Terminal mit Dominance Layer, AI-Res
 badge: "Architecture Proof · Built System"
 tags: ["Sparkfined-TradeApp", "BobbyExecute", "Solana", "Dominance Layer", "TypeScript"]
 watermark: "SOL"
-facts: [{"label":"Problem","text":"Trading ist kein Informationsproblem, sondern ein Kontrollproblem: Folgen, Freigaben und Zustand müssen beherrscht werden."},{"label":"Terminal","text":"Swap-Execution mit Real-Time-Quotes, Fee Preview, Slippage-Kontrolle und Pre-Flight-Simulation vor jeder Signatur."},{"label":"Governance","text":"Backend ist kanonisch, der Browser zeigt nur Absicht: Provider-Routing, Credentials und Execution laufen serverseitig."},{"label":"Boundary","text":"Architektur- und Systemarbeitsprobe; kein Live-Trading-Claim, keine Performance-Behauptung und keine Investment-Beratung."}]
+facts: [{"label":"Problem","text":"Trading ist kein Informationsproblem, sondern ein Kontrollproblem: Folgen, Freigaben und Zustand müssen beherrscht werden."},{"label":"Terminal","text":"Swap-Execution mit Real-Time-Quotes, Fee Preview, Slippage-Kontrolle und Pre-Flight-Simulation vor jeder Signatur."},{"label":"Governance","text":"Backend ist die einzige Quelle der Wahrheit: Provider-Routing, Credentials und Execution laufen serverseitig."},{"label":"Boundary","text":"Kontrollierte Execution als Systemarchitektur; kein Investment-Tool, keine Finanzberatung, kein Live-Trading- oder Performance-Claim."}]
 order: 2
 ---
 ## Einstieg
-Trading auf dezentralen Märkten ist kein reines Informationsproblem. Die meisten Daten sind verfügbar. Das eigentliche Problem ist Kontrolle: Wann darf ein System eine Aktion ausführen? Wer hat das entschieden? Und was passiert, wenn ein Quote veraltet ist, ein Modell falsch antwortet oder ein Trade auf halbem Weg abbricht?
+Schnelle Märkte erzeugen ein spezifisches Risiko: Entscheidungen entstehen aus Impuls, nicht aus Kontext. Ein Trade wird ausgeführt, weil sich die Bewegung richtig anfühlte. Weil kein System da war, das gefragt hätte: Warte — ist das wirklich das, was du willst?
 
-Sparkfined / BobbyExecute übersetzt diese Fragen in Architektur statt sie in Prompts zu verstecken.
+Sparkfined und BobbyExecute sind der Versuch, genau diese Frage in Architektur zu übersetzen.
 
 ## Was es ist
-Ein non-custodiales Trading Terminal für Solana, gebaut mit React/TypeScript im Frontend, Node/Express als kanonischem Backend und Jupiter v6 für On-Chain-Execution.
+Ein non-custodiales Trading Terminal für Solana, gebaut mit React/TypeScript im Frontend, Node/Express als Backend mit serverseitiger Ausführungslogik und Jupiter v6 für On-Chain-Execution.
 
 Das Terminal umfasst drei Arbeitsflächen:
 
 - Terminal: Swap-Execution mit Real-Time-Quotes, Fee Preview, Slippage-Kontrolle und Pre-Flight-Simulation vor jeder Signatur.
 - Discover: Token-Discovery mit Filter-Engine, Ranking-Scoring und direktem Deep-Link in den Terminal-Kontext.
-- Research / Journal: Strukturiertes Trade-Journal, Session Review und AI-gestützte Reflexion als Arbeitsspeicher gegen Trade-Amnesia.
+- Research / Journal: Strukturiertes Trade-Journal, Session Review und AI-gestützte Reflexion als strukturiertes Gedächtnis für vergangene Entscheidungen.
+
+## Konzeptkern
+- Kontrolle: lokale Datenhaltung, klare Backend-Grenzen und non-custodiale Ausführung bedeuten: du behältst Autorität über deine Daten und Aktionen — kein Dritter sitzt dazwischen.
 
 ## Die Architekturentscheidung, die das Projekt trägt
 Das wichtigste Designprinzip steht im README:
@@ -84,13 +87,9 @@ Dieser Showcase ist kein Trading-Demo. Er ist ein Architekturnachweis für eine 
 
 Geschwindigkeit und Kontrolle schließen sich nicht aus, aber sie müssen bewusst getrennt werden. Wo die Grenze zwischen Oberfläche und Authority verläuft, zwischen Model-Output und Wahrheit, zwischen Quote und Commitment, das sind Designentscheidungen, keine Konfigurationen.
 
-Wer damit arbeiten will:
-
-Wenn du an Systemen baust, in denen AI oder Agenten in schnellen, signalreichen Kontexten handeln sollen und wo Kontrolle, Nachvollziehbarkeit und klare Authority-Grenzen keine Nacharbeit sein dürfen, dann ist das die Art zu denken, die ich einbringe.
+Wenn du an Systemen arbeitest, in denen Geschwindigkeit und Kontrolle gleichzeitig gefordert werden — und du weißt, dass die Antwort nicht mehr Prompts sind, sondern klarere Grenzen: dann ist das die Denkweise, die ich einbringe.
 
 → [twim.baum@proton.me](mailto:twim.baum@proton.me)
 
 ## Boundary
-Dieses Showcase zeigt eine Architektur- und Systemarbeitsprobe auf Basis des öffentlichen Repos `baum777/Sparkfined-TradeApp`.
-
-Es ist keine Finanzberatung, keine Performance-Behauptung, kein Rendite-Claim und keine Aussage über freigegebenen Live-Trading-Betrieb. Kein Kundendaten-Exposure, keine regulatorische Konformitätsbehauptung.
+Sparkfined / BobbyExecute zeigt eine Systemarchitektur für kontrollierte Execution — kein Investment-Tool, keine Finanzberatung, kein Live-Trading-Claim, kein Performance-Nachweis. Der Code ist real. Der Betrieb ist nicht autorisiert behauptet.

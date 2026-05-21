@@ -1,12 +1,39 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { ReactNode } from "react";
 import { parseSimpleMarkdown } from "@/lib/markdown";
 import { getAllProjectDetails, getProjectBySlug } from "@/lib/projects";
 import { getSiteContent } from "@/lib/site-content";
 
 interface ProjectPageProps {
   params: { slug: string };
+}
+
+function renderInlineMarkdown(text: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  const linkPattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = linkPattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      nodes.push(text.slice(lastIndex, match.index));
+    }
+
+    nodes.push(
+      <a href={match[2]} key={`${match[1]}-${match.index}`}>
+        {match[1]}
+      </a>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(text.slice(lastIndex));
+  }
+
+  return nodes;
 }
 
 export async function generateStaticParams() {
@@ -72,12 +99,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               return (
                 <ul key={`ul-${index}`}>
                   {block.items.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item}>{renderInlineMarkdown(item)}</li>
                   ))}
                 </ul>
               );
             }
-            return <p key={`p-${index}`}>{block.text}</p>;
+            return <p key={`p-${index}`}>{renderInlineMarkdown(block.text)}</p>;
           })}
         </article>
       </div>
