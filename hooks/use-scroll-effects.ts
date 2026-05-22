@@ -8,7 +8,7 @@ function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
 }
 
-export function useScrollEffects() {
+export function useScrollEffects(refreshKey?: string) {
   useEffect(() => {
     const root = document.documentElement;
     const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>(".side-nav-link, .mobile-nav-link"));
@@ -151,5 +151,5 @@ export function useScrollEffects() {
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
     };
-  }, []);
+  }, [refreshKey]);
 }

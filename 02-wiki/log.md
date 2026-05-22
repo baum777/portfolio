@@ -79,3 +79,5 @@
 ## [2026-05-22] verify | Bilinguale Portfolio-Ausgabe lokal per Build, Lint und Playwright-Browser-QA geprüft: DE-Default, EN-Toggle, html-lang, localStorage-Persistenz, Detailseitenwechsel und Mobile-Toggle-Bounds verifiziert [[components/language-toggle]] [[hooks/use-language]] [[components/home-page-client]] [[components/project-detail-client]]
 
 ## [2026-05-22] deploy | Bilingualen Portfolio-Stand `ae2d232` nach Production veröffentlicht; Deployment `dpl_GK4DtAbPa1bw6E5bWws78YtdJi5u` als Ready auf `portfolio.uniterasystems.com` per Vercel-Inspect und Live-Browser-QA verifiziert [[vercel.json]] [[components/language-toggle]] [[hooks/use-language]]
+
+## [2026-05-22] fix | EN-Principles-Cards nach Sprachwechsel wieder sichtbar gemacht: Scroll-/Reveal-Observer wird bei Language-Change neu initialisiert und bindet die aktuell gerenderten `.masked`-Elemente [[hooks/use-scroll-effects]] [[components/home-page-client]] [[02-wiki/index]]

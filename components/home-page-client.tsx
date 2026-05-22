@@ -159,9 +159,9 @@ function BrandMark() {
 }
 
 export function HomePageClient({ sites, projects }: HomePageClientProps) {
-  useScrollEffects();
   const { theme, toggleTheme } = useThemeToggle();
   const { language, toggleLanguage } = useLanguageToggle();
+  useScrollEffects(language);
   const [openStepIndex, setOpenStepIndex] = useState(0);
   const site = sites[language];
   const localizedProjects = projects[language];

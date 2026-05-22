@@ -9,10 +9,10 @@
 [[app/page]] | Dynamische Startseite im Next.js App Router, datengetrieben aus JSON und Projekt-Metadaten | #nextjs #routing #homepage | 2026-05-19
 [[app/layout]] | App-Rahmen mit deutschem Default-Lang, Metadaten, Lora/IBM-Plex-Fonts, initialer Theme-Auflösung und Fokus-Sigil-Favicon-/Manifest-Einbindung | #nextjs #layout #fonts #theme #favicon | 2026-05-22
 [[app/globals]] | Globales CSS für Paper-Notepad/Tokyo-Night-Themes, Fokus-Sigil-Brandmark, Language-Toggle, Sticky-Side-Nav, Prozessscroll, Mobile-Accordion und Projekt-Richtext-Links | #css #responsive #frontend #theme #brand #i18n | 2026-05-22
-[[components/home-page-client]] | Clientseitige Startseiten-Komponente mit DE/EN-Sprachumschaltung, Fokus-Sigil/CF-Branding, Hero-Subline, Kontaktabsätzen, Side-Nav, Theme-Toggle, Prozessindikator und datengetriebenen Sections | #nextjs #react #frontend #theme #brand #i18n | 2026-05-22
+[[components/home-page-client]] | Clientseitige Startseiten-Komponente mit DE/EN-Sprachumschaltung, Fokus-Sigil/CF-Branding, Hero-Subline, Kontaktabsätzen, Side-Nav, Theme-Toggle, Prozessindikator, sprachsensitiver Reveal-Aktualisierung und datengetriebenen Sections | #nextjs #react #frontend #theme #brand #i18n | 2026-05-22
 [[components/project-detail-client]] | Clientseitige Projekt-Detailansicht mit DE/EN-Sprachumschaltung und Markdown-Rendering für lokalisierte Projektinhalte | #nextjs #react #projects #markdown #i18n | 2026-05-22
 [[components/language-toggle]] | Fixierter DE/EN-Sprachschalter mit localStorage-Persistenz über Hook | #nextjs #react #i18n #ui | 2026-05-22
-[[hooks/use-scroll-effects]] | Clientseitige Scroll-Effekte für Side-Nav-Aktivzustand, Prozess-Translation, Indikator und Reveal-Zustände | #react #scroll #frontend | 2026-05-20
+[[hooks/use-scroll-effects]] | Clientseitige Scroll-Effekte für Side-Nav-Aktivzustand, Prozess-Translation, Indikator und Reveal-Zustände mit Reinitialisierung bei Sprachwechsel | #react #scroll #frontend #i18n | 2026-05-22
 [[hooks/use-theme]] | Clientseitiger Theme-Hook für data-theme, Systempräferenz und localStorage-Persistenz | #react #theme #frontend | 2026-05-20
 [[hooks/use-language]] | Clientseitiger DE/EN-Sprachhook mit localStorage-Persistenz und html-lang-Synchronisierung nach Hydration | #react #i18n #frontend | 2026-05-22
 [[lib/site-content]] | Loader und Schema-Validierung für lokalisierte Site-Content-JSONs mit deutschem Default | #content #loader #i18n | 2026-05-22
