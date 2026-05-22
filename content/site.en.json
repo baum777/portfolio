@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "title": "Cheikh Fall — Controllable AI Systems",
+    "description": "Portfolio by Cheikh Fall: Unitera as Main Development, SOL trading systems, and model-agnostic work environments.",
+    "brand": "CF — Cheikh Fall / Unitera Systems",
+    "footerClaim": "Signals → Boundaries → Authority → Evidence → Execution"
+  },
+  "nav": [
+    {
+      "href": "#denken",
+      "label": "Thinking"
+    },
+    {
+      "href": "#arbeiten",
+      "label": "Principles"
+    },
+    {
+      "href": "#projekte",
+      "label": "Showcases"
+    },
+    {
+      "href": "#kompetenz",
+      "label": "Expertise"
+    },
+    {
+      "href": "#kontakt",
+      "label": "Contact"
+    }
+  ],
+  "hero": {
+    "kicker": "AI Governance · Agentic Systems · Backend-first Workflows",
+    "titlePrefix": "Complex systems in",
+    "titleHighlight": "controllable",
+    "titleSuffix": "workspaces.",
+    "subline": "I translate loose signals, risky handovers, and agentic toolchains into roles, Gates, Backend-Authority, and verifiable Evidence.\nFor people who know: built fast is not the same as built under control.",
+    "ctas": [
+      {
+        "href": "#denken",
+        "label": "Working Method →",
+        "variant": "primary"
+      },
+      {
+        "href": "#projekte",
+        "label": "Showcases",
+        "variant": "secondary"
+      }
+    ]
+  },
+  "intro": {
+    "lead": "Not a classic profile.",
+    "text": "This page shows how I turn friction, risks, and tool chaos into controllable workspaces: first the boundary, then the logic, then the implementation."
+  },
+  "process": {
+    "kicker": "01 / Thinking",
+    "title": "From loose signals to reliable control paths.",
+    "text": "Every Showcase follows the same chain: clarify input signals, make boundaries visible, model system logic, limit Authority, and generate Evidence.",
+    "chain": [
+      "Signals",
+      "Boundaries",
+      "Structure",
+      "Control",
+      "Operations"
+    ],
+    "steps": [
+      {
+        "stepLabel": "Step 01 / Signals",
+        "title": "Capture information, friction, and decision points.",
+        "text": "At the beginning, there is rarely a perfect briefing. I collect signals from processes, tools, risks, user behavior, and existing artifacts.",
+        "bullets": [
+          "read operational friction",
+          "identify tool and data breaks",
+          "mark unclear decisions"
+        ]
+      },
+      {
+        "stepLabel": "Step 02 / Boundaries",
+        "title": "Make Authority, scope, and non-goals explicit.",
+        "text": "Before automation is created, it must be clear what a system is allowed to do, what it is only allowed to suggest, and when a human or Gate must take over.",
+        "bullets": [
+          "define Authority Boundary",
+          "record non-claims",
+          "form risk and owner chains"
+        ]
+      },
+      {
+        "stepLabel": "Step 03 / Structure",
+        "title": "Derive roles, data flows, Contracts, and Interfaces.",
+        "text": "Patterns become architecture: states, handovers, Backend logic, and UI surfaces are modeled so that work remains controllable.",
+        "bullets": [
+          "model Contracts and states",
+          "define Backend-first logic",
+          "design Interfaces as workspaces"
+        ]
+      },
+      {
+        "stepLabel": "Step 04 / Control",
+        "title": "Build in Review, Gates, Evidence, and escalation.",
+        "text": "Control is not an add-on. An agentic workflow only becomes reliable when stop conditions, logs, and review paths are part of the system.",
+        "bullets": [
+          "define Review-Gates",
+          "make Evidence visible",
+          "build in fail-closed behavior"
+        ]
+      },
+      {
+        "stepLabel": "Step 05 / Operations",
+        "title": "Test implementation against real constraints.",
+        "text": "The implementation shows whether a system is viable under real working conditions: with limited time, limited data, real roles, and clear completion criteria.",
+        "bullets": [
+          "build prototypes",
+          "validation instead of claim",
+          "improve from friction"
+        ]
+      }
+    ]
+  },
+  "principles": {
+    "kicker": "02 / Working Principles",
+    "title": "Control is architecture, not afterwork.",
+    "text": "I do not position AI and agents as blind automation, but as bounded system parts with roles, boundaries, proof, and escalation paths.",
+    "items": [
+      {
+        "title": "Boundary first, then automation",
+        "text": "A process is only automated when scope, risk, owner, and non-goals are clear."
+      },
+      {
+        "title": "Backend owns Authority",
+        "text": "Critical source of truth does not live in the surface, but in controlled logic, Contracts, and server state."
+      },
+      {
+        "title": "UI shows intent, not source of truth",
+        "text": "Interfaces should make decisions readable, but not create implicit execution authority."
+      },
+      {
+        "title": "Review is part of the system",
+        "text": "Approval, Return, Reject, Verify, and Escalate belong in the workflow, not in informal side channels."
+      },
+      {
+        "title": "Evidence instead of demo claim",
+        "text": "A result only becomes strong when origin, Gate status, version, and decision path are traceable."
+      },
+      {
+        "title": "Models remain swappable",
+        "text": "Good systems do not bind themselves blindly to one model, but to roles, Contracts, validation, and Adapter boundaries."
+      }
+    ]
+  },
+  "projects": {
+    "kicker": "03 / Showcases",
+    "title": "Unitera as Main Development. Two further systems as Architecture Proofs.",
+    "text": "Three systems — one shared principle: AI and agents are reliable when roles, boundaries, and proof are part of the architecture — not informal afterwork. Unitera is the Main Development. Sparkfined / BobbyExecute shows controlled Execution in fast markets. Model-Agnostic Working shows how system logic remains stable when models change."
+  },
+  "capabilities": {
+    "kicker": "04 / Expertise",
+    "title": "Where my value is strongest.",
+    "text": "I become especially strong where AI use, accountability, tooling, and execution are not yet cleanly separated.",
+    "valueZoneLabel": "Value Zone",
+    "valueZoneTitle": "Translate unclear processes into controllable AI systems.",
+    "valueZoneText": "My strongest contribution is where a project has energy, tools, and ideas, but not yet stable logic for accountability, execution, and proof.",
+    "valueList": [
+      "Make Draft-to-Commit Governance visible with Unitera as Main Development",
+      "Design AI/agent systems with clear Authority Boundaries",
+      "Structure trading and research systems with deterministic control paths",
+      "Stabilize model-agnostic work environments through Contracts, Adapter, Validators, and Review Cards"
+    ],
+    "capabilitiesLabel": "Capabilities",
+    "rows": [
+      {
+        "title": "AI Governance",
+        "text": "Build Review, Approval, Evidence, Audit Trail, and accountability into workflows."
+      },
+      {
+        "title": "Backend-first Architecture",
+        "text": "Cleanly bound server-side source of truth, credentials, routing, Execute, and Verify."
+      },
+      {
+        "title": "Agentic Workflow Design",
+        "text": "Model human-agent handovers, tool surfaces, Gate logic, and escalations."
+      },
+      {
+        "title": "Model-Agnostic Systems",
+        "text": "Design provider-neutral Contracts, Adapter, exports, and validation for swappable models."
+      },
+      {
+        "title": "Evidence & Validation",
+        "text": "Secure claims through artifacts, Gates, logs, fixtures, and clear non-claims."
+      }
+    ]
+  },
+  "contact": {
+    "kicker": "05 / Contact",
+    "title": "Let’s talk about controllable AI systems.",
+    "text": "If you are at a point where your system is running — but you are no longer sure who is really deciding: that is the kind of question I work with.\n\nI am interested in projects where control, roles, and traceability cannot be an after-the-fact requirement, but must be built in from the beginning.",
+    "ctas": [
+      {
+        "href": "mailto:twim.baum@proton.me",
+        "label": "twim.baum@proton.me →",
+        "variant": "primary"
+      },
+      {
+        "href": "mailto:founder@uniterasystems.com",
+        "label": "founder@uniterasystems.com",
+        "variant": "ghost"
+      }
+    ]
+  }
+}

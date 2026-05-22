@@ -1,4 +1,6 @@
 export type ThemeMode = "dark" | "light";
+export type LanguageMode = "de" | "en";
+export type Localized<T> = Record<LanguageMode, T>;
 
 export interface NavItem {
   href: string;

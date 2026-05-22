@@ -1,8 +1,11 @@
 import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
-import { ProjectDetail, ProjectFrontmatter, ProjectSummary } from "./types";
+import { LanguageMode, Localized, ProjectDetail, ProjectFrontmatter, ProjectSummary } from "./types";
 
-const projectsDir = path.join(process.cwd(), "content", "projects");
+const projectDirs: Record<LanguageMode, string> = {
+  de: path.join(process.cwd(), "content", "projects"),
+  en: path.join(process.cwd(), "content", "projects", "en")
+};
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) {
@@ -91,16 +94,16 @@ function validateFrontmatter(value: Record<string, unknown>, source: string): Pr
   };
 }
 
-function getProjectFiles(): string[] {
-  return readdirSync(projectsDir)
+function getProjectFiles(language: LanguageMode): string[] {
+  return readdirSync(projectDirs[language])
     .filter((file) => file.endsWith(".md"))
     .sort((a, b) => a.localeCompare(b, "de"));
 }
 
-export function getAllProjectDetails(): ProjectDetail[] {
-  const files = getProjectFiles();
+export function getAllProjectDetails(language: LanguageMode = "de"): ProjectDetail[] {
+  const files = getProjectFiles(language);
   const projects = files.map((file) => {
-    const fullPath = path.join(projectsDir, file);
+    const fullPath = path.join(projectDirs[language], file);
     const { frontmatter, body } = parseMarkdownFile(fullPath);
     const valid = validateFrontmatter(frontmatter, file);
     return { ...valid, content: body };
@@ -116,7 +119,11 @@ export function getAllProjectDetails(): ProjectDetail[] {
 }
 
 export function getProjectSummaries(): ProjectSummary[] {
-  return getAllProjectDetails().map((project) => ({
+  return getProjectSummariesForLanguage("de");
+}
+
+export function getProjectSummariesForLanguage(language: LanguageMode): ProjectSummary[] {
+  return getAllProjectDetails(language).map((project) => ({
     slug: project.slug,
     title: project.title,
     teaser: project.teaser,
@@ -128,6 +135,24 @@ export function getProjectSummaries(): ProjectSummary[] {
   }));
 }
 
-export function getProjectBySlug(slug: string): ProjectDetail | undefined {
-  return getAllProjectDetails().find((project) => project.slug === slug);
+export function getLocalizedProjectSummaries(): Localized<ProjectSummary[]> {
+  return {
+    de: getProjectSummariesForLanguage("de"),
+    en: getProjectSummariesForLanguage("en")
+  };
+}
+
+export function getProjectBySlug(slug: string, language: LanguageMode = "de"): ProjectDetail | undefined {
+  return getAllProjectDetails(language).find((project) => project.slug === slug);
+}
+
+export function getLocalizedProjectBySlug(slug: string): Localized<ProjectDetail> | undefined {
+  const de = getProjectBySlug(slug, "de");
+  const en = getProjectBySlug(slug, "en");
+
+  if (!de || !en) {
+    return undefined;
+  }
+
+  return { de, en };
 }

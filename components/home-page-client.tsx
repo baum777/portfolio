@@ -3,13 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { LanguageToggle } from "@/components/language-toggle";
+import { useLanguageToggle } from "@/hooks/use-language";
 import { useScrollEffects } from "@/hooks/use-scroll-effects";
-import { ThemeMode, useThemeToggle } from "@/hooks/use-theme";
-import { ProjectSummary, SiteContent } from "@/lib/types";
+import { useThemeToggle } from "@/hooks/use-theme";
+import type { ThemeMode } from "@/hooks/use-theme";
+import type { Localized, ProjectSummary, SiteContent } from "@/lib/types";
 
 interface HomePageClientProps {
-  site: SiteContent;
-  projects: ProjectSummary[];
+  sites: Localized<SiteContent>;
+  projects: Localized<ProjectSummary[]>;
 }
 
 type VisualNode = { className: string; label: string; emphasized?: boolean };
@@ -134,7 +137,7 @@ function renderLines(text: string) {
 
 function ThemeToggle({ theme, onToggle }: { theme: ThemeMode; onToggle: () => void }) {
   return (
-    <button className="theme-toggle" type="button" aria-label="Theme wechseln" data-current={theme} onClick={onToggle}>
+    <button className="theme-toggle" type="button" aria-label="Switch theme" data-current={theme} onClick={onToggle}>
       <svg className="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M19.5 15.2A7.6 7.6 0 0 1 8.8 4.5a8.2 8.2 0 1 0 10.7 10.7Z" />
       </svg>
@@ -155,16 +158,21 @@ function BrandMark() {
   );
 }
 
-export function HomePageClient({ site, projects }: HomePageClientProps) {
+export function HomePageClient({ sites, projects }: HomePageClientProps) {
   useScrollEffects();
   const { theme, toggleTheme } = useThemeToggle();
+  const { language, toggleLanguage } = useLanguageToggle();
   const [openStepIndex, setOpenStepIndex] = useState(0);
+  const site = sites[language];
+  const localizedProjects = projects[language];
+  const contactLabel = site.nav.find((item) => item.href === "#kontakt")?.label ?? (language === "de" ? "Kontakt" : "Contact");
   const heroTitle = heroTitleParts(site);
 
   return (
     <div className="site-shell">
-      <aside className="side-nav" aria-label="Hauptnavigation">
-        <a href="#top" className="side-brand" aria-label="Cheikh Fall — zur Startsektion">
+      <LanguageToggle language={language} onToggle={toggleLanguage} />
+      <aside className="side-nav" aria-label={language === "de" ? "Hauptnavigation" : "Main navigation"}>
+        <a href="#top" className="side-brand" aria-label={language === "de" ? "Cheikh Fall — zur Startsektion" : "Cheikh Fall — back to top"}>
           <BrandMark />
           <span>CF</span>
         </a>
@@ -186,13 +194,13 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
       </aside>
 
       <header className="mobile-nav">
-        <a href="#top" className="mobile-brand" aria-label="Cheikh Fall — zur Startsektion">
+        <a href="#top" className="mobile-brand" aria-label={language === "de" ? "Cheikh Fall — zur Startsektion" : "Cheikh Fall — back to top"}>
           <BrandMark />
           <span>CF</span>
         </a>
         <ThemeToggle theme={theme} onToggle={toggleTheme} />
         <a className="mobile-nav-link" href="#kontakt">
-          Kontakt
+          {contactLabel}
         </a>
       </header>
 
@@ -218,7 +226,11 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
           </div>
         </section>
 
-        <section className="process-scroll" id="denken" aria-label="Denkweise als horizontale Scroll-Ausstellung">
+        <section
+          className="process-scroll"
+          id="denken"
+          aria-label={language === "de" ? "Denkweise als horizontale Scroll-Ausstellung" : "Thinking as horizontal scroll exhibition"}
+        >
           <div className="process-sticky">
             <div className="process-meta wrap">
               <div className="process-title">
@@ -351,7 +363,7 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
           </div>
 
           <div className="projects">
-            {projects.map((project) => (
+            {localizedProjects.map((project) => (
               <article className="project-card masked" key={project.slug}>
                 <div className="label">{project.badge}</div>
                 <h3 className="project-title">{project.title}</h3>
@@ -372,7 +384,7 @@ export function HomePageClient({ site, projects }: HomePageClientProps) {
                   ))}
                 </div>
                 <Link className="text-link" href={`/projekte/${project.slug}`}>
-                  Projektdetail öffnen →
+                  {language === "de" ? "Projektdetail öffnen →" : "Open project detail →"}
                 </Link>
               </article>
             ))}

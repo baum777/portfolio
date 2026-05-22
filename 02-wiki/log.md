@@ -67,3 +67,13 @@
 ## [2026-05-21] verify+deploy | Browser-QA lokal und live für Startseite sowie drei Showcase-Detailseiten durchgeführt; Production-Deployment `dpl_4eJu2qAQyrvngTJ9aRR56sHBGHpW` als Ready auf `portfolio.uniterasystems.com` verifiziert [[content/site.de]] [[content/projects]] [[vercel.json]]
 
 ## [2026-05-21] deploy | Production-Deployment erneut über prebuilt Vercel-Output veröffentlicht; Deployment `dpl_3zWxeDBERRbCTErb8sUN4GvZMWdH` als Ready auf `portfolio.uniterasystems.com` verifiziert [[vercel.json]]
+
+## [2026-05-22] update | Portfolio-Content von Deutsch nach Englisch übersetzt: Startseite, drei Showcase-Detailseiten, sichtbare UI-Texte, HTML-Lang und Frontdoor aktualisiert; Architekturbegriffe und Anchors beibehalten [[content/site.de]] [[content/projects]] [[components/home-page-client]] [[app/projekte/[slug]/page]] [[app/not-found]] [[app/layout]] [[README]] [[02-wiki/index]]
+
+## [2026-05-22] deploy | Englischen Portfolio-Stand über prebuilt Vercel-Output nach Production veröffentlicht; Deployment `dpl_H4y2jFKyugHgG26kYVzhxoTh4Reh` als Ready auf `portfolio.uniterasystems.com` verifiziert [[content/site.de]] [[content/projects]] [[vercel.json]]
+
+## [2026-05-22] update | Portfolio auf bilinguale DE/EN-Ausgabe mit clientseitigem Language-Toggle umgestellt; deutsche Inhalte als Default und englische Inhalte parallel in eigenen Content-Quellen gehalten [[content/site.de]] [[content/site.en]] [[content/projects]] [[content/projects/en]] [[components/home-page-client]] [[components/project-detail-client]] [[components/language-toggle]] [[hooks/use-language]] [[lib/site-content]] [[lib/projects]] [[app/globals]]
+
+## [2026-05-22] fix | Language-Toggle-Hydration gegen localStorage-Überschreiben abgesichert und Mobile-Navigation für Toggle rechts oben freigestellt [[hooks/use-language]] [[app/globals]] [[02-wiki/index]]
+
+## [2026-05-22] verify | Bilinguale Portfolio-Ausgabe lokal per Build, Lint und Playwright-Browser-QA geprüft: DE-Default, EN-Toggle, html-lang, localStorage-Persistenz, Detailseitenwechsel und Mobile-Toggle-Bounds verifiziert [[components/language-toggle]] [[hooks/use-language]] [[components/home-page-client]] [[components/project-detail-client]]

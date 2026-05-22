@@ -1,8 +1,11 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { SiteContent } from "./types";
+import { LanguageMode, Localized, SiteContent } from "./types";
 
-const contentPath = path.join(process.cwd(), "content", "site.de.json");
+const contentPaths: Record<LanguageMode, string> = {
+  de: path.join(process.cwd(), "content", "site.de.json"),
+  en: path.join(process.cwd(), "content", "site.en.json")
+};
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) {
@@ -41,7 +44,21 @@ function validateSiteContent(value: unknown): asserts value is SiteContent {
 }
 
 export function getSiteContent(): SiteContent {
-  const raw = readFileSync(contentPath, "utf-8");
+  const raw = readFileSync(contentPaths.de, "utf-8");
+  const parsed = JSON.parse(raw) as unknown;
+  validateSiteContent(parsed);
+  return parsed;
+}
+
+export function getLocalizedSiteContent(): Localized<SiteContent> {
+  return {
+    de: getSiteContentForLanguage("de"),
+    en: getSiteContentForLanguage("en")
+  };
+}
+
+export function getSiteContentForLanguage(language: LanguageMode): SiteContent {
+  const raw = readFileSync(contentPaths[language], "utf-8");
   const parsed = JSON.parse(raw) as unknown;
   validateSiteContent(parsed);
   return parsed;

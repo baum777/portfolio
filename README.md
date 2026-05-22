@@ -7,8 +7,10 @@ Dynamische Website auf Basis von Next.js App Router mit Fokus auf kontrollierbar
 - `app/` — Routen (`/`, `/projekte/[slug]`)
 - `components/` — Seitenkomponenten
 - `hooks/` — Theme- und Scroll-Interaktionen
-- `content/site.de.json` — globale Inhalte (Deutsch)
-- `content/projects/*.md` — Projektdetails mit Frontmatter + Markdown-Body
+- `content/site.de.json` — globale Inhalte auf Deutsch
+- `content/site.en.json` — globale Inhalte auf Englisch
+- `content/projects/*.md` — deutsche Projektdetails mit Frontmatter + Markdown-Body
+- `content/projects/en/*.md` — englische Projektdetails mit gleichem Slug-Set
 - `lib/` — Typen, Validierung, Loader, Markdown-Parser
 
 ## Lokal starten
