@@ -1,10 +1,29 @@
-export const siteContent = {
+const sharedLinks = {
+  booking: "https://www.cal.eu/cheikh-fall",
+  github: "https://github.com/baum777/",
+  company: "https://www.uniterasystems.com/",
+  fallbackEmail: "twim.baum@proton.me",
+};
+
+const deContent = {
+  locale: "de",
+  links: sharedLinks,
   meta: {
-    title: "Cheikh Kai — Kontrollierbare KI-Systeme",
+    title: "Cheikh Fall — AI Governance & Agentic Systems",
     description:
-      "Cheikh Kai — Kontrollierbare KI-Systeme. Persönliche Landingpage für AI Governance, Automatisierung, Systemdenken und kontrollierbare KI-Prozesse.",
+      "Kontrollierbare KI-Systeme: Rollen, Gates, Audit Evidence. Buchbar via cal.eu/cheikh-fall.",
+    ogUrl: "https://portfolio.uniterasystems.com",
+    ogImage: "/og-image.png",
   },
-  brand: "CK — Cheikh Kai / Systems",
+  brand: "CF — Cheikh Fall / Systems",
+  localeSwitch: {
+    de: "DE",
+    en: "EN",
+  },
+  externalNav: {
+    github: "GitHub",
+    company: "Unitera Systems",
+  },
   nav: [
     { label: "Denken", href: "#denken" },
     { label: "Arbeiten", href: "#arbeiten" },
@@ -23,6 +42,8 @@ export const siteContent = {
       { label: "Projekte", href: "#projekte", className: "button secondary" },
       { label: "Kontakt", href: "#kontakt", className: "button ghost" },
     ],
+    bookingPrefix: "Direkt buchen:",
+    bookingLabel: "cal.eu/cheikh-fall →",
   },
   systemPanel: {
     nodes: [
@@ -262,6 +283,7 @@ export const siteContent = {
           },
         ],
         tags: ["Governance", "Review Gates", "Evidence"],
+        codeLinkLabel: "Code & Architektur auf GitHub",
       },
       {
         watermark: "Gate",
@@ -282,6 +304,7 @@ export const siteContent = {
           },
         ],
         tags: ["Backend", "Agents", "Credentials"],
+        codeLinkLabel: "Code & Architektur auf GitHub",
       },
       {
         watermark: "Email AI",
@@ -302,6 +325,7 @@ export const siteContent = {
           },
         ],
         tags: ["Automation", "Data Quality", "Workflow"],
+        codeLinkLabel: "Code & Architektur auf GitHub",
       },
     ],
   },
@@ -343,15 +367,354 @@ export const siteContent = {
       "Ich interessiere mich für Projekte, in denen KI nicht nur produktiver machen soll, sondern strukturiert, erklärbar und verantwortbar eingesetzt wird.",
     ctas: [
       {
-        label: "Kontakt aufnehmen →",
-        href: "mailto:cheikh.witm@proton.me",
+        label: "Gespräch buchen →",
+        href: sharedLinks.booking,
         className: "button primary",
+        external: true,
       },
-      { label: "Systeme ansehen", href: "#denken", className: "button ghost" },
+    ],
+    fallbackLabel: "Fallback:",
+    externalLinks: [
+      { label: "GitHub", href: sharedLinks.github, icon: "github" },
+      { label: "Uniterasystems", href: sharedLinks.company, icon: "external" },
     ],
   },
   footer: {
-    left: "Cheikh Kai · AI Governance & Automation",
-    right: "Signals → Patterns → Structure → Control → Execution",
+    left: "Cheikh Fall · AI Governance & Agentic Systems",
+    links: [
+      { label: "GitHub ↗", href: sharedLinks.github },
+      { label: "Unitera Systems ↗", href: sharedLinks.company },
+      { label: "Gespräch buchen ↗", href: sharedLinks.booking },
+    ],
   },
 };
+
+const enContent = {
+  ...deContent,
+  locale: "en",
+  meta: {
+    ...deContent.meta,
+    title: "Cheikh Fall — Controllable AI Systems",
+    description:
+      "AI Governance & Agentic Systems: roles, gates, audit evidence. Book at cal.eu/cheikh-fall.",
+  },
+  nav: [
+    { label: "Thinking", href: "#denken" },
+    { label: "Working", href: "#arbeiten" },
+    { label: "Projects", href: "#projekte" },
+    { label: "Contact", href: "#kontakt" },
+  ],
+  hero: {
+    ...deContent.hero,
+    titlePrefix: "Complex contexts into",
+    titleHighlight: "controllable",
+    titleSuffix: "AI systems.",
+    subline:
+      "I combine operational experience, systems thinking, and AI automation to build workflows that remain traceable, auditable, and accountable.",
+    ctas: [
+      { label: "Working method →", href: "#denken", className: "button primary" },
+      { label: "Showcases", href: "#projekte", className: "button secondary" },
+      { label: "Contact", href: "#kontakt", className: "button ghost" },
+    ],
+    bookingPrefix: "Book directly:",
+  },
+  systemPanel: {
+    ...deContent.systemPanel,
+    terminalLines: [
+      "input.scan(<em>signals</em>)",
+      "map.dependencies → roles / risks / decisions",
+      "define.review_gate(scope, evidence, owner)",
+      "execute only if: accountable && traceable",
+    ],
+  },
+  intro: {
+    lead: "Not a conventional profile.",
+    text:
+      "LinkedIn shows roles. This page shows how I work: how I identify patterns, design systems, and translate AI into controllable processes.",
+  },
+  process: {
+    ...deContent.process,
+    kicker: "01 / Thinking",
+    title: "From loose signals to resilient structures.",
+    text:
+      "Vertical scrolling moves the process chain horizontally: a curated thinking space where each step reveals a new system layer.",
+    chain: ["Signals", "Patterns", "Structure", "Control", "Execution"],
+    steps: [
+      {
+        ...deContent.process.steps[0],
+        stepLabel: "Step 01 / Signals",
+        title: "Capture information, problems, and opportunities.",
+        text:
+          "The starting point is not a perfect brief, but a mix of observations, friction, tools, ideas, data, and open decision points.",
+        microList: [
+          "observe operational workflows",
+          "mark friction and process gaps",
+          "collect relevant input signals",
+        ],
+        terminal: {
+          ...deContent.process.steps[0].terminal,
+          lines: [
+            { key: "capture", value: "information / problems" },
+            { key: "detect", value: "process gaps" },
+            { key: "output", value: "raw signal map" },
+          ],
+        },
+      },
+      {
+        ...deContent.process.steps[1],
+        stepLabel: "Step 02 / Patterns",
+        title: "Identify relationships, risks, and dependencies.",
+        text:
+          "I look beyond isolated points toward recurring structures: Where do risks emerge? Who decides? What depends on what?",
+        microList: [
+          "clarify roles and handoffs",
+          "build risk and dependency chains",
+          "isolate recurring patterns",
+        ],
+        terminal: {
+          ...deContent.process.steps[1].terminal,
+          lines: [
+            { key: "map", value: "dependencies → owners" },
+            { key: "trace", value: "repeated risks" },
+            { key: "output", value: "relation graph" },
+          ],
+        },
+      },
+      {
+        ...deContent.process.steps[2],
+        stepLabel: "Step 03 / Structure",
+        title: "Derive roles, rules, data flows, and interfaces.",
+        text:
+          "Patterns become architecture: system boundaries, states, backend logic, and interfaces are defined so work becomes steerable.",
+        microList: [
+          "model responsibilities",
+          "define backend-first logic",
+          "shape interfaces as workspaces",
+        ],
+        terminal: {
+          ...deContent.process.steps[2].terminal,
+          lines: [
+            { key: "define", value: "roles / states / permissions" },
+            { key: "compose", value: "workflow + data path" },
+            { key: "output", value: "controlled architecture" },
+          ],
+        },
+      },
+      {
+        ...deContent.process.steps[3],
+        stepLabel: "Step 04 / Control",
+        title: "Build in reviews, gates, evidence, and escalations.",
+        text:
+          "Control is not an add-on. An AI workflow is only resilient when stop conditions, review paths, and evidence are visible.",
+        microList: [
+          "define review gates",
+          "make evidence and logs visible",
+          "integrate fail-closed rules",
+        ],
+        terminal: {
+          ...deContent.process.steps[3].terminal,
+          lines: [
+            { key: "require", value: "evidence + owner" },
+            { key: "stop", value: "if unverified" },
+            { key: "output", value: "accountable workflow" },
+          ],
+        },
+      },
+      {
+        ...deContent.process.steps[4],
+        stepLabel: "Step 05 / Execution",
+        title: "Test practical viability.",
+        text:
+          "Execution shows whether a system works in real operations: with real people, real constraints, and real decisions.",
+        microList: [
+          "prototypes instead of pure theory",
+          "validation with clear criteria",
+          "improvement through observed friction",
+        ],
+        terminal: {
+          ...deContent.process.steps[4].terminal,
+          lines: [
+            { key: "test", value: "with real constraints" },
+            { key: "measure", value: "reliability / traceability" },
+            { key: "output", value: "operational system" },
+          ],
+        },
+      },
+    ],
+  },
+  principles: {
+    ...deContent.principles,
+    kicker: "02 / Working Principles",
+    title: "Control is not an add-on. Control is architecture.",
+    text:
+      "These principles position AI not as blind automation, but as an accountable part of a traceable system.",
+    items: [
+      {
+        num: "01",
+        title: "Understand first, then automate",
+        text:
+          "Before a process is automated, responsibility, risk, and decision points must be clear.",
+      },
+      {
+        num: "02",
+        title: "AI needs roles and boundaries",
+        text:
+          "An agent without a clear task, scope, and escalation logic is not a system. It is a risk.",
+      },
+      {
+        num: "03",
+        title: "Traceability beats speed",
+        text:
+          "Fast results are worthless if nobody can later explain how they were produced.",
+      },
+      {
+        num: "04",
+        title: "Backend-side authority",
+        text:
+          "Critical actions belong not only in the interface, but in controlled logic with permissions.",
+      },
+      {
+        num: "05",
+        title: "Validation instead of assertion",
+        text:
+          "Outputs must be verifiable: with evidence, logs, review paths, and clear completion criteria.",
+      },
+      {
+        num: "06",
+        title: "Practical usability matters",
+        text:
+          "Architecture must work with real people, real workflows, and real constraints.",
+      },
+    ],
+  },
+  projects: {
+    ...deContent.projects,
+    kicker: "03 / Projects",
+    title: "Projects as evidence of working method.",
+    text:
+      "The projects are not staged as a classic portfolio list, but as case examples for systems thinking, governance, and controllable execution.",
+    items: [
+      {
+        ...deContent.projects.items[0],
+        text:
+          "Governance layer between AI agents, human decisions, and business-critical processes.",
+        facts: [
+          {
+            key: "Problem",
+            value:
+              "AI agents take over tasks, but uncertainty emerges without review paths.",
+          },
+          {
+            key: "Approach",
+            value:
+              "Make commitments, responsibilities, escalations, and evidence visible.",
+          },
+        ],
+        codeLinkLabel: "Code & architecture on GitHub",
+      },
+      {
+        ...deContent.projects.items[1],
+        text:
+          "Agentic work interface focused on backend-side authority and traceable actions.",
+        facts: [
+          {
+            key: "Problem",
+            value:
+              "Many AI tools are UI-centered, while critical decisions need controlled logic.",
+          },
+          {
+            key: "Approach",
+            value:
+              "Connect chat, GitHub, Matrix, credential flows, and review gates.",
+          },
+        ],
+        codeLinkLabel: "Code & architecture on GitHub",
+      },
+      {
+        ...deContent.projects.items[2],
+        text:
+          "Early automation project with fine-tuning, FlutterFlow, Power Automate, and custom datasets.",
+        facts: [
+          {
+            key: "Problem",
+            value:
+              "Automate recurring communication without losing context and quality.",
+          },
+          {
+            key: "Approach",
+            value:
+              "Build data structures, prompt logic, and automation flows in practice.",
+          },
+        ],
+        codeLinkLabel: "Code & architecture on GitHub",
+      },
+    ],
+  },
+  capabilities: {
+    ...deContent.capabilities,
+    kicker: "04 / Capability Fields",
+    title: "Where my value is strongest.",
+    text:
+      "I become especially relevant when an AI project does not yet have a clear structure: many loose points, but no resilient system design yet.",
+    valueTitle: "Translate unclear problems into clear systems.",
+    valueText:
+      "My contribution often starts where others are still trying to grasp the problem itself.",
+    valueList: [
+      "structure AI projects",
+      "make human-AI workflows controllable",
+      "define review and decision paths",
+      "connect technical execution and strategic logic",
+    ],
+    rows: [
+      {
+        key: "Systems thinking",
+        value: "Translate complex contexts into roles, rules, and workflows.",
+      },
+      {
+        key: "AI automation",
+        value: "Integrate AI meaningfully into real workflows.",
+      },
+      {
+        key: "AI governance",
+        value: "Build in control, review, evidence, and responsibility.",
+      },
+      { key: "Backend logic", value: "Think about systems structurally and technically." },
+      { key: "Validation", value: "Make results verifiable." },
+    ],
+  },
+  contact: {
+    ...deContent.contact,
+    kicker: "05 / Contact",
+    title: "Let’s talk about controllable AI systems.",
+    text:
+      "I am interested in projects where AI is not only supposed to increase productivity, but is used in a structured, explainable, and accountable way.",
+    ctas: [
+      {
+        label: "Book a conversation →",
+        href: sharedLinks.booking,
+        className: "button primary",
+        external: true,
+      },
+    ],
+    fallbackLabel: "Fallback:",
+    externalLinks: [
+      { label: "GitHub", href: sharedLinks.github, icon: "github" },
+      { label: "Uniterasystems", href: sharedLinks.company, icon: "external" },
+    ],
+  },
+  footer: {
+    left: "Cheikh Fall · AI Governance & Agentic Systems",
+    links: [
+      { label: "GitHub ↗", href: sharedLinks.github },
+      { label: "Unitera Systems ↗", href: sharedLinks.company },
+      { label: "Book a conversation ↗", href: sharedLinks.booking },
+    ],
+  },
+};
+
+export const siteContentByLocale = {
+  de: deContent,
+  en: enContent,
+};
+
+export const siteContent = deContent;

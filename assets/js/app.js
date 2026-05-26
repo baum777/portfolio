@@ -1,18 +1,50 @@
-import { siteContent } from "../data/site-content.js";
+import { siteContentByLocale } from "../data/site-content.js";
 import { renderPage } from "./render.js";
 
 const root = document.documentElement;
 const appRoot = document.querySelector("[data-app-root]");
+const supportedLocales = ["de", "en"];
+const pathLocale = window.location.pathname
+  .split("/")
+  .filter(Boolean)
+  .find((segment) => supportedLocales.includes(segment));
+const storedLocale = (() => {
+  try {
+    return localStorage.getItem("ck-locale");
+  } catch (_) {
+    return null;
+  }
+})();
+const initialLocale = supportedLocales.includes(pathLocale)
+  ? pathLocale
+  : supportedLocales.includes(storedLocale)
+    ? storedLocale
+    : "de";
+const siteContent = siteContentByLocale[initialLocale];
 
 if (!appRoot) {
   throw new Error("Missing [data-app-root] container.");
 }
 
+root.setAttribute("lang", siteContent.locale);
 document.title = siteContent.meta.title;
-const descriptionMeta = document.querySelector('meta[name="description"]');
-if (descriptionMeta) {
-  descriptionMeta.setAttribute("content", siteContent.meta.description);
+try {
+  localStorage.setItem("ck-locale", siteContent.locale);
+} catch (_) {}
+
+function setMeta(selector, content) {
+  const meta = document.querySelector(selector);
+  if (meta) {
+    meta.setAttribute("content", content);
+  }
 }
+
+setMeta('meta[name="description"]', siteContent.meta.description);
+setMeta('meta[property="og:title"]', siteContent.meta.title);
+setMeta('meta[property="og:description"]', siteContent.meta.description);
+setMeta('meta[property="og:image"]', siteContent.meta.ogImage);
+setMeta('meta[property="og:url"]', siteContent.meta.ogUrl);
+setMeta('meta[property="og:type"]', "website");
 
 appRoot.innerHTML = renderPage(siteContent);
 

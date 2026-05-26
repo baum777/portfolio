@@ -41,6 +41,26 @@ ${nodes}
         </aside>`;
 }
 
+function renderIcon(name, className = "icon") {
+  if (name === "github") {
+    return `
+      <svg class="${className}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.5 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.93.85.09-.66.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.35 9.35 0 0 1 12 6.9c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.8-4.57 5.06.36.32.68.95.68 1.92 0 1.38-.01 2.5-.01 2.84 0 .28.18.6.69.5A10.1 10.1 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z" fill="currentColor"/>
+      </svg>`;
+  }
+
+  return `
+      <svg class="${className}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M7 7h10v10h-2V10.41l-8.29 8.3-1.42-1.42 8.3-8.29H7V7Z" fill="currentColor"/>
+      </svg>`;
+}
+
+function externalAttrs(item) {
+  return item.external || /^https?:\/\//.test(item.href)
+    ? ' target="_blank" rel="noopener noreferrer"'
+    : "";
+}
+
 function renderProcessStep(step) {
   const lines = step.lines
     .map((lineClass) => `<div class="visual-line ${lineClass}"></div>`)
@@ -80,6 +100,11 @@ function renderProjectCard(project, index) {
     )
     .join("");
   const tags = project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("");
+  const codeLink = `
+          <a class="project-code-link" href="${project.codeLinkHref}" target="_blank" rel="noopener noreferrer">
+            ${renderIcon("github", "icon small")}
+            <span>${project.codeLinkLabel}</span>
+          </a>`;
 
   return `
         <article class="project-card masked" data-watermark="${project.watermark}" data-project-index="${index}">
@@ -89,7 +114,10 @@ function renderProjectCard(project, index) {
             <p class="project-text">${project.text}</p>
             <div class="project-facts">${facts}</div>
           </div>
-          <div class="tags">${tags}</div>
+          <div class="project-actions">
+            <div class="tags">${tags}</div>
+            ${codeLink}
+          </div>
         </article>`;
 }
 
@@ -97,8 +125,21 @@ export function renderPage(content) {
   const navLinks = content.nav
     .map((item) => `<a class="nav-link" href="${item.href}">${item.label}</a>`)
     .join("");
+  const localeLinks = ["de", "en"]
+    .map((locale) => {
+      const active = locale === content.locale ? " active" : "";
+      return `<a class="locale-link${active}" href="/${locale}/" hreflang="${locale}">${content.localeSwitch[locale]}</a>`;
+    })
+    .join("");
+  const externalNavLinks = `
+        <a class="nav-icon-link" href="${content.links.github}" target="_blank" rel="noopener noreferrer" aria-label="${content.externalNav.github}">
+          ${renderIcon("github")}
+        </a>
+        <a class="nav-icon-link" href="${content.links.company}" target="_blank" rel="noopener noreferrer" aria-label="${content.externalNav.company}">
+          ${renderIcon("external")}
+        </a>`;
   const heroCtas = content.hero.ctas
-    .map((cta) => `<a class="${cta.className}" href="${cta.href}">${cta.label}</a>`)
+    .map((cta) => `<a class="${cta.className}" href="${cta.href}"${externalAttrs(cta)}>${cta.label}</a>`)
     .join("");
   const processChain = content.process.chain.map((item) => `<span>${item}</span>`).join("");
   const processCards = content.process.steps.map((step) => renderProcessStep(step)).join("");
@@ -113,7 +154,9 @@ export function renderPage(content) {
     )
     .join("");
   const projectCards = content.projects.items
-    .map((project, index) => renderProjectCard(project, index))
+    .map((project, index) =>
+      renderProjectCard({ ...project, codeLinkHref: content.links.github }, index)
+    )
     .join("");
   const valueItems = content.capabilities.valueList
     .map((item) => `<li>${item}</li>`)
@@ -128,7 +171,22 @@ export function renderPage(content) {
     )
     .join("");
   const contactCtas = content.contact.ctas
-    .map((cta) => `<a class="${cta.className}" href="${cta.href}">${cta.label}</a>`)
+    .map((cta) => `<a class="${cta.className}" href="${cta.href}"${externalAttrs(cta)}>${cta.label}</a>`)
+    .join("");
+  const contactExternalLinks = content.contact.externalLinks
+    .map(
+      (link) => `
+              <a class="inline-muted-link" href="${link.href}" target="_blank" rel="noopener noreferrer">
+                ${renderIcon(link.icon, "icon small")}
+                <span>${link.label}</span>
+              </a>`
+    )
+    .join("");
+  const footerLinks = content.footer.links
+    .map(
+      (link) =>
+        `<a class="footer-link" href="${link.href}" target="_blank" rel="noopener noreferrer">${link.label}</a>`
+    )
     .join("");
 
   return `
@@ -138,7 +196,11 @@ export function renderPage(content) {
   <header class="site-header">
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="#top" class="brand">${content.brand}</a>
-      <div class="nav-links">${navLinks}</div>
+      <div class="nav-right">
+        <div class="nav-links">${navLinks}</div>
+        <div class="locale-switch" aria-label="Sprache wechseln">${localeLinks}</div>
+        <div class="nav-external">${externalNavLinks}</div>
+      </div>
     </nav>
   </header>
 
@@ -154,6 +216,10 @@ export function renderPage(content) {
           </h1>
           <p class="subline">${content.hero.subline}</p>
           <div class="cta-row">${heroCtas}</div>
+          <p class="hero-booking">
+            ${content.hero.bookingPrefix}
+            <a href="${content.links.booking}" target="_blank" rel="noopener noreferrer">${content.hero.bookingLabel}</a>
+          </p>
         </div>
 ${renderSystemPanel(content.systemPanel)}
       </div>
@@ -230,7 +296,14 @@ ${renderSystemPanel(content.systemPanel)}
           <div class="section-kicker">${content.contact.kicker}</div>
           <h2>${content.contact.title}</h2>
           <p>${content.contact.text}</p>
-          <div class="cta-row" style="justify-content:center;">${contactCtas}</div>
+          <div class="contact-actions">
+            <div class="cta-row" style="justify-content:center;">${contactCtas}</div>
+            <a class="contact-fallback" href="mailto:${content.links.fallbackEmail}">
+              <span>${content.contact.fallbackLabel}</span>
+              ${content.links.fallbackEmail}
+            </a>
+            <div class="contact-links">${contactExternalLinks}</div>
+          </div>
         </div>
       </div>
     </section>
@@ -239,7 +312,7 @@ ${renderSystemPanel(content.systemPanel)}
   <footer class="footer">
     <div class="wrap footer-inner">
       <span>${content.footer.left}</span>
-      <span>${content.footer.right}</span>
+      <span class="footer-links">${footerLinks}</span>
     </div>
   </footer>`;
 }
