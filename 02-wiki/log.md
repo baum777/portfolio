@@ -87,3 +87,5 @@
 ## [2026-05-26] deploy | Trust-Link-/Booking-Patch als Commit `465fffa` nach Production veröffentlicht; Deployment `dpl_GndVwbj27YL5Hz8ksko48Jb7tf8N` als Ready auf `portfolio.uniterasystems.com` per Vercel-Output, HTTP 200 und Live-Browser-QA verifiziert [[components/home-page-client]] [[content/site.de]] [[content/site.en]] [[vercel.json]]
 
 ## [2026-05-26] reconcile | Divergierten lokalen Static-Stand gegen kanonischen Next.js-Remote-Stand geprüft; Trust-/Booking-/OG-/DE-EN-Inhalte sind in `origin/master` bereits enthalten, daher kein Static-Rückport in die aktive App [[02-wiki/log]] [[vercel.json]]
+
+## [2026-05-26] deploy | Reconcile-Branch `codex/reconcile-prod-deploy` nach Production veröffentlicht; Deployment `dpl_84nQtz8Yi4BNbVVNL77RN7XoHM8h` als Ready auf `portfolio.uniterasystems.com` per Vercel-Output und HTTP 200 für `/` sowie `/projekte/unitera-systems` verifiziert [[02-wiki/log]] [[vercel.json]]
