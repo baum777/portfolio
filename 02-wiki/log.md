@@ -81,3 +81,5 @@
 ## [2026-05-22] deploy | Bilingualen Portfolio-Stand `ae2d232` nach Production veröffentlicht; Deployment `dpl_GK4DtAbPa1bw6E5bWws78YtdJi5u` als Ready auf `portfolio.uniterasystems.com` per Vercel-Inspect und Live-Browser-QA verifiziert [[vercel.json]] [[components/language-toggle]] [[hooks/use-language]]
 
 ## [2026-05-22] fix | EN-Principles-Cards nach Sprachwechsel wieder sichtbar gemacht: Scroll-/Reveal-Observer wird bei Language-Change neu initialisiert und bindet die aktuell gerenderten `.masked`-Elemente [[hooks/use-scroll-effects]] [[components/home-page-client]] [[02-wiki/index]]
+
+## [2026-05-26] patch | Kontakt-CTA, externe Trust-Links, Showcase-GitHub-Links, konsistente Fallback-Mail und Open-Graph-Metadaten in der aktiven Next.js-Portfolio-Seite ergänzt [[content/site.de]] [[content/site.en]] [[components/home-page-client]] [[app/layout]] [[app/globals]] [[public/og-image]]

@@ -135,6 +135,29 @@ function renderLines(text: string) {
   ));
 }
 
+function ExternalIcon({ name, className = "link-icon" }: { name: "github" | "external"; className?: string }) {
+  if (name === "github") {
+    return (
+      <svg className={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path
+          d="M12 2C6.48 2 2 6.58 2 12.25c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.5 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.93.85.09-.66.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.35 9.35 0 0 1 12 6.9c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.8-4.57 5.06.36.32.68.95.68 1.92 0 1.38-.01 2.5-.01 2.84 0 .28.18.6.69.5A10.1 10.1 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"
+          fill="currentColor"
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M7 7h10v10h-2V10.41l-8.29 8.3-1.42-1.42 8.3-8.29H7V7Z" fill="currentColor" />
+    </svg>
+  );
+}
+
+function externalAttrs(href: string) {
+  return href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {};
+}
+
 function ThemeToggle({ theme, onToggle }: { theme: ThemeMode; onToggle: () => void }) {
   return (
     <button className="theme-toggle" type="button" aria-label="Switch theme" data-current={theme} onClick={onToggle}>
@@ -186,10 +209,14 @@ export function HomePageClient({ sites, projects }: HomePageClientProps) {
           ))}
         </nav>
 
-        <a className="side-email" href="mailto:twim.baum@proton.me">
-          <span>twim.baum@</span>
-          <span>proton.me</span>
-        </a>
+        <div className="side-external-links" aria-label={language === "de" ? "Externe Profile" : "External profiles"}>
+          <a href={site.meta.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <ExternalIcon name="github" />
+          </a>
+          <a href={site.meta.companyUrl} target="_blank" rel="noopener noreferrer" aria-label="Unitera Systems">
+            <ExternalIcon name="external" />
+          </a>
+        </div>
         <ThemeToggle theme={theme} onToggle={toggleTheme} />
       </aside>
 
@@ -223,6 +250,12 @@ export function HomePageClient({ sites, projects }: HomePageClientProps) {
                 </a>
               ))}
             </div>
+            <p className="hero-booking">
+              {site.hero.bookingPrefix}{" "}
+              <a href={site.meta.bookingUrl} target="_blank" rel="noopener noreferrer">
+                {site.hero.bookingLabel}
+              </a>
+            </p>
           </div>
         </section>
 
@@ -383,6 +416,10 @@ export function HomePageClient({ sites, projects }: HomePageClientProps) {
                     </span>
                   ))}
                 </div>
+                <a className="project-code-link" href={site.meta.githubUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalIcon name="github" className="link-icon small" />
+                  <span>{language === "de" ? "Code & Architektur auf GitHub" : "Code & architecture on GitHub"}</span>
+                </a>
                 <Link className="text-link" href={`/projekte/${project.slug}`}>
                   {language === "de" ? "Projektdetail öffnen →" : "Open project detail →"}
                 </Link>
@@ -435,8 +472,20 @@ export function HomePageClient({ sites, projects }: HomePageClientProps) {
             ))}
             <div className="cta-row center">
               {site.contact.ctas.map((cta) => (
-                <a key={cta.label} className={`button ${cta.variant}`} href={cta.href}>
+                <a key={cta.label} className={`button ${cta.variant}`} href={cta.href} {...externalAttrs(cta.href)}>
                   {cta.label}
+                </a>
+              ))}
+            </div>
+            <a className="contact-fallback" href={`mailto:${site.contact.fallbackEmail}`}>
+              <span>{site.contact.fallbackLabel}</span>
+              {site.contact.fallbackEmail}
+            </a>
+            <div className="contact-links">
+              {site.contact.externalLinks.map((link) => (
+                <a key={link.href} className="muted-link" href={link.href} target="_blank" rel="noopener noreferrer">
+                  <ExternalIcon name={link.icon} className="link-icon small" />
+                  <span>{link.label}</span>
                 </a>
               ))}
             </div>
@@ -444,8 +493,14 @@ export function HomePageClient({ sites, projects }: HomePageClientProps) {
         </section>
 
         <footer className="footer">
-          <span>Cheikh Fall · AI Governance &amp; Agentic Systems</span>
-          <span>{site.meta.footerClaim}</span>
+          <span>Cheikh Fall · {site.meta.footerClaim}</span>
+          <span className="footer-links">
+            {site.footer.links.map((link) => (
+              <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+                {link.label}
+              </a>
+            ))}
+          </span>
         </footer>
       </main>
     </div>

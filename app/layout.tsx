@@ -8,6 +8,22 @@ const site = getSiteContent();
 export const metadata: Metadata = {
   title: site.meta.title,
   description: site.meta.description,
+  metadataBase: new URL("https://portfolio.uniterasystems.com"),
+  openGraph: {
+    title: site.meta.title,
+    description: site.meta.description,
+    url: "https://portfolio.uniterasystems.com",
+    siteName: "Cheikh Fall",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Cheikh Fall — AI Governance & Agentic Systems"
+      }
+    ],
+    type: "website"
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },

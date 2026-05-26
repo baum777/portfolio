@@ -41,6 +41,12 @@ function validateSiteContent(value: unknown): asserts value is SiteContent {
   const capabilities = candidate.capabilities as Record<string, unknown>;
   assert(isStringArray(capabilities.valueList), "capabilities.valueList muss string[] sein.");
   assert(Array.isArray(capabilities.rows), "capabilities.rows muss ein Array sein.");
+
+  const contact = candidate.contact as Record<string, unknown>;
+  assert(Array.isArray(contact.externalLinks), "contact.externalLinks muss ein Array sein.");
+  assert(typeof candidate.footer === "object" && candidate.footer !== null, "footer fehlt.");
+  const footer = candidate.footer as Record<string, unknown>;
+  assert(Array.isArray(footer.links), "footer.links muss ein Array sein.");
 }
 
 export function getSiteContent(): SiteContent {

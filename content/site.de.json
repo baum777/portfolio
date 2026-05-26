@@ -1,9 +1,12 @@
 {
   "meta": {
-    "title": "Cheikh Fall — Kontrollierbare KI-Systeme",
-    "description": "Portfolio von Cheikh Fall: Unitera als Main Development, SOL-Trading-Systeme und model-agnostische Arbeitsumgebungen.",
+    "title": "Cheikh Fall — AI Governance & Agentic Systems",
+    "description": "Kontrollierbare KI-Systeme: Rollen, Gates, Audit Evidence. Buchbar via cal.eu/cheikh-fall.",
     "brand": "CF — Cheikh Fall / Unitera Systems",
-    "footerClaim": "Signals → Boundaries → Authority → Evidence → Execution"
+    "footerClaim": "AI Governance & Agentic Systems",
+    "bookingUrl": "https://www.cal.eu/cheikh-fall",
+    "githubUrl": "https://github.com/baum777/",
+    "companyUrl": "https://www.uniterasystems.com/"
   },
   "nav": [
     {
@@ -44,7 +47,9 @@
         "label": "Showcases",
         "variant": "secondary"
       }
-    ]
+    ],
+    "bookingPrefix": "Direkt buchen:",
+    "bookingLabel": "cal.eu/cheikh-fall →"
   },
   "intro": {
     "lead": "Kein klassisches Profil.",
@@ -193,14 +198,39 @@
     "text": "Wenn du an einem Punkt bist, an dem dein System läuft — aber du nicht mehr sicher bist, wer wirklich entscheidet: dann ist das die Art Frage, mit der ich arbeite.\n\nIch interessiere mich für Projekte, in denen Kontrolle, Rollen und Nachvollziehbarkeit keine nachträgliche Anforderung sein dürfen, sondern von Anfang an eingebaut werden müssen.",
     "ctas": [
       {
-        "href": "mailto:twim.baum@proton.me",
-        "label": "twim.baum@proton.me →",
+        "href": "https://www.cal.eu/cheikh-fall",
+        "label": "Gespräch buchen →",
         "variant": "primary"
+      }
+    ],
+    "fallbackLabel": "Fallback:",
+    "fallbackEmail": "twim.baum@proton.me",
+    "externalLinks": [
+      {
+        "href": "https://github.com/baum777/",
+        "label": "GitHub",
+        "icon": "github"
       },
       {
-        "href": "mailto:founder@uniterasystems.com",
-        "label": "founder@uniterasystems.com",
-        "variant": "ghost"
+        "href": "https://www.uniterasystems.com/",
+        "label": "Uniterasystems",
+        "icon": "external"
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      {
+        "href": "https://github.com/baum777/",
+        "label": "GitHub ↗"
+      },
+      {
+        "href": "https://www.uniterasystems.com/",
+        "label": "Unitera Systems ↗"
+      },
+      {
+        "href": "https://www.cal.eu/cheikh-fall",
+        "label": "Gespräch buchen ↗"
       }
     ]
   }

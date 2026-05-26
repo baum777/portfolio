@@ -1,9 +1,12 @@
 {
   "meta": {
     "title": "Cheikh Fall — Controllable AI Systems",
-    "description": "Portfolio by Cheikh Fall: Unitera as Main Development, SOL trading systems, and model-agnostic work environments.",
+    "description": "AI Governance & Agentic Systems: roles, gates, audit evidence. Book at cal.eu/cheikh-fall.",
     "brand": "CF — Cheikh Fall / Unitera Systems",
-    "footerClaim": "Signals → Boundaries → Authority → Evidence → Execution"
+    "footerClaim": "AI Governance & Agentic Systems",
+    "bookingUrl": "https://www.cal.eu/cheikh-fall",
+    "githubUrl": "https://github.com/baum777/",
+    "companyUrl": "https://www.uniterasystems.com/"
   },
   "nav": [
     {
@@ -44,7 +47,9 @@
         "label": "Showcases",
         "variant": "secondary"
       }
-    ]
+    ],
+    "bookingPrefix": "Book directly:",
+    "bookingLabel": "cal.eu/cheikh-fall →"
   },
   "intro": {
     "lead": "Not a classic profile.",
@@ -193,14 +198,39 @@
     "text": "If you are at a point where your system is running — but you are no longer sure who is really deciding: that is the kind of question I work with.\n\nI am interested in projects where control, roles, and traceability cannot be an after-the-fact requirement, but must be built in from the beginning.",
     "ctas": [
       {
-        "href": "mailto:twim.baum@proton.me",
-        "label": "twim.baum@proton.me →",
+        "href": "https://www.cal.eu/cheikh-fall",
+        "label": "Book a conversation →",
         "variant": "primary"
+      }
+    ],
+    "fallbackLabel": "Fallback:",
+    "fallbackEmail": "twim.baum@proton.me",
+    "externalLinks": [
+      {
+        "href": "https://github.com/baum777/",
+        "label": "GitHub",
+        "icon": "github"
       },
       {
-        "href": "mailto:founder@uniterasystems.com",
-        "label": "founder@uniterasystems.com",
-        "variant": "ghost"
+        "href": "https://www.uniterasystems.com/",
+        "label": "Uniterasystems",
+        "icon": "external"
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      {
+        "href": "https://github.com/baum777/",
+        "label": "GitHub ↗"
+      },
+      {
+        "href": "https://www.uniterasystems.com/",
+        "label": "Unitera Systems ↗"
+      },
+      {
+        "href": "https://www.cal.eu/cheikh-fall",
+        "label": "Book a conversation ↗"
       }
     ]
   }

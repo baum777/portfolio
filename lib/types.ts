@@ -14,6 +14,8 @@ export interface HeroContent {
   titleSuffix: string;
   subline: string;
   ctas: Array<{ href: string; label: string; variant: "primary" | "secondary" | "ghost" }>;
+  bookingPrefix: string;
+  bookingLabel: string;
 }
 
 export interface IntroContent {
@@ -44,6 +46,9 @@ export interface SiteContent {
     description: string;
     brand: string;
     footerClaim: string;
+    bookingUrl: string;
+    githubUrl: string;
+    companyUrl: string;
   };
   nav: NavItem[];
   hero: HeroContent;
@@ -82,6 +87,12 @@ export interface SiteContent {
     title: string;
     text: string;
     ctas: Array<{ href: string; label: string; variant: "primary" | "ghost" }>;
+    fallbackLabel: string;
+    fallbackEmail: string;
+    externalLinks: Array<{ href: string; label: string; icon: "github" | "external" }>;
+  };
+  footer: {
+    links: Array<{ href: string; label: string }>;
   };
 }
 

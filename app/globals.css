@@ -238,13 +238,26 @@ p {
   font-weight: 400;
 }
 
-.side-email {
+.side-external-links {
   margin-top: auto;
-  display: grid;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   color: var(--color-ink-3);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  line-height: 1.45;
+}
+
+.side-external-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  opacity: 0.6;
+  transition: opacity 120ms ease, color 120ms ease;
+}
+
+.side-external-links a:hover {
+  color: var(--color-ink);
+  opacity: 1;
 }
 
 .mobile-nav {
@@ -359,6 +372,23 @@ h1 {
   color: var(--color-ink-2);
   font-size: var(--text-lg);
   line-height: 1.6;
+}
+
+.hero-booking {
+  margin: 14px 0 0;
+  color: var(--color-ink-3);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.hero-booking a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 120ms ease;
+}
+
+.hero-booking a:hover {
+  color: var(--color-ink);
 }
 
 .cta-row {
@@ -842,8 +872,11 @@ h1 {
 }
 
 .text-link,
-.project-back {
+.project-back,
+.project-code-link {
   display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin-top: 20px;
   color: var(--color-link);
   font-size: 14px;
@@ -852,10 +885,27 @@ h1 {
   transition: opacity 120ms ease;
 }
 
+.project-code-link {
+  margin-top: 16px;
+  color: var(--color-ink-3);
+}
+
 .text-link:hover,
-.project-back:hover {
+.project-back:hover,
+.project-code-link:hover {
   color: var(--color-link-hover);
   opacity: 0.7;
+}
+
+.link-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+
+.link-icon.small {
+  width: 14px;
+  height: 14px;
 }
 
 .capabilities {
@@ -956,6 +1006,47 @@ h1 {
   margin-inline: auto;
 }
 
+.contact-fallback,
+.contact-links,
+.muted-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-fallback {
+  gap: 7px;
+  margin-top: 16px;
+  color: var(--color-ink-3);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.contact-fallback span {
+  color: var(--color-ink-3);
+  opacity: 0.72;
+}
+
+.contact-links {
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.muted-link {
+  gap: 6px;
+  color: var(--color-ink-3);
+  font-size: var(--text-sm);
+  line-height: 1.4;
+  transition: color 120ms ease, opacity 120ms ease;
+}
+
+.contact-fallback:hover,
+.muted-link:hover {
+  color: var(--color-ink);
+  opacity: 0.78;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -967,6 +1058,23 @@ h1 {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   line-height: 1.5;
+}
+
+.footer-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-links a:not(:last-child)::after {
+  content: "·";
+  margin-left: 10px;
+  color: var(--color-ink-3);
+}
+
+.footer-links a:hover {
+  color: var(--color-ink);
 }
 
 .masked {

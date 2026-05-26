@@ -26,4 +26,5 @@
 [[content/projects/sol-trading-systems]] | Sparkfined/BobbyExecute-Detailseite auf Deutsch mit Marktimpuls-Einstieg, Kontrollkern, Execution-Gates und geschärfter Boundary | #content #markdown #projects #solana #execution #de | 2026-05-22
 [[content/projects/model-agnostic-working]] | Model-Agnostic-Detailseite auf Deutsch mit Modellabhängigkeits-Einstieg, Herkunftssektion, Begriffsklärung und transparenter Reifegrad-Boundary | #content #markdown #projects #model-agnostic #governance #de | 2026-05-22
 [[public/brand-assets]] | Fokus-Sigil/Baum-Sigil Logo-, Favicon-, Manifest- und Referenzassets für helles und dunkles Branding | #brand #assets #favicon #public | 2026-05-21
+[[public/og-image]] | Open-Graph-Bild für Portfolio-Linkvorschauen mit Cheikh-Fall-Governance-Positionierung | #asset #og #public | 2026-05-26
 [[vercel.json]] | Vercel-Projektkonfiguration für Next.js-Framework und Dashboard-Output-Override | #vercel #deployment #nextjs | 2026-05-19
