@@ -1,5 +1,5 @@
 const sharedLinks = {
-  booking: "https://www.cal.eu/cheikh-fall",
+  email: "mailto:twim.baum@proton.me",
   github: "https://github.com/baum777/",
   company: "https://www.uniterasystems.com/",
   fallbackEmail: "twim.baum@proton.me",
@@ -11,7 +11,7 @@ const deContent = {
   meta: {
     title: "Cheikh Fall — AI Governance & Agentic Systems",
     description:
-      "Kontrollierbare KI-Systeme: Rollen, Gates, Audit Evidence. Buchbar via cal.eu/cheikh-fall.",
+      "AI Development, AI Automation und AI Engineering für kontrollierbare KI-Systeme in realen Prozessen.",
     ogUrl: "https://portfolio.uniterasystems.com",
     ogImage: "/og-image.png",
   },
@@ -30,6 +30,11 @@ const deContent = {
     { label: "Projekte", href: "#projekte" },
     { label: "Kontakt", href: "#kontakt" },
   ],
+  jobSignal: {
+    text:
+      "Ich suche eine Rolle in AI Development, AI Automation oder AI Engineering — für Teams, die KI nicht nur einsetzen, sondern kontrollierbar in Prozesse integrieren wollen.",
+    email: "twim.baum@proton.me",
+  },
   hero: {
     kicker: "AI Governance · Automation · Systems Thinking",
     titlePrefix: "Komplexe Zusammenhänge in",
@@ -38,12 +43,12 @@ const deContent = {
     subline:
       "Ich verbinde operative Erfahrung, Systemdenken und KI-Automatisierung, um Workflows zu entwickeln, die nachvollziehbar, prüfbar und verantwortbar bleiben.",
     ctas: [
-      { label: "Arbeitsweise →", href: "#denken", className: "button primary" },
-      { label: "Projekte", href: "#projekte", className: "button secondary" },
+      { label: "Denkweise →", href: "#denken", className: "button primary" },
+      { label: "Meine Arbeit", href: "#projekte", className: "button secondary" },
       { label: "Kontakt", href: "#kontakt", className: "button ghost" },
     ],
-    bookingPrefix: "Direkt buchen:",
-    bookingLabel: "cal.eu/cheikh-fall →",
+    bookingPrefix: "Kontakt:",
+    bookingLabel: "twim.baum@proton.me →",
   },
   systemPanel: {
     nodes: [
@@ -362,18 +367,17 @@ const deContent = {
   },
   contact: {
     kicker: "05 / Kontakt",
-    title: "Lass uns über kontrollierbare KI-Systeme sprechen.",
+    title: "Kontrollierbare KI-Systeme im Team bauen.",
     text:
-      "Ich interessiere mich für Projekte, in denen KI nicht nur produktiver machen soll, sondern strukturiert, erklärbar und verantwortbar eingesetzt wird.",
+      "Ich suche ein Team, das kontrollierbare KI-Systeme ernst nimmt —<br>und das bereit ist, mit jemandem zu arbeiten, der das Thema<br>von Grund auf durchdrungen hat, auch ohne klassischen Engineering-Hintergrund.<br><br>Wenn das passt: <a href=\"mailto:twim.baum@proton.me\">twim.baum@proton.me</a><br><br>Kein Briefing nötig. Eine Zeile reicht.",
     ctas: [
       {
-        label: "Gespräch buchen →",
-        href: sharedLinks.booking,
+        label: "twim.baum@proton.me →",
+        href: sharedLinks.email,
         className: "button primary",
-        external: true,
       },
     ],
-    fallbackLabel: "Fallback:",
+    fallbackLabel: "",
     externalLinks: [
       { label: "GitHub", href: sharedLinks.github, icon: "github" },
       { label: "Uniterasystems", href: sharedLinks.company, icon: "external" },
@@ -384,7 +388,7 @@ const deContent = {
     links: [
       { label: "GitHub ↗", href: sharedLinks.github },
       { label: "Unitera Systems ↗", href: sharedLinks.company },
-      { label: "Gespräch buchen ↗", href: sharedLinks.booking },
+      { label: "Kontakt aufnehmen ↗", href: sharedLinks.email },
     ],
   },
 };
@@ -396,7 +400,7 @@ const enContent = {
     ...deContent.meta,
     title: "Cheikh Fall — Controllable AI Systems",
     description:
-      "AI Governance & Agentic Systems: roles, gates, audit evidence. Book at cal.eu/cheikh-fall.",
+      "AI Development, AI Automation, and AI Engineering for controllable AI systems in real workflows.",
   },
   nav: [
     { label: "Thinking", href: "#denken" },
@@ -404,6 +408,11 @@ const enContent = {
     { label: "Projects", href: "#projekte" },
     { label: "Contact", href: "#kontakt" },
   ],
+  jobSignal: {
+    text:
+      "I am looking for a role in AI Development, AI Automation, or AI Engineering — for teams that do not just use AI, but integrate it into processes in a controllable way.",
+    email: "twim.baum@proton.me",
+  },
   hero: {
     ...deContent.hero,
     titlePrefix: "Complex contexts into",
@@ -412,11 +421,12 @@ const enContent = {
     subline:
       "I combine operational experience, systems thinking, and AI automation to build workflows that remain traceable, auditable, and accountable.",
     ctas: [
-      { label: "Working method →", href: "#denken", className: "button primary" },
-      { label: "Showcases", href: "#projekte", className: "button secondary" },
+      { label: "Thinking →", href: "#denken", className: "button primary" },
+      { label: "My work", href: "#projekte", className: "button secondary" },
       { label: "Contact", href: "#kontakt", className: "button ghost" },
     ],
-    bookingPrefix: "Book directly:",
+    bookingPrefix: "Contact:",
+    bookingLabel: "twim.baum@proton.me →",
   },
   systemPanel: {
     ...deContent.systemPanel,
@@ -685,18 +695,17 @@ const enContent = {
   contact: {
     ...deContent.contact,
     kicker: "05 / Contact",
-    title: "Let’s talk about controllable AI systems.",
+    title: "Build controllable AI systems with a team.",
     text:
-      "I am interested in projects where AI is not only supposed to increase productivity, but is used in a structured, explainable, and accountable way.",
+      "I am looking for a team that takes controllable AI systems seriously —<br>and is ready to work with someone who has understood the topic from the ground up, even without a classic engineering background.<br><br>If that fits: <a href=\"mailto:twim.baum@proton.me\">twim.baum@proton.me</a><br><br>No brief needed. One line is enough.",
     ctas: [
       {
-        label: "Book a conversation →",
-        href: sharedLinks.booking,
+        label: "twim.baum@proton.me →",
+        href: sharedLinks.email,
         className: "button primary",
-        external: true,
       },
     ],
-    fallbackLabel: "Fallback:",
+    fallbackLabel: "",
     externalLinks: [
       { label: "GitHub", href: sharedLinks.github, icon: "github" },
       { label: "Uniterasystems", href: sharedLinks.company, icon: "external" },
@@ -707,7 +716,7 @@ const enContent = {
     links: [
       { label: "GitHub ↗", href: sharedLinks.github },
       { label: "Unitera Systems ↗", href: sharedLinks.company },
-      { label: "Book a conversation ↗", href: sharedLinks.booking },
+      { label: "Get in touch ↗", href: sharedLinks.email },
     ],
   },
 };

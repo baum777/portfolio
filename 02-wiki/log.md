@@ -15,3 +15,5 @@
 ## [2026-05-18] update | Single-File in datengetriebene Struktur migriert (index + assets css/js/data) [[index]] [[cheikh-kai-kontrollierbare-ki-systeme-scroll-page]]
 
 ## [2026-05-26] patch | Trust-Links, Booking-CTA, EN-Locale und Open-Graph-Metadaten in der statischen Portfolio-Seite ergänzt [[index]] [[de/index]] [[en/index]] [[cheikh-kai-kontrollierbare-ki-systeme-scroll-page]] [[og-image]]
+
+## [2026-05-28] patch | Erste Job-Signal-Schicht für AI Development, AI Automation und AI Engineering ergänzt; Booking-CTAs auf Mailkontakt umgestellt [[index]] [[de/index]] [[en/index]] [[cheikh-kai-kontrollierbare-ki-systeme-scroll-page]]

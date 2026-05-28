@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kontrollierbare KI-Systeme: Rollen, Gates, Audit Evidence. Buchbar via cal.eu/cheikh-fall." />
+  <meta name="description" content="AI Development, AI Automation und AI Engineering für kontrollierbare KI-Systeme in realen Prozessen." />
   <meta property="og:title" content="Cheikh Fall — AI Governance & Agentic Systems" />
-  <meta property="og:description" content="Kontrollierbare KI-Systeme: Rollen, Gates, Audit Evidence. Buchbar via cal.eu/cheikh-fall." />
+  <meta property="og:description" content="AI Development, AI Automation und AI Engineering für kontrollierbare KI-Systeme in realen Prozessen." />
   <meta property="og:image" content="/og-image.png" />
   <meta property="og:url" content="https://portfolio.uniterasystems.com" />
   <meta property="og:type" content="website" />
@@ -281,6 +281,37 @@
       color: var(--accent);
       border-color: var(--border-2);
       background: color-mix(in srgb, var(--accent) 10%, transparent);
+    }
+
+    .job-signal {
+      margin-top: 14px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--bg-2) 48%, transparent);
+    }
+
+    .job-signal-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding-block: 11px;
+      color: var(--ink-3);
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .job-signal a {
+      color: var(--ink-2);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      white-space: nowrap;
+      transition: 180ms ease;
+    }
+
+    .job-signal a:hover {
+      color: var(--accent);
     }
 
     .hero {
@@ -1361,6 +1392,17 @@
       line-height: 1.65;
     }
 
+    .contact p a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: 180ms ease;
+    }
+
+    .contact p a:hover {
+      color: var(--accent);
+    }
+
     .footer {
       padding: 26px 0 46px;
       border-top: 1px solid var(--border);
@@ -1474,6 +1516,18 @@
 
       .nav-link {
         white-space: nowrap;
+      }
+
+      .job-signal {
+        margin-top: 12px;
+      }
+
+      .job-signal-inner {
+        width: min(100% - 32px, var(--max));
+        flex-direction: column;
+        gap: 4px;
+        padding-block: 12px;
+        font-size: 12px;
       }
 
       .theme-toggle {
@@ -1648,6 +1702,13 @@
     </nav>
   </header>
 
+  <div class="job-signal" aria-label="Aktuelle Rollensuche">
+    <div class="wrap job-signal-inner">
+      <span>Ich suche eine Rolle in AI Development, AI Automation oder AI Engineering — für Teams, die KI nicht nur einsetzen, sondern kontrollierbar in Prozesse integrieren wollen.</span>
+      <a href="mailto:twim.baum@proton.me">→ twim.baum@proton.me</a>
+    </div>
+  </div>
+
   <main id="top">
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-grid">
@@ -1663,8 +1724,8 @@
             um Workflows zu entwickeln, die nachvollziehbar, prüfbar und verantwortbar bleiben.
           </p>
           <div class="cta-row">
-            <a class="button primary" href="#denken">Arbeitsweise →</a>
-            <a class="button secondary" href="#projekte">Projekte</a>
+            <a class="button primary" href="#denken">Denkweise →</a>
+            <a class="button secondary" href="#projekte">Meine Arbeit</a>
             <a class="button ghost" href="#kontakt">Kontakt</a>
           </div>
         </div>
@@ -2092,14 +2153,16 @@
       <div class="contact-box masked">
         <div class="contact-content">
           <div class="section-kicker">05 / Kontakt</div>
-          <h2>Lass uns über kontrollierbare KI-Systeme sprechen.</h2>
+          <h2>Kontrollierbare KI-Systeme im Team bauen.</h2>
           <p>
-            Ich interessiere mich für Projekte, in denen KI nicht nur produktiver machen soll,
-            sondern strukturiert, erklärbar und verantwortbar eingesetzt wird.
+            Ich suche ein Team, das kontrollierbare KI-Systeme ernst nimmt —<br>
+            und das bereit ist, mit jemandem zu arbeiten, der das Thema<br>
+            von Grund auf durchdrungen hat, auch ohne klassischen Engineering-Hintergrund.<br><br>
+            Wenn das passt: <a href="mailto:twim.baum@proton.me">twim.baum@proton.me</a><br><br>
+            Kein Briefing nötig. Eine Zeile reicht.
           </p>
           <div class="cta-row" style="justify-content:center;">
-            <a class="button primary" href="https://www.cal.eu/cheikh-fall" target="_blank" rel="noopener noreferrer">Gespräch buchen →</a>
-            <a class="button ghost" href="mailto:twim.baum@proton.me">twim.baum@proton.me</a>
+            <a class="button primary" href="mailto:twim.baum@proton.me">twim.baum@proton.me →</a>
           </div>
         </div>
       </div>
@@ -2112,7 +2175,7 @@
       <span>
         <a href="https://github.com/baum777/" target="_blank" rel="noopener noreferrer">GitHub ↗</a> ·
         <a href="https://www.uniterasystems.com/" target="_blank" rel="noopener noreferrer">Unitera Systems ↗</a> ·
-        <a href="https://www.cal.eu/cheikh-fall" target="_blank" rel="noopener noreferrer">Gespräch buchen ↗</a>
+        <a href="mailto:twim.baum@proton.me">Kontakt aufnehmen ↗</a>
       </span>
     </div>
   </footer>

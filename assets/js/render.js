@@ -173,6 +173,13 @@ export function renderPage(content) {
   const contactCtas = content.contact.ctas
     .map((cta) => `<a class="${cta.className}" href="${cta.href}"${externalAttrs(cta)}>${cta.label}</a>`)
     .join("");
+  const contactFallback = content.contact.fallbackLabel
+    ? `
+            <a class="contact-fallback" href="mailto:${content.links.fallbackEmail}">
+              <span>${content.contact.fallbackLabel}</span>
+              ${content.links.fallbackEmail}
+            </a>`
+    : "";
   const contactExternalLinks = content.contact.externalLinks
     .map(
       (link) => `
@@ -185,7 +192,7 @@ export function renderPage(content) {
   const footerLinks = content.footer.links
     .map(
       (link) =>
-        `<a class="footer-link" href="${link.href}" target="_blank" rel="noopener noreferrer">${link.label}</a>`
+        `<a class="footer-link" href="${link.href}"${externalAttrs(link)}>${link.label}</a>`
     )
     .join("");
 
@@ -204,6 +211,13 @@ export function renderPage(content) {
     </nav>
   </header>
 
+  <div class="job-signal" aria-label="Aktuelle Rollensuche">
+    <div class="wrap job-signal-inner">
+      <span>${content.jobSignal.text}</span>
+      <a href="${content.links.email}">→ ${content.jobSignal.email}</a>
+    </div>
+  </div>
+
   <main id="top">
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-grid">
@@ -218,7 +232,7 @@ export function renderPage(content) {
           <div class="cta-row">${heroCtas}</div>
           <p class="hero-booking">
             ${content.hero.bookingPrefix}
-            <a href="${content.links.booking}" target="_blank" rel="noopener noreferrer">${content.hero.bookingLabel}</a>
+            <a href="${content.links.email}">${content.hero.bookingLabel}</a>
           </p>
         </div>
 ${renderSystemPanel(content.systemPanel)}
@@ -298,10 +312,7 @@ ${renderSystemPanel(content.systemPanel)}
           <p>${content.contact.text}</p>
           <div class="contact-actions">
             <div class="cta-row" style="justify-content:center;">${contactCtas}</div>
-            <a class="contact-fallback" href="mailto:${content.links.fallbackEmail}">
-              <span>${content.contact.fallbackLabel}</span>
-              ${content.links.fallbackEmail}
-            </a>
+            ${contactFallback}
             <div class="contact-links">${contactExternalLinks}</div>
           </div>
         </div>

@@ -304,6 +304,37 @@
       opacity: 1;
     }
 
+    .job-signal {
+      margin-top: 14px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--bg-2) 48%, transparent);
+    }
+
+    .job-signal-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding-block: 11px;
+      color: var(--ink-3);
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .job-signal a {
+      color: var(--ink-2);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      white-space: nowrap;
+      transition: 180ms ease;
+    }
+
+    .job-signal a:hover {
+      color: var(--accent);
+    }
+
     .icon {
       width: 16px;
       height: 16px;
@@ -1432,6 +1463,17 @@
       line-height: 1.65;
     }
 
+    .contact p a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: 180ms ease;
+    }
+
+    .contact p a:hover {
+      color: var(--accent);
+    }
+
     .contact-actions {
       display: grid;
       justify-items: center;
@@ -1632,6 +1674,18 @@
 
       .nav-external {
         display: none;
+      }
+
+      .job-signal {
+        margin-top: 12px;
+      }
+
+      .job-signal-inner {
+        width: min(100% - 32px, var(--max));
+        flex-direction: column;
+        gap: 4px;
+        padding-block: 12px;
+        font-size: 12px;
       }
 
       .theme-toggle {
