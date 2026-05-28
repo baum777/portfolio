@@ -1106,6 +1106,40 @@
       box-shadow: 0 0 14px var(--glow);
     }
 
+    .why-section {
+      padding: 16px 0 80px;
+    }
+
+    .why-panel {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.72fr) minmax(0, 1.28fr);
+      gap: clamp(28px, 6vw, 72px);
+      padding: clamp(26px, 4vw, 44px) 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-panel h2 {
+      max-width: 420px;
+      margin: 16px 0 0;
+      font-size: clamp(38px, 6vw, 82px);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+    }
+
+    .why-copy {
+      display: grid;
+      gap: 18px;
+      max-width: 760px;
+    }
+
+    .why-copy p {
+      margin: 0;
+      color: var(--ink-2);
+      font-size: clamp(16px, 1.4vw, 19px);
+      line-height: 1.68;
+    }
+
     .principles {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1314,6 +1348,49 @@
       font-size: 10px;
       letter-spacing: 0.07em;
       text-transform: uppercase;
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stack-card {
+      min-height: 250px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background: color-mix(in srgb, var(--bg-2) 84%, transparent);
+      box-shadow: 0 16px 40px color-mix(in srgb, var(--bg) 18%, transparent);
+    }
+
+    .stack-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .stack-items span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 6px 9px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--ink-2);
+      background: color-mix(in srgb, var(--bg-3) 34%, transparent);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .stack-note {
+      max-width: 760px;
+      margin: 22px 0 0;
+      color: var(--ink-3);
+      font-size: 14px;
+      line-height: 1.6;
     }
 
     .capabilities {
@@ -1584,6 +1661,10 @@
         grid-template-columns: 1fr;
       }
 
+      .stack-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
       h1 {
         font-size: clamp(48px, 7vw, 68px);
         letter-spacing: -0.055em;
@@ -1609,9 +1690,17 @@
         gap: 12px;
       }
 
+      .why-panel {
+        grid-template-columns: 1fr;
+      }
+
       .principles,
       .projects {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .stack-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .process-card {
@@ -1730,6 +1819,19 @@
         padding-top: 28px;
       }
 
+      .why-section {
+        padding: 20px 0 64px;
+      }
+
+      .why-panel {
+        gap: 22px;
+      }
+
+      .why-panel h2 {
+        font-size: clamp(36px, 11vw, 58px);
+        letter-spacing: -0.05em;
+      }
+
       .process-scroll {
         height: auto;
         border: 0;
@@ -1793,8 +1895,13 @@
 
       .principles,
       .projects,
+      .stack-grid,
       .capability-row {
         grid-template-columns: 1fr;
+      }
+
+      .stack-card {
+        min-height: auto;
       }
 
       .project-card {

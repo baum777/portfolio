@@ -71,6 +71,16 @@ const deContent = {
     text:
       "LinkedIn zeigt Stationen. Diese Seite zeigt meine Arbeitsweise: wie ich Muster erkenne, Systeme entwerfe und KI in kontrollierbare Prozesse übersetze.",
   },
+  why: {
+    kicker: "Kein klassischer Weg. Ein klares Problemfeld.",
+    title: "Warum ich",
+    paragraphs: [
+      "Ich komme nicht über den klassischen Engineering-Weg, sondern über ein konkretes Problem: Wie werden KI-Systeme in echten Arbeitsprozessen kontrollierbar, prüfbar und verantwortbar?",
+      "Aus dieser Frage heraus habe ich in den letzten zwei Jahren eigene Systeme, Architekturkonzepte und Prototypen aufgebaut — von Workflow-Automation über agentische Toolchains bis zu Governance-, Review- und Evidence-Logik.",
+      "Unitera ist dabei mein stärkster Beleg: nicht als fertiges SaaS-Versprechen, sondern als Architekturarbeit an einem Problem, das viele Unternehmen gerade erst sauber zu greifen beginnen.",
+      "Jetzt suche ich eine Rolle in einem Team, in dem ich diese Denkweise in reale Unternehmensprozesse einbringen, weiterentwickeln und gegen echte Anforderungen prüfen kann.",
+    ],
+  },
   process: {
     kicker: "01 / Denkweise",
     title: "Von losen Signalen zu belastbaren Strukturen.",
@@ -263,6 +273,52 @@ const deContent = {
       },
     ],
   },
+  stack: {
+    kicker: "Technologie / Werkzeuge",
+    title: "Womit ich arbeite",
+    text:
+      "Keine Senior-Stack-Behauptung — sondern die Werkzeuge, mit denen meine Architektur- und Prototypenarbeit entstanden ist.",
+    groups: [
+      {
+        title: "Sprachen & Frameworks",
+        items: ["TypeScript", "JavaScript", "Next.js", "Node.js"],
+      },
+      {
+        title: "AI / Agentic Layer",
+        items: [
+          "Anthropic Claude API",
+          "OpenAI / LLM APIs",
+          "MCP",
+          "LLM Prompt Engineering",
+          "model-agnostic Contracts",
+          "Provider Adapters",
+          "Structured Outputs",
+        ],
+      },
+      {
+        title: "Governance & Systemlogik",
+        items: [
+          "Role-based Authority",
+          "Gate Design",
+          "Audit Trail",
+          "Review Workflows",
+          "State Machines",
+          "Backend-first Architecture",
+          "Evidence Logic",
+        ],
+      },
+      {
+        title: "Tooling & Infrastruktur",
+        items: ["GitHub", "Vercel", "REST APIs", "JSON Schema", "Static Site / Frontend Rendering"],
+      },
+      {
+        title: "In Entwicklung",
+        items: ["Python Grundlagen", "SQL Grundlagen"],
+      },
+    ],
+    note:
+      "Kein Senior-Stack-Claim. Gezeigt durch Code, Architektur und nachvollziehbare Systemlogik — nicht durch Jobtitel.",
+  },
   projects: {
     kicker: "03 / Projekte",
     title: "Projekte als Beweise für Denkweise.",
@@ -421,6 +477,16 @@ const enContent = {
     text:
       "LinkedIn shows roles. This page shows how I work: how I identify patterns, design systems, and translate AI into controllable processes.",
   },
+  why: {
+    kicker: "Not a classical path. A clear problem field.",
+    title: "Why me",
+    paragraphs: [
+      "I did not come through the classical engineering path, but through a concrete problem: How can AI systems in real work processes become controllable, reviewable, and accountable?",
+      "From that question, I built my own systems, architecture concepts, and prototypes over the last two years — from workflow automation and agentic toolchains to governance, review, and evidence logic.",
+      "Unitera is the strongest proof of that work: not as a finished SaaS promise, but as architecture work around a problem many companies are only beginning to define clearly.",
+      "Now I am looking for a role in a team where I can bring this way of thinking into real company processes, develop it further, and test it against real operational requirements.",
+    ],
+  },
   process: {
     ...deContent.process,
     kicker: "01 / Thinking",
@@ -575,6 +641,53 @@ const enContent = {
           "Architecture must work with real people, real workflows, and real constraints.",
       },
     ],
+  },
+  stack: {
+    ...deContent.stack,
+    kicker: "Technology / Tools",
+    title: "What I work with",
+    text:
+      "Not a senior-stack claim — these are the tools behind my architecture and prototype work.",
+    groups: [
+      {
+        title: "Languages & Frameworks",
+        items: ["TypeScript", "JavaScript", "Next.js", "Node.js"],
+      },
+      {
+        title: "AI / Agentic Layer",
+        items: [
+          "Anthropic Claude API",
+          "OpenAI / LLM APIs",
+          "MCP",
+          "LLM Prompt Engineering",
+          "model-agnostic Contracts",
+          "Provider Adapters",
+          "Structured Outputs",
+        ],
+      },
+      {
+        title: "Governance & System Logic",
+        items: [
+          "Role-based Authority",
+          "Gate Design",
+          "Audit Trail",
+          "Review Workflows",
+          "State Machines",
+          "Backend-first Architecture",
+          "Evidence Logic",
+        ],
+      },
+      {
+        title: "Tooling & Infrastructure",
+        items: ["GitHub", "Vercel", "REST APIs", "JSON Schema", "Static Site / Frontend Rendering"],
+      },
+      {
+        title: "In Development",
+        items: ["Python basics", "SQL basics"],
+      },
+    ],
+    note:
+      "Not a senior-stack claim. Shown through code, architecture, and traceable system logic — not through job titles.",
   },
   projects: {
     ...deContent.projects,

@@ -142,6 +142,9 @@ export function renderPage(content) {
     .map((cta) => `<a class="${cta.className}" href="${cta.href}"${externalAttrs(cta)}>${cta.label}</a>`)
     .join("");
   const processChain = content.process.chain.map((item) => `<span>${item}</span>`).join("");
+  const whyParagraphs = content.why.paragraphs
+    .map((paragraph) => `<p>${paragraph}</p>`)
+    .join("");
   const processCards = content.process.steps.map((step) => renderProcessStep(step)).join("");
   const principleCards = content.principles.items
     .map(
@@ -150,6 +153,17 @@ export function renderPage(content) {
           <div class="label">Principle</div>
           <h3>${item.title}</h3>
           <p>${item.text}</p>
+        </article>`
+    )
+    .join("");
+  const stackGroups = content.stack.groups
+    .map(
+      (group) => `
+        <article class="stack-card masked">
+          <div class="label">${group.title}</div>
+          <div class="stack-items">
+            ${group.items.map((item) => `<span>${item}</span>`).join("")}
+          </div>
         </article>`
     )
     .join("");
@@ -245,6 +259,16 @@ ${renderSystemPanel(content.systemPanel)}
       </div>
     </section>
 
+    <section class="why-section wrap" id="why">
+      <div class="why-panel masked">
+        <div>
+          <div class="section-kicker">${content.why.kicker}</div>
+          <h2>${content.why.title}</h2>
+        </div>
+        <div class="why-copy">${whyParagraphs}</div>
+      </div>
+    </section>
+
     <section class="process-scroll" id="denken" aria-label="Denkweise als horizontale Scroll-Ausstellung">
       <div class="process-sticky">
         <div class="process-meta">
@@ -269,6 +293,18 @@ ${renderSystemPanel(content.systemPanel)}
         </div>
       </div>
       <div class="principles">${principleCards}</div>
+    </section>
+
+    <section class="section wrap" id="stack">
+      <div class="section-head masked">
+        <div class="section-kicker">${content.stack.kicker}</div>
+        <div>
+          <h2>${content.stack.title}</h2>
+          <p class="section-copy">${content.stack.text}</p>
+        </div>
+      </div>
+      <div class="stack-grid">${stackGroups}</div>
+      <p class="stack-note masked">${content.stack.note}</p>
     </section>
 
     <section class="section wrap" id="projekte">
