@@ -25,11 +25,15 @@ function validateSiteContent(value: unknown): asserts value is SiteContent {
   assert(Array.isArray(candidate.nav), "nav muss ein Array sein.");
   assert(typeof candidate.hero === "object" && candidate.hero !== null, "hero fehlt.");
   assert(typeof candidate.intro === "object" && candidate.intro !== null, "intro fehlt.");
+  assert(typeof candidate.journey === "object" && candidate.journey !== null, "journey fehlt.");
   assert(typeof candidate.process === "object" && candidate.process !== null, "process fehlt.");
   assert(typeof candidate.principles === "object" && candidate.principles !== null, "principles fehlt.");
   assert(typeof candidate.projects === "object" && candidate.projects !== null, "projects fehlt.");
   assert(typeof candidate.capabilities === "object" && candidate.capabilities !== null, "capabilities fehlt.");
   assert(typeof candidate.contact === "object" && candidate.contact !== null, "contact fehlt.");
+
+  const journey = candidate.journey as Record<string, unknown>;
+  assert(Array.isArray(journey.items) && journey.items.length > 0, "journey.items muss gefüllt sein.");
 
   const process = candidate.process as Record<string, unknown>;
   assert(Array.isArray(process.steps) && process.steps.length > 0, "process.steps muss gefüllt sein.");

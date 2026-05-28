@@ -55,6 +55,28 @@
     "lead": "Kein klassisches Profil.",
     "text": "Diese Seite zeigt, wie ich aus Reibung, Risiken und Tool-Chaos kontrollierbare Arbeitsräume baue: zuerst die Grenze, dann die Logik, dann die Umsetzung."
   },
+  "journey": {
+    "kicker": "00 / Werdegang",
+    "title": "Von Fine-Tuning-Datensätzen zu model-agnostischen Architektur-Layern.",
+    "text": "Der rote Faden ist nicht ein einzelnes Tool, sondern die gleiche Frage auf höherer Ebene: Wie werden KI-Ausgaben kontrollierbar, prüfbar und in echte Arbeit übersetzbar?",
+    "items": [
+      {
+        "period": "2023",
+        "title": "Fine-Tuning, Datensätze und praktische Automatisierung",
+        "text": "Der Einstieg lag in strukturierten Datensätzen, Fine-Tuning-Versuchen, Prompt-Logik und Workflow-Automation mit konkretem Nutzwert: Qualität, Kontext und wiederkehrende Kommunikation kontrollierbarer machen."
+      },
+      {
+        "period": "2024",
+        "title": "Vom Workflow zum Governance-Problem",
+        "text": "Aus einzelnen Automatisierungen wurde die Frage nach Rollen, Freigaben, Tool-Grenzen und Nachweisen. KI sollte nicht nur schneller schreiben, sondern sauber in Verantwortung, Review und Backend-Logik eingebunden werden."
+      },
+      {
+        "period": "Heute",
+        "title": "Model-Agnostic Multi-Layer Architecture",
+        "text": "Der aktuelle Schwerpunkt liegt auf austauschbaren Modellen, portablem Shared Core, Communication Layer, Contracts, Validators und Review Cards: Modelle arbeiten im System, aber sie sind nicht die Wahrheit des Systems."
+      }
+    ]
+  },
   "process": {
     "kicker": "01 / Denkweise",
     "title": "Von losen Signalen zu belastbaren Kontrollpfaden.",
