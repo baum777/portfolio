@@ -267,7 +267,7 @@ const deContent = {
     kicker: "03 / Projekte",
     title: "Projekte als Beweise für Denkweise.",
     text:
-      "Die Projekte sind nicht als klassische Portfolio-Liste inszeniert, sondern als Fallbeispiele für Systemdenken, Governance und kontrollierbare Umsetzung.",
+      "Unitera als Hauptentwicklung. Model-Agnostic Working als Architekturbeweis. Beide zeigen dasselbe Prinzip: Systemlogik vor Oberfläche — Kontrolle vor Automatisierung.",
     items: [
       {
         watermark: "Unitera",
@@ -292,44 +292,23 @@ const deContent = {
       },
       {
         watermark: "Gate",
-        label: "Backend-first AI Console",
-        title: "ModelGate / MosaicStack",
+        label: "Architecture Proof",
+        title: "Model-Agnostic Working",
         text:
-          "Agentische Arbeitsoberfläche mit Fokus auf backend-seitige Autorität und nachvollziehbare Aktionen.",
+          "Architekturbeweis für modellunabhängige Arbeitsweise, backend-seitige Autorität und nachvollziehbare Aktionen.",
         facts: [
           {
             key: "Problem",
             value:
-              "Viele AI-Tools sind UI-zentriert, kritische Entscheidungen brauchen kontrollierte Logik.",
+              "AI-Workflows dürfen nicht an ein einzelnes Modell oder eine Oberfläche gebunden sein.",
           },
           {
             key: "Ansatz",
             value:
-              "Chat, GitHub, Matrix, Credential-Flows und Review-Gates verbinden.",
+              "Systemlogik, Rollen, Gates und Evidenz so trennen, dass die Architektur steuerbar bleibt.",
           },
         ],
-        tags: ["Backend", "Agents", "Credentials"],
-        codeLinkLabel: "Code & Architektur auf GitHub",
-      },
-      {
-        watermark: "Email AI",
-        label: "Practical AI Workflow",
-        title: "AI Email Automation",
-        text:
-          "Frühes Automatisierungsprojekt mit Fine-Tuning, FlutterFlow, Power Automate und eigenen Datensätzen.",
-        facts: [
-          {
-            key: "Problem",
-            value:
-              "Wiederkehrende Kommunikation automatisieren, ohne Kontext und Qualität zu verlieren.",
-          },
-          {
-            key: "Ansatz",
-            value:
-              "Datenstrukturen, Prompt-Logik und Automatisierungsflüsse praktisch aufbauen.",
-          },
-        ],
-        tags: ["Automation", "Data Quality", "Workflow"],
+        tags: ["Architecture", "Model-Agnostic", "Control"],
         codeLinkLabel: "Code & Architektur auf GitHub",
       },
     ],
@@ -602,7 +581,7 @@ const enContent = {
     kicker: "03 / Projects",
     title: "Projects as evidence of working method.",
     text:
-      "The projects are not staged as a classic portfolio list, but as case examples for systems thinking, governance, and controllable execution.",
+      "Unitera as the main development. Model-Agnostic Working as the architecture proof. Both show the same principle: system logic before interface — control before automation.",
     items: [
       {
         ...deContent.projects.items[0],
@@ -624,36 +603,20 @@ const enContent = {
       },
       {
         ...deContent.projects.items[1],
+        label: "Architecture Proof",
+        title: "Model-Agnostic Working",
         text:
-          "Agentic work interface focused on backend-side authority and traceable actions.",
+          "Architecture proof for model-agnostic working, backend-side authority, and traceable actions.",
         facts: [
           {
             key: "Problem",
             value:
-              "Many AI tools are UI-centered, while critical decisions need controlled logic.",
+              "AI workflows must not depend on a single model or interface.",
           },
           {
             key: "Approach",
             value:
-              "Connect chat, GitHub, Matrix, credential flows, and review gates.",
-          },
-        ],
-        codeLinkLabel: "Code & architecture on GitHub",
-      },
-      {
-        ...deContent.projects.items[2],
-        text:
-          "Early automation project with fine-tuning, FlutterFlow, Power Automate, and custom datasets.",
-        facts: [
-          {
-            key: "Problem",
-            value:
-              "Automate recurring communication without losing context and quality.",
-          },
-          {
-            key: "Approach",
-            value:
-              "Build data structures, prompt logic, and automation flows in practice.",
+              "Separate system logic, roles, gates, and evidence so the architecture remains controllable.",
           },
         ],
         codeLinkLabel: "Code & architecture on GitHub",

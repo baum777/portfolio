@@ -17,3 +17,5 @@
 ## [2026-05-26] patch | Trust-Links, Booking-CTA, EN-Locale und Open-Graph-Metadaten in der statischen Portfolio-Seite ergänzt [[index]] [[de/index]] [[en/index]] [[cheikh-kai-kontrollierbare-ki-systeme-scroll-page]] [[og-image]]
 
 ## [2026-05-28] patch | Erste Job-Signal-Schicht für AI Development, AI Automation und AI Engineering ergänzt; Booking-CTAs auf Mailkontakt umgestellt [[index]] [[de/index]] [[en/index]] [[cheikh-kai-kontrollierbare-ki-systeme-scroll-page]]
+
+## [2026-05-28] patch | Homepage-Evidence-Layer auf Unitera Systems und Model-Agnostic Working verengt; Sparkfined/BobbyExecute- und Trading/Crypto-Positionierung aus homepage-facing Content entfernt; kein README-, Stack-, Warum-ich-, Deployment- oder Redesign-Scope [[index]] [[de/index]] [[en/index]] [[cheikh-kai-kontrollierbare-ki-systeme-scroll-page]]
