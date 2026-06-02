@@ -55,6 +55,28 @@
     "lead": "Not a classic profile.",
     "text": "This page shows how I turn friction, risks, and tool chaos into controllable workspaces: first the boundary, then the logic, then the implementation."
   },
+  "journey": {
+    "kicker": "00 / Development Path",
+    "title": "From fine-tuning datasets to model-agnostic architecture layers.",
+    "text": "The throughline is not one single tool, but the same question at a higher level: how do AI outputs become controllable, verifiable, and usable in real work?",
+    "items": [
+      {
+        "period": "2023",
+        "title": "Fine-tuning, datasets, and practical automation",
+        "text": "The starting point was structured datasets, fine-tuning experiments, prompt logic, and workflow automation with practical value: making quality, context, and recurring communication more controllable."
+      },
+      {
+        "period": "2024",
+        "title": "From workflow to governance problem",
+        "text": "Single automations turned into questions about roles, approvals, tool boundaries, and proof. AI should not only write faster, but fit cleanly into accountability, review, and Backend logic."
+      },
+      {
+        "period": "Today",
+        "title": "Model-agnostic multi-layer architecture",
+        "text": "The current focus is swappable models, portable Shared Core, Communication Layer, Contracts, Validators, and Review Cards: models work inside the system, but they are not the system's source of truth."
+      }
+    ]
+  },
   "process": {
     "kicker": "01 / Thinking",
     "title": "From loose signals to reliable control paths.",

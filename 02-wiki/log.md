@@ -85,3 +85,13 @@
 ## [2026-05-26] patch | Kontakt-CTA, externe Trust-Links, Showcase-GitHub-Links, konsistente Fallback-Mail und Open-Graph-Metadaten in der aktiven Next.js-Portfolio-Seite ergänzt [[content/site.de]] [[content/site.en]] [[components/home-page-client]] [[app/layout]] [[app/globals]] [[public/og-image]]
 
 ## [2026-05-26] deploy | Trust-Link-/Booking-Patch als Commit `465fffa` nach Production veröffentlicht; Deployment `dpl_GndVwbj27YL5Hz8ksko48Jb7tf8N` als Ready auf `portfolio.uniterasystems.com` per Vercel-Output, HTTP 200 und Live-Browser-QA verifiziert [[components/home-page-client]] [[content/site.de]] [[content/site.en]] [[vercel.json]]
+
+## [2026-05-26] reconcile | Divergierten lokalen Static-Stand gegen kanonischen Next.js-Remote-Stand geprüft; Trust-/Booking-/OG-/DE-EN-Inhalte sind in `origin/master` bereits enthalten, daher kein Static-Rückport in die aktive App [[02-wiki/log]] [[vercel.json]]
+
+## [2026-05-26] deploy | Reconcile-Branch `codex/reconcile-prod-deploy` nach Production veröffentlicht; Deployment `dpl_84nQtz8Yi4BNbVVNL77RN7XoHM8h` als Ready auf `portfolio.uniterasystems.com` per Vercel-Output und HTTP 200 für `/` sowie `/projekte/unitera-systems` verifiziert [[02-wiki/log]] [[vercel.json]]
+
+## [2026-05-28] update | Werdegang-Sektion auf der Startseite wieder sichtbar gemacht: Entwicklung von Fine-Tuning-Datensätzen 2023 über Governance-Workflows bis zu model-agnostischen Multi-Layer-Architekturen ergänzt [[content/site.de]] [[content/site.en]] [[components/home-page-client]] [[app/globals]] [[lib/site-content]]
+
+## [2026-06-02] update | Unitera-Showcase auf AI Governance OS und OfferFlow als erste App repositioniert; Teaser, Problem-Fact und optionale Tags in DE/EN aktualisiert [[content/projects/unitera-systems]] [[content/projects/en]] [[02-wiki/index]]
+
+## [2026-06-02] verify | Unitera-Showcase-Repositioning lokal geprüft: npm run lint, npm run build, git diff --check und Browser-QA für Root, Projekt-Detailseite sowie EN-Toggle bestanden; bekannte Font-Warnung in app/layout.tsx unverändert [[content/projects/unitera-systems]] [[content/projects/en]]

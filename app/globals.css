@@ -786,6 +786,76 @@ h1 {
   background: var(--color-mono);
 }
 
+.journey {
+  min-height: auto;
+  padding-top: clamp(80px, 10vh, 128px);
+}
+
+.journey-timeline {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  max-width: 860px;
+  margin-left: 214px;
+}
+
+.journey-timeline::before {
+  content: "";
+  position: absolute;
+  left: 94px;
+  top: 18px;
+  bottom: 18px;
+  width: 1px;
+  background: var(--color-border);
+}
+
+.journey-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr);
+  gap: 28px;
+  padding: 24px 28px;
+  border: 0.5px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+}
+
+.journey-item::before {
+  content: "";
+  position: absolute;
+  left: 91px;
+  top: 31px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-mono);
+  box-shadow: 0 0 0 6px var(--color-surface);
+}
+
+.journey-period {
+  color: var(--color-mono);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.journey-item h3 {
+  margin: 0 0 10px;
+  font-size: var(--text-lg);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.journey-item p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--color-ink-2);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+
 .principles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1263,6 +1333,11 @@ h1 {
     margin-bottom: 28px;
   }
 
+  .journey-timeline {
+    max-width: none;
+    margin-left: 0;
+  }
+
   .section h2,
   .process-title h2,
   .contact h2 {
@@ -1442,6 +1517,7 @@ h1 {
   }
 
   .principle-card,
+  .journey-item,
   .project-card,
   .value-zone,
   .capability-panel,
@@ -1453,6 +1529,16 @@ h1 {
 
   .project-detail-page {
     padding: 76px 0;
+  }
+
+  .journey-timeline::before,
+  .journey-item::before {
+    display: none;
+  }
+
+  .journey-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
 

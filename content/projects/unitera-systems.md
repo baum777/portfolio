@@ -1,11 +1,11 @@
 ---
 slug: "unitera-systems"
 title: "Unitera Systems — Main Development"
-teaser: "Hauptentwicklung: eine Draft-to-Commit-Governance-Schicht für AI-gestützte Angebots-, RFP- und Change-Request-Prozesse — mit Rollen, Gates, Commit-Logik und Audit Evidence."
+teaser: "Hauptentwicklung: ein AI Governance Operating System — die governance-first Schicht zwischen Enterprise-Systemen und KI-Modellen. OfferFlow ist die erste App auf dem OS: ein Revenue-Commitment-Workflow für Angebote, RFPs und Change Requests. Die Plattformlogik liegt darunter: Rollen, Rules, Context Binding, Policy Gates, Commit-Checks und Auditpfade."
 badge: "Main Development · AI Governance"
-tags: ["Main Development", "Draft-to-Commit", "Review Gates", "Audit Evidence"]
+tags: ["Main Development", "Draft-to-Commit", "Review Gates", "Audit Evidence", "AI Governance OS", "OfferFlow"]
 watermark: "UNITERA"
-facts: [{"label":"Rolle","text":"Unitera ist die Hauptentwicklung: der stärkste Beleg für mein Denken in kontrollierbaren KI-Systemen."},{"label":"Problem","text":"AI-Drafts beschleunigen Entwürfe, aber Preis, Scope, Claims und Freigabe brauchen belastbare Übergabe."},{"label":"Systemlogik","text":"Intake, Context Binding, Governed Draft, Policy Evaluation, Multi-Role Review, Approval Console, Traceable Commit und Audit Evidence."},{"label":"Boundary","text":"Systemlogik auf synthetischen, nicht produktiven Daten; kein Kundenproof, kein Integrations- oder Compliance-Claim."}]
+facts: [{"label":"Rolle","text":"Unitera ist die Hauptentwicklung: der stärkste Beleg für mein Denken in kontrollierbaren KI-Systemen."},{"label":"Problem","text":"AI-Drafts beschleunigen Entwürfe, aber Preis, Scope, Claims und Freigabe brauchen belastbare Übergabe. Das eigentliche Problem ist breiter: KI darf entwerfen — aber nicht ohne Governance-Pfad committen. Dieser Grundsatz gilt unabhängig vom Use Case."},{"label":"Systemlogik","text":"Intake, Context Binding, Governed Draft, Policy Evaluation, Multi-Role Review, Approval Console, Traceable Commit und Audit Evidence."},{"label":"Boundary","text":"Systemlogik auf synthetischen, nicht produktiven Daten; kein Kundenproof, kein Integrations- oder Compliance-Claim."}]
 order: 1
 ---
 Es gibt einen Moment in jedem AI-gestützten Prozess, an dem die Geschwindigkeit kippt. Der Draft ist fertig. Er klingt gut. Aber niemand ist sicher, welcher Kontext gebunden wurde. Ob ein Preis drin steckt, der nicht freigegeben ist. Ob jemand formal zugestimmt hat — oder nur nicht widersprochen.

@@ -259,6 +259,28 @@ export function HomePageClient({ sites, projects }: HomePageClientProps) {
           </div>
         </section>
 
+        <section className="journey section wrap" id="werdegang">
+          <div className="section-head masked">
+            <div className="section-kicker">{site.journey.kicker}</div>
+            <div>
+              <h2>{site.journey.title}</h2>
+              <p className="section-copy">{site.journey.text}</p>
+            </div>
+          </div>
+
+          <div className="journey-timeline" aria-label={site.journey.kicker}>
+            {site.journey.items.map((item) => (
+              <article className="journey-item masked" key={`${item.period}-${item.title}`}>
+                <div className="journey-period">{item.period}</div>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section
           className="process-scroll"
           id="denken"
