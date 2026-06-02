@@ -20,9 +20,9 @@
 [[app/projekte/[slug]/page]] | Statisch generierte Projekt-Detailseiten aus lokalisierten Markdown-Quellen mit dynamischer Slug-Route und clientseitigem DE/EN-Switch | #nextjs #ssg #projects #markdown #i18n | 2026-05-22
 [[content/site.de]] | Zentraler deutscher Content-Satz für Hero-, Werdegang-, Showcase-, Prozess-, Kompetenz- und Kontaktlogik | #content #json #de | 2026-05-28
 [[content/site.en]] | Zentraler englischer Content-Satz für Hero-, Werdegang-, Showcase-, Prozess-, Kompetenz- und Kontaktlogik | #content #json #en | 2026-05-28
-[[content/projects]] | Deutsche Projektquellen als Markdown-Showcases mit Governance-Logik, Kontaktbrücken und konsistenten Boundaries | #content #markdown #projects #showcases #de | 2026-05-22
-[[content/projects/en]] | Englische Projektquellen als Markdown-Showcases mit gleichem Slug-Set und erhaltener Governance-Logik | #content #markdown #projects #showcases #en | 2026-05-22
-[[content/projects/unitera-systems]] | Unitera-Detailseite auf Deutsch mit Governance-Einstieg, AI-Draft-Handlungslogik und begrenzter synthetischer Boundary | #content #markdown #projects #unitera #governance #de | 2026-05-22
+[[content/projects]] | Deutsche Projektquellen als Markdown-Showcases mit Governance-Logik, Kontaktbrücken und konsistenten Boundaries | #content #markdown #projects #showcases #de | 2026-06-02
+[[content/projects/en]] | Englische Projektquellen als Markdown-Showcases mit gleichem Slug-Set und erhaltener Governance-Logik | #content #markdown #projects #showcases #en | 2026-06-02
+[[content/projects/unitera-systems]] | Unitera-Detailseite auf Deutsch mit AI-Governance-OS-/OfferFlow-Framing, AI-Draft-Handlungslogik und begrenzter synthetischer Boundary | #content #markdown #projects #unitera #governance #de | 2026-06-02
 [[content/projects/sol-trading-systems]] | Sparkfined/BobbyExecute-Detailseite auf Deutsch mit Marktimpuls-Einstieg, Kontrollkern, Execution-Gates und geschärfter Boundary | #content #markdown #projects #solana #execution #de | 2026-05-22
 [[content/projects/model-agnostic-working]] | Model-Agnostic-Detailseite auf Deutsch mit Modellabhängigkeits-Einstieg, Herkunftssektion, Begriffsklärung und transparenter Reifegrad-Boundary | #content #markdown #projects #model-agnostic #governance #de | 2026-05-22
 [[public/brand-assets]] | Fokus-Sigil/Baum-Sigil Logo-, Favicon-, Manifest- und Referenzassets für helles und dunkles Branding | #brand #assets #favicon #public | 2026-05-21

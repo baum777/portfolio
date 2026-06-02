@@ -91,3 +91,7 @@
 ## [2026-05-26] deploy | Reconcile-Branch `codex/reconcile-prod-deploy` nach Production veröffentlicht; Deployment `dpl_84nQtz8Yi4BNbVVNL77RN7XoHM8h` als Ready auf `portfolio.uniterasystems.com` per Vercel-Output und HTTP 200 für `/` sowie `/projekte/unitera-systems` verifiziert [[02-wiki/log]] [[vercel.json]]
 
 ## [2026-05-28] update | Werdegang-Sektion auf der Startseite wieder sichtbar gemacht: Entwicklung von Fine-Tuning-Datensätzen 2023 über Governance-Workflows bis zu model-agnostischen Multi-Layer-Architekturen ergänzt [[content/site.de]] [[content/site.en]] [[components/home-page-client]] [[app/globals]] [[lib/site-content]]
+
+## [2026-06-02] update | Unitera-Showcase auf AI Governance OS und OfferFlow als erste App repositioniert; Teaser, Problem-Fact und optionale Tags in DE/EN aktualisiert [[content/projects/unitera-systems]] [[content/projects/en]] [[02-wiki/index]]
+
+## [2026-06-02] verify | Unitera-Showcase-Repositioning lokal geprüft: npm run lint, npm run build, git diff --check und Browser-QA für Root, Projekt-Detailseite sowie EN-Toggle bestanden; bekannte Font-Warnung in app/layout.tsx unverändert [[content/projects/unitera-systems]] [[content/projects/en]]

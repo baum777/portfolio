@@ -1,11 +1,11 @@
 ---
 slug: "unitera-systems"
 title: "Unitera Systems — Main Development"
-teaser: "Main Development: a Draft-to-Commit governance layer for AI-supported proposal, RFP, and change request processes — with roles, Gates, Commit-Logik, and Audit Evidence."
+teaser: "Main Development: an AI Governance Operating System — the governance-first layer between enterprise systems and AI models. OfferFlow is the first app on the OS: a revenue commitment workflow for offers, RFPs, and change requests. The platform logic sits underneath: roles, rules, Context Binding, Policy Gates, Commit checks, and audit paths."
 badge: "Main Development · AI Governance"
-tags: ["Main Development", "Draft-to-Commit", "Review Gates", "Audit Evidence"]
+tags: ["Main Development", "Draft-to-Commit", "Review Gates", "Audit Evidence", "AI Governance OS", "OfferFlow"]
 watermark: "UNITERA"
-facts: [{"label":"Role","text":"Unitera is the Main Development: the strongest proof of my thinking in controllable AI systems."},{"label":"Problem","text":"AI-Drafts accelerate drafts, but pricing, scope, claims, and approval require reliable handover."},{"label":"System logic","text":"Intake, Context Binding, Governed Draft, Policy Evaluation, Multi-Role Review, Approval Console, Traceable Commit, and Audit Evidence."},{"label":"Boundary","text":"System logic based on synthetic, non-production data; no customer proof, no integration or compliance claim."}]
+facts: [{"label":"Role","text":"Unitera is the Main Development: the strongest proof of my thinking in controllable AI systems."},{"label":"Problem","text":"AI-Drafts accelerate drafts, but pricing, scope, claims, and approval require reliable handover. The real problem is broader: AI may draft — but it must not commit without a governance path. This principle applies independently of the use case."},{"label":"System logic","text":"Intake, Context Binding, Governed Draft, Policy Evaluation, Multi-Role Review, Approval Console, Traceable Commit, and Audit Evidence."},{"label":"Boundary","text":"System logic based on synthetic, non-production data; no customer proof, no integration or compliance claim."}]
 order: 1
 ---
 There is a moment in every AI-supported process when speed tips over. The draft is ready. It sounds good. But nobody is sure which context was bound. Whether it contains a price that has not been approved. Whether someone formally agreed — or merely did not object.
