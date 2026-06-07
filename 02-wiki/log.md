@@ -85,3 +85,7 @@
 ## [2026-05-26] patch | Kontakt-CTA, externe Trust-Links, Showcase-GitHub-Links, konsistente Fallback-Mail und Open-Graph-Metadaten in der aktiven Next.js-Portfolio-Seite ergänzt [[content/site.de]] [[content/site.en]] [[components/home-page-client]] [[app/layout]] [[app/globals]] [[public/og-image]]
 
 ## [2026-05-26] deploy | Trust-Link-/Booking-Patch als Commit `465fffa` nach Production veröffentlicht; Deployment `dpl_GndVwbj27YL5Hz8ksko48Jb7tf8N` als Ready auf `portfolio.uniterasystems.com` per Vercel-Output, HTTP 200 und Live-Browser-QA verifiziert [[components/home-page-client]] [[content/site.de]] [[content/site.en]] [[vercel.json]]
+
+## [2026-06-07] update | P1–P4 UI/UX-Pro-Max-Fixes umgesetzt
+(Kontrast-Tokens Light/Dark auf WCAG AA gehoben, Skip-Link "Zum Hauptinhalt springen", Noscript-Light-Theme-Fallback, Touch-Targets ≥ 44×44 auf Theme-Toggle / Language-Toggle / Buttons, Hero-SVG node-and-line graph desktop-only, Showcases auf 2-Spalten auto-fit grid, Back-to-Top Button mit reduced-motion handling, Section-Head-Grid 170→180px an Side-Nav angeglichen, Prozess-Scroll-Jacking 500svh entfernt → statische vertikale Stacking-Variante mit IntersectionObserver-Reveal, Mobile-Accordion erhalten, Masked-Reveal 320ms mit cubic-bezier, Hover-States auf color-shift vereinheitlicht, cursor: default auf .process-card Desktop, Footer-Jahr © 2026 ergänzt, prefers-reduced-data blendet body::before aus)
+[[app/layout]] [[app/globals]] [[components/home-page-client]] [[hooks/use-scroll-effects]]
