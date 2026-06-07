@@ -89,3 +89,7 @@
 ## [2026-06-07] update | P1–P4 UI/UX-Pro-Max-Fixes umgesetzt
 (Kontrast-Tokens Light/Dark auf WCAG AA gehoben, Skip-Link "Zum Hauptinhalt springen", Noscript-Light-Theme-Fallback, Touch-Targets ≥ 44×44 auf Theme-Toggle / Language-Toggle / Buttons, Hero-SVG node-and-line graph desktop-only, Showcases auf 2-Spalten auto-fit grid, Back-to-Top Button mit reduced-motion handling, Section-Head-Grid 170→180px an Side-Nav angeglichen, Prozess-Scroll-Jacking 500svh entfernt → statische vertikale Stacking-Variante mit IntersectionObserver-Reveal, Mobile-Accordion erhalten, Masked-Reveal 320ms mit cubic-bezier, Hover-States auf color-shift vereinheitlicht, cursor: default auf .process-card Desktop, Footer-Jahr © 2026 ergänzt, prefers-reduced-data blendet body::before aus)
 [[app/layout]] [[app/globals]] [[components/home-page-client]] [[hooks/use-scroll-effects]]
+
+## [2026-06-07] add | 00 / Werdegang-Sektion in der Next.js-Portfolio-Seite ergänzt
+(Journey-Timeline mit 3 Stationen 2023, 2024, Heute · 2026 zwischen Hero und Prozess-Scroll, intro/lead/title + items, DE und EN Content, journey/journey-timeline/journey-item/journey-period CSS, TypeScript-Typ JourneyContent in lib/types.ts ergänzt, Anker #werdegang, mobile Stack ohne Timeline-Rail)
+[[app/globals]] [[components/home-page-client]] [[content/site.de]] [[content/site.en]] [[lib/types]]

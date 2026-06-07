@@ -23,6 +23,19 @@ export interface IntroContent {
   text: string;
 }
 
+export interface JourneyItem {
+  period: string;
+  title: string;
+  text: string;
+}
+
+export interface JourneyContent {
+  kicker: string;
+  title: string;
+  lead: string;
+  items: JourneyItem[];
+}
+
 export interface ProcessStep {
   stepLabel: string;
   title: string;
@@ -53,6 +66,7 @@ export interface SiteContent {
   nav: NavItem[];
   hero: HeroContent;
   intro: IntroContent;
+  journey: JourneyContent;
   process: {
     kicker: string;
     title: string;

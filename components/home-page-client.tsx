@@ -313,6 +313,27 @@ export function HomePageClient({ sites, projects }: HomePageClientProps) {
           <HeroIllustration />
         </section>
 
+        <section className="section wrap journey" id="werdegang" aria-labelledby="werdegang-title">
+          <div className="section-head masked">
+            <div className="section-kicker">{site.journey.kicker}</div>
+            <div>
+              <h2 id="werdegang-title">{site.journey.title}</h2>
+              <p className="section-copy">{site.journey.lead}</p>
+            </div>
+          </div>
+          <div className="journey-timeline">
+            {site.journey.items.map((item) => (
+              <article className="journey-item masked" key={`${item.period}-${item.title}`}>
+                <div className="journey-period">{item.period}</div>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section
           className="process-scroll"
           id="denken"
