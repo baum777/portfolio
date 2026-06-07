@@ -135,6 +135,59 @@ function renderLines(text: string) {
   ));
 }
 
+function HeroIllustration() {
+  return (
+    <svg className="hero-illustration" viewBox="0 0 480 320" role="img" aria-hidden="true" focusable="false">
+      <g className="edges">
+        <path className="edge" d="M 60 80 L 200 120" />
+        <path className="edge" d="M 200 120 L 340 80" />
+        <path className="edge" d="M 60 80 L 140 220" />
+        <path className="edge" d="M 200 120 L 280 220" />
+        <path className="edge" d="M 140 220 L 280 220" />
+        <path className="edge" d="M 280 220 L 400 240" />
+        <path className="edge" d="M 340 80 L 400 240" />
+      </g>
+      <g className="nodes">
+        <g className="node">
+          <circle cx="60" cy="80" r="14" />
+          <text className="label" x="60" y="50" textAnchor="middle">Signal</text>
+        </g>
+        <g className="node">
+          <circle cx="200" cy="120" r="18" />
+          <text className="label" x="200" y="90" textAnchor="middle">Scope</text>
+        </g>
+        <g className="node">
+          <circle cx="340" cy="80" r="14" />
+          <text className="label" x="340" y="50" textAnchor="middle">Authority</text>
+        </g>
+        <g className="node">
+          <circle cx="140" cy="220" r="16" />
+          <text className="label" x="140" y="190" textAnchor="middle">Rollen</text>
+        </g>
+        <g className="node emphasized">
+          <circle cx="280" cy="220" r="20" />
+          <text className="label" x="280" y="190" textAnchor="middle">Backend</text>
+        </g>
+        <g className="node">
+          <circle cx="400" cy="240" r="14" />
+          <text className="label" x="400" y="278" textAnchor="middle">Evidence</text>
+        </g>
+      </g>
+    </svg>
+  );
+}
+
+function BackToTopButton({ label }: { label: string }) {
+  return (
+    <button className="back-to-top" type="button" data-back-to-top aria-label={label}>
+      <span>{label}</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  );
+}
+
 function ExternalIcon({ name, className = "link-icon" }: { name: "github" | "external"; className?: string }) {
   if (name === "github") {
     return (
@@ -257,6 +310,7 @@ export function HomePageClient({ sites, projects }: HomePageClientProps) {
               </a>
             </p>
           </div>
+          <HeroIllustration />
         </section>
 
         <section
@@ -493,7 +547,7 @@ export function HomePageClient({ sites, projects }: HomePageClientProps) {
         </section>
 
         <footer className="footer">
-          <span>Cheikh Fall · {site.meta.footerClaim}</span>
+          <span>© 2026 Cheikh Fall · {site.meta.footerClaim}</span>
           <span className="footer-links">
             {site.footer.links.map((link) => (
               <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
@@ -502,6 +556,7 @@ export function HomePageClient({ sites, projects }: HomePageClientProps) {
             ))}
           </span>
         </footer>
+        <BackToTopButton label={language === "de" ? "Nach oben" : "Back to top"} />
       </main>
     </div>
   );

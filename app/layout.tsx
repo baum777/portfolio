@@ -48,11 +48,37 @@ const themeInitScript = `
 })();
 `;
 
+const noscriptThemeStyle = `
+:root {
+  --color-bg: #f5f0e8;
+  --color-surface: #fdfaf4;
+  --color-surface-2: #ede8df;
+  --color-border: rgba(43, 36, 23, 0.1);
+  --color-border-em: rgba(43, 36, 23, 0.22);
+  --color-ink: #2b2417;
+  --color-ink-2: #6e6354;
+  --color-ink-3: #766a5a;
+  --color-accent: #2b2417;
+  --color-accent-inv: #f5f0e8;
+  --color-mono: #7a5a10;
+  --color-tag-bg: #e6e0d4;
+  --color-tag-text: #6e6354;
+  --color-nav-bg: rgba(245, 240, 232, 0.93);
+  --color-link: #2b2417;
+  --color-link-hover: #7a5a10;
+  --shadow-soft: 0 24px 80px rgba(43, 36, 23, 0.08);
+  color-scheme: light;
+}
+`;
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="de" data-theme="light" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <noscript>
+          <style dangerouslySetInnerHTML={{ __html: noscriptThemeStyle }} />
+        </noscript>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -61,7 +87,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <a href="#hero-title" className="skip-link">Zum Hauptinhalt springen</a>
+        {children}
+      </body>
     </html>
   );
 }

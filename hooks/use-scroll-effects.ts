@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 
 const MOBILE_BREAKPOINT = 900;
+const BACK_TO_TOP_THRESHOLD = 1.5;
 
 function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
@@ -12,13 +13,8 @@ export function useScrollEffects(refreshKey?: string) {
   useEffect(() => {
     const root = document.documentElement;
     const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>(".side-nav-link, .mobile-nav-link"));
-    const processSection = document.querySelector<HTMLElement>(".process-scroll");
-    const processTrack = document.querySelector<HTMLElement>("[data-process-track]");
-    const processSticky = document.querySelector<HTMLElement>(".process-sticky");
-    const indicator = document.querySelector<HTMLElement>("[data-process-indicator]");
-    const indicatorLabel = document.querySelector<HTMLElement>("[data-process-label]");
-    const indicatorDots = Array.from(document.querySelectorAll<HTMLElement>("[data-process-dot]"));
-    const maskedElements = document.querySelectorAll<HTMLElement>(".masked");
+    const maskedElements = Array.from(document.querySelectorAll<HTMLElement>(".masked"));
+    const backToTopButton = document.querySelector<HTMLButtonElement>("[data-back-to-top]");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const sectionByHash = navLinks
@@ -42,10 +38,19 @@ export function useScrollEffects(refreshKey?: string) {
       });
     };
 
+    const updateBackToTop = () => {
+      if (!backToTopButton) return;
+      const threshold = window.innerHeight * BACK_TO_TOP_THRESHOLD;
+      backToTopButton.classList.toggle("visible", window.scrollY > threshold);
+    };
+
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("in-view");
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            revealObserver.unobserve(entry.target);
+          }
         });
       },
       {
@@ -57,22 +62,8 @@ export function useScrollEffects(refreshKey?: string) {
     maskedElements.forEach((element) => revealObserver.observe(element));
 
     let smoothY = window.scrollY;
-    let currentX = 0;
-    let targetX = 0;
-    let processProgress = 0;
     let rafId = 0;
     let ticking = false;
-
-    const setIndicator = (activeIndex: number, visible: boolean) => {
-      indicator?.classList.toggle("visible", visible);
-      indicatorDots.forEach((dot, index) => {
-        dot.classList.toggle("active", index === activeIndex);
-      });
-      const activeDot = indicatorDots[activeIndex];
-      if (indicatorLabel && activeDot?.dataset.label) {
-        indicatorLabel.textContent = activeDot.dataset.label;
-      }
-    };
 
     const updateTargets = () => {
       const scrollY = window.scrollY;
@@ -80,39 +71,12 @@ export function useScrollEffects(refreshKey?: string) {
       const pageProgress = maxScroll > 0 ? scrollY / maxScroll : 0;
       root.style.setProperty("--page-progress", pageProgress.toFixed(4));
       updateActiveNav();
-
-      if (processSection && processTrack && processSticky && window.innerWidth >= MOBILE_BREAKPOINT) {
-        const rect = processSection.getBoundingClientRect();
-        const sectionTop = scrollY + rect.top;
-        const distance = processSection.offsetHeight - window.innerHeight;
-        processProgress = distance > 0 ? clamp((scrollY - sectionTop) / distance, 0, 1) : 0;
-
-        const visibleWidth = processSticky.clientWidth;
-        const maxX = Math.max(0, processTrack.scrollWidth - visibleWidth);
-        targetX = -processProgress * maxX;
-
-        const activeIndex = clamp(Math.round(processProgress * Math.max(indicatorDots.length - 1, 0)), 0, Math.max(indicatorDots.length - 1, 0));
-        setIndicator(activeIndex, rect.top < window.innerHeight * 0.62 && rect.bottom > window.innerHeight * 0.38);
-      } else {
-        processProgress = 0;
-        targetX = 0;
-        setIndicator(0, false);
-      }
-
-      root.style.setProperty("--process-progress", processProgress.toFixed(4));
+      updateBackToTop();
     };
 
     const animate = () => {
       smoothY += (window.scrollY - smoothY) * 0.08;
-      currentX += (targetX - currentX) * 0.12;
       root.style.setProperty("--smooth-y", smoothY.toFixed(2));
-
-      if (processTrack && window.innerWidth >= MOBILE_BREAKPOINT) {
-        processTrack.style.transform = `translate3d(${currentX}px, 0, 0)`;
-      } else if (processTrack) {
-        processTrack.style.removeProperty("transform");
-      }
-
       rafId = window.requestAnimationFrame(animate);
     };
 
@@ -125,31 +89,34 @@ export function useScrollEffects(refreshKey?: string) {
       });
     };
 
-    const resizeObserver = new ResizeObserver(() => {
-      requestUpdate();
-    });
-    if (processTrack) resizeObserver.observe(processTrack);
-    if (processSticky) resizeObserver.observe(processSticky);
-    if (processSection) resizeObserver.observe(processSection);
-    resizeObserver.observe(document.body);
+    const onBackToTopClick = (event: MouseEvent) => {
+      if (!backToTopButton) return;
+      event.preventDefault();
+      if (reducedMotion) {
+        window.scrollTo({ top: 0, behavior: "auto" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+
+    backToTopButton?.addEventListener("click", onBackToTopClick);
 
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
 
     updateTargets();
-    if (reducedMotion) {
-      root.style.setProperty("--smooth-y", String(window.scrollY));
-      if (processTrack) processTrack.style.removeProperty("transform");
-    } else {
+    if (!reducedMotion) {
       animate();
+    } else {
+      root.style.setProperty("--smooth-y", String(window.scrollY));
     }
 
     return () => {
       revealObserver.disconnect();
-      resizeObserver.disconnect();
       window.cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
+      backToTopButton?.removeEventListener("click", onBackToTopClick);
     };
   }, [refreshKey]);
 }
